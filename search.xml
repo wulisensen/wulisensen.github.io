@@ -50,17 +50,6 @@
       </tags>
   </entry>
   <entry>
-    <title>.gitignore失效解决办法</title>
-    <url>/2020/09/01/git/ignore/</url>
-    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'We really don'</span>t want Git to track this anymore!<span class="string">'</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git命令行基础（二）分支</title>
     <url>/2020/09/01/git/branch/</url>
     <content><![CDATA[<p>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”。在其他分支上进行开发，完成后再将它们合并到主分支上。</p>
@@ -75,6 +64,17 @@
 <h3 id="5、除非你将分支推送到远端仓库，不然该分支就是-不为他人所见的："><a href="#5、除非你将分支推送到远端仓库，不然该分支就是-不为他人所见的：" class="headerlink" title="5、除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的："></a>5、除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin &lt;branch&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="6、拉取远程分支并创建本地分支"><a href="#6、拉取远程分支并创建本地分支" class="headerlink" title="6、拉取远程分支并创建本地分支"></a>6、拉取远程分支并创建本地分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -b <span class="built_in">test</span> origin/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>.gitignore失效解决办法</title>
+    <url>/2020/09/01/git/ignore/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'We really don'</span>t want Git to track this anymore!<span class="string">'</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>git</category>
       </categories>
@@ -112,6 +112,18 @@
       </tags>
   </entry>
   <entry>
+    <title>Git迁移</title>
+    <url>/2020/09/01/git/remote/</url>
+    <content><![CDATA[<h3 id="git-仓库迁移"><a href="#git-仓库迁移" class="headerlink" title="git 仓库迁移"></a>git 仓库迁移</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote rename origin old-origin <span class="comment"># 先把旧的git源删除</span></span><br><span class="line">git remote add origin git@git.ifengidc.com:wugs/11111.git <span class="comment"># 设置新的源</span></span><br><span class="line">git push -u origin --all <span class="comment"># 将所有分支上传</span></span><br><span class="line">git push -u origin --tags <span class="comment"># 将所以tag上传</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git命令行基础（三）更新与合并</title>
     <url>/2020/09/01/git/pull/</url>
     <content><![CDATA[<h3 id="1、更新代码"><a href="#1、更新代码" class="headerlink" title="1、更新代码"></a>1、更新代码</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
@@ -125,18 +137,6 @@
 
 <p>在合并改动之前，也可以使用如下命令查看：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git diff &lt;source_branch&gt; &lt;target_branch&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git迁移</title>
-    <url>/2020/09/01/git/remote/</url>
-    <content><![CDATA[<h3 id="git-仓库迁移"><a href="#git-仓库迁移" class="headerlink" title="git 仓库迁移"></a>git 仓库迁移</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote rename origin old-origin <span class="comment"># 先把旧的git源删除</span></span><br><span class="line">git remote add origin git@git.ifengidc.com:wugs/11111.git <span class="comment"># 设置新的源</span></span><br><span class="line">git push -u origin --all <span class="comment"># 将所有分支上传</span></span><br><span class="line">git push -u origin --tags <span class="comment"># 将所以tag上传</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>git</category>
@@ -222,22 +222,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git更新全局账户密码</title>
-    <url>/2020/09/01/git/update/</url>
-    <content><![CDATA[<h3 id="1、查看当前用户名和邮箱"><a href="#1、查看当前用户名和邮箱" class="headerlink" title="1、查看当前用户名和邮箱"></a>1、查看当前用户名和邮箱</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、修改"><a href="#2、修改" class="headerlink" title="2、修改"></a>2、修改</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"zhangsan(新的用户名)"</span></span><br><span class="line">git config --global user.email <span class="string">"123456@qq.com(新的邮箱)"</span></span><br><span class="line">git config --global user.password<span class="string">"123456(新的密码)"</span></span><br><span class="line">//这里的zhangsan和邮箱都是你修改之后的用户名和邮箱</span><br></pre></td></tr></table></figure>
-
-<p>修改完成之后再次查看确认下，是不是自己改后的用户名和邮箱以及密码</p>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Gulp实现项目一键部署</title>
     <url>/2020/09/01/gulp/index/</url>
     <content><![CDATA[<h2 id="1、安装gulp和gulp-sftp"><a href="#1、安装gulp和gulp-sftp" class="headerlink" title="1、安装gulp和gulp-sftp"></a>1、安装gulp和gulp-sftp</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm i gulp gulp-sftp --save-dev</span></span><br></pre></td></tr></table></figure>
@@ -300,6 +284,22 @@
       </categories>
       <tags>
         <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git更新全局账户密码</title>
+    <url>/2020/09/01/git/update/</url>
+    <content><![CDATA[<h3 id="1、查看当前用户名和邮箱"><a href="#1、查看当前用户名和邮箱" class="headerlink" title="1、查看当前用户名和邮箱"></a>1、查看当前用户名和邮箱</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、修改"><a href="#2、修改" class="headerlink" title="2、修改"></a>2、修改</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"zhangsan(新的用户名)"</span></span><br><span class="line">git config --global user.email <span class="string">"123456@qq.com(新的邮箱)"</span></span><br><span class="line">git config --global user.password<span class="string">"123456(新的密码)"</span></span><br><span class="line">//这里的zhangsan和邮箱都是你修改之后的用户名和邮箱</span><br></pre></td></tr></table></figure>
+
+<p>修改完成之后再次查看确认下，是不是自己改后的用户名和邮箱以及密码</p>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -569,6 +569,22 @@
       </tags>
   </entry>
   <entry>
+    <title>MongoDB　对象数组的查询</title>
+    <url>/2020/09/01/mongodb/object/</url>
+    <content><![CDATA[<h2 id="数据库中某个字段是对象数组"><a href="#数据库中某个字段是对象数组" class="headerlink" title="数据库中某个字段是对象数组"></a>数据库中某个字段是对象数组</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"tags_cn"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">"type"</span> : <span class="string">"set"</span>,</span><br><span class="line">			<span class="attr">"id"</span> : <span class="string">"5ce4f86824e43e7550bf7b6c"</span>,</span><br><span class="line">			<span class="attr">"setNumberNew"</span> : <span class="string">"10266"</span>,</span><br><span class="line">			<span class="attr">"setName"</span> : <span class="string">"NASA Apollo 11 Lunar Lander"</span>,</span><br><span class="line">			<span class="attr">"setName_cn"</span> : <span class="string">"阿波罗11号登月舱"</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询的时候可以通过下列方法查询"><a href="#查询的时候可以通过下列方法查询" class="headerlink" title="查询的时候可以通过下列方法查询"></a>查询的时候可以通过下列方法查询</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.a_test.find(&#123;</span><br><span class="line">    <span class="string">'tags_cn.0'</span>: &#123; <span class="attr">$exists</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    <span class="string">'tags_cn.type'</span>: <span class="string">'set'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>原创内容，转载请说明出处</p>
+]]></content>
+      <categories>
+        <category>mongodb</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在MongoDB中使用JOIN操作</title>
     <url>/2020/09/01/mongodb/join/</url>
     <content><![CDATA[<h3 id="1、SQL"><a href="#1、SQL" class="headerlink" title="1、SQL"></a>1、SQL</h3><p>SQL与NoSQL最大的不同之一就是不支持JOIN，在传统的数据库中，SQL JOIN子句允许你使用普通的字段，在两个或者是更多表中的组合表中的每行数据。例如，如果你有表books和publishers，你可以像下面这样写命令：</p>
@@ -629,22 +645,6 @@
 <p>理想情况下，这个$lookup操作应该不会经常使用，如果你需要经常使用它，那么你就使用了错误的数据存储了（数据库）：如果你有相关联的数据，应该使用关联数据库（SQL）。</p>
 <p>也就是说$lookup是一个MongoDB 3.2新加入的，他解决了当在Nosql数据库中使用一些小的相关联的数据查询的时候一些令人失望的问题。</p>
 <p>参考链接<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vZHVodW8vcC82MDY4ODc5Lmh0bWw=" title="https://www.cnblogs.com/duhuo/p/6068879.html">https://www.cnblogs.com/duhuo/p/6068879.html<i class="fa fa-external-link"></i></span></p>
-]]></content>
-      <categories>
-        <category>mongodb</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MongoDB　对象数组的查询</title>
-    <url>/2020/09/01/mongodb/object/</url>
-    <content><![CDATA[<h2 id="数据库中某个字段是对象数组"><a href="#数据库中某个字段是对象数组" class="headerlink" title="数据库中某个字段是对象数组"></a>数据库中某个字段是对象数组</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"tags_cn"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">"type"</span> : <span class="string">"set"</span>,</span><br><span class="line">			<span class="attr">"id"</span> : <span class="string">"5ce4f86824e43e7550bf7b6c"</span>,</span><br><span class="line">			<span class="attr">"setNumberNew"</span> : <span class="string">"10266"</span>,</span><br><span class="line">			<span class="attr">"setName"</span> : <span class="string">"NASA Apollo 11 Lunar Lander"</span>,</span><br><span class="line">			<span class="attr">"setName_cn"</span> : <span class="string">"阿波罗11号登月舱"</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="查询的时候可以通过下列方法查询"><a href="#查询的时候可以通过下列方法查询" class="headerlink" title="查询的时候可以通过下列方法查询"></a>查询的时候可以通过下列方法查询</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.a_test.find(&#123;</span><br><span class="line">    <span class="string">'tags_cn.0'</span>: &#123; <span class="attr">$exists</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    <span class="string">'tags_cn.type'</span>: <span class="string">'set'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>原创内容，转载请说明出处</p>
 ]]></content>
       <categories>
         <category>mongodb</category>
@@ -886,80 +886,6 @@
       </tags>
   </entry>
   <entry>
-    <title>promise 和 async await 的联系 常见使用问题 实现原理</title>
-    <url>/2020/09/01/javascript/async/</url>
-    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>CodeReview中发现存在误用Promise, 对Promise相关callback的回调时机控制存在问题的场景</p>
-<p>因此梳理了这份文档, 主要收集了常见的误用场景, 比较复杂的场景如何处理, 如何通过 Promise优化网页体验, 以及 async await 实现原理</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">getStaticConf</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> rollbackToTaskCenterModuleList;</span><br><span class="line">    axios.post(<span class="string">'/rest/wd/kconf/get'</span>, &#123;</span><br><span class="line">        key: <span class="string">'frontend.browserConfig.lowActiveConfig'</span>,</span><br><span class="line">        type: <span class="string">'json'</span>,</span><br><span class="line">    &#125;).then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        rollbackToTaskCenterModuleList = res.data.rollbackToTaskCenterModuleList;</span><br><span class="line">    &#125;, () =&gt; &#123;</span><br><span class="line">        rollbackToTaskCenterModuleList = <span class="literal">false</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> rollbackToTaskCenterModuleList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上面的例子中，axios.post 执行后发出了异步请求，其链式调用 then 的回调函数是异步执行的, 因此</p>
-<p>rollbackToTaskCenterModuleList 总是返回 undefined</p>
-<p>可以对then的返回值使用await，就能实现我们想要的结果</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">getStaticConf</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> rollbackToTaskCenterModuleList;</span><br><span class="line">    <span class="keyword">await</span> axios.post(<span class="string">'/rest/wd/kconf/get'</span>, &#123;</span><br><span class="line">        key: <span class="string">'frontend.browserConfig.lowActiveConfig'</span>,</span><br><span class="line">        type: <span class="string">'json'</span>,</span><br><span class="line">    &#125;).then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        rollbackToTaskCenterModuleList = res.data.rollbackToTaskCenterModuleList;</span><br><span class="line">    &#125;, () =&gt; &#123;</span><br><span class="line">        rollbackToTaskCenterModuleList = <span class="literal">false</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> rollbackToTaskCenterModuleList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="更进一步-Promise-的各部分回调函数是异步执行的吗"><a href="#更进一步-Promise-的各部分回调函数是异步执行的吗" class="headerlink" title="更进一步: Promise 的各部分回调函数是异步执行的吗"></a>更进一步: Promise 的各部分回调函数是异步执行的吗</h3><p>new Promise 里的代码是同步的，then、catch、finally 都是异步执行的</p>
-<p><img data-src="/images/async/async1.png" alt="代码"></p>
-<p>代码地址 <span class="exturl" data-url="aHR0cHM6Ly9jb2Rlc2FuZGJveC5pby9zLzExLXEydWI3" title="https://codesandbox.io/s/11-q2ub7">https://codesandbox.io/s/11-q2ub7<i class="fa fa-external-link"></i></span></p>
-<h2 id="无意识地充分串行执行"><a href="#无意识地充分串行执行" class="headerlink" title="无意识地充分串行执行"></a>无意识地充分串行执行</h2><p>开发中可能会出现 把可以并行执行的代码 串行执行</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="keyword">await</span> getValue();</span><br><span class="line"><span class="keyword">const</span> b = <span class="keyword">await</span> getValue();</span><br><span class="line"><span class="keyword">const</span> c = <span class="keyword">await</span> getValue();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>() - start); <span class="comment">// 300</span></span><br></pre></td></tr></table></figure>
-
-<p>假设 每个getValue 所需的时间都是100ms, 那么总共所需的时间为 300ms，时间轴如下</p>
-<p><img data-src="/images/async/2.png" alt="代码"></p>
-<p>解决方法</p>
-<p>1)为了将代码并行执行，可以的使用Promise.all的方式</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [a, b, c] = <span class="keyword">await</span> <span class="built_in">Promise</span>.all([</span><br><span class="line">  getValue(), </span><br><span class="line">  getValue(), </span><br><span class="line">  getValue()</span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>() - start); <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
-
-<p>2）还可以 先初始化Promise，在需要获取值得地方 再await</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>();  </span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a1 = getValue();</span><br><span class="line"><span class="keyword">const</span> b1 = getValue();</span><br><span class="line"><span class="keyword">const</span> c1 = getValue();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="keyword">await</span> a1;</span><br><span class="line"><span class="keyword">const</span> b = <span class="keyword">await</span> b1;</span><br><span class="line"><span class="keyword">const</span> c = <span class="keyword">await</span> c1;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>() - start); <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
-
-<p>可以看到3个方法都是并行执行的，代码链接: <span class="exturl" data-url="aHR0cHM6Ly9jb2Rlc2FuZGJveC5pby9zLzIyLWRuMGxlP2ZpbGU9L3NyYy9pbmRleC5qcw==" title="https://codesandbox.io/s/22-dn0le?file=/src/index.js">https://codesandbox.io/s/22-dn0le?file=/src/index.js<i class="fa fa-external-link"></i></span></p>
-<p><img data-src="/images/async/3.png" alt="代码"></p>
-<p>为了测试每个值获取到的时间，<span class="exturl" data-url="aHR0cHM6Ly9jb2Rlc2FuZGJveC5pby9zLzIzLWQ1b3Ux" title="https://codesandbox.io/s/23-d5ou1">https://codesandbox.io/s/23-d5ou1<i class="fa fa-external-link"></i></span></p>
-<p><img data-src="/images/async/4.png" alt="代码"></p>
-<p>可以看到，Promise的执行时间虽然是固定的，但在变量赋值的时机上，前面的await会影响后面的await，整体结束的时间取决于时间最长的那个方法</p>
-<p>b方法的执行时间虽然只有200，但是 受限于c的await，需要300ms后才能赋值给b</p>
-<h3 id="异步调用常规习惯是"><a href="#异步调用常规习惯是" class="headerlink" title="异步调用常规习惯是"></a>异步调用常规习惯是</h3><p>-不要着急await<br>-延迟到要用 Promise 中保存的值时, 再 await<br>-将 Promise 想象成魔法师的帽子, 未来某个时刻可以掏出兔子, 但不一定要现在掏</p>
-<h2 id="可选await的场景（缓存-及其-初始化）"><a href="#可选await的场景（缓存-及其-初始化）" class="headerlink" title="可选await的场景（缓存 及其 初始化）"></a>可选await的场景（缓存 及其 初始化）</h2><p><video src='/images/async/fast-navigation.mp4' controls></video></p>
-<p>需求：某些功能的接口请求，期望能立即返回缓存数据，并显示出来，随后立即对数据进行更新</p>
-<p>方法：对于已缓存数据，优先返回缓存数据，并对数据更新；</p>
-<pre><code>对于未缓存的数据，先表现loading，请求接口并更新数据成功后，loading结束，并替换内容</code></pre><p>在vue中我们可以使用如下伪代码来实现这个功能</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">foo: <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> params = <span class="number">12222</span></span><br><span class="line">    <span class="keyword">const</span> pms = ajax(params)</span><br><span class="line">    <span class="keyword">const</span> update = <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="keyword">this</span>.xx = v</span><br><span class="line">    <span class="keyword">if</span> (cache == <span class="literal">null</span>) &#123;</span><br><span class="line">        cache = <span class="keyword">await</span> pms</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        pms.then(<span class="function"><span class="params">res</span> =&gt;</span> update(res))</span><br><span class="line">    &#125;</span><br><span class="line">    update(cache);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="async-await-原理"><a href="#async-await-原理" class="headerlink" title="async await 原理"></a>async await 原理</h2><h3 id="generator简单介绍"><a href="#generator简单介绍" class="headerlink" title="generator简单介绍"></a>generator简单介绍</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> *<span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> fetch(<span class="string">'/'</span>);</span><br><span class="line">    <span class="keyword">yield</span> fetch(<span class="string">'/a'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这是一个典型的generator函数，使用方法</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> g = <span class="keyword">get</span>();</span><br><span class="line">g.next();  // &#123;value: <span class="built_in">Promise</span>, <span class="attr">done</span>: <span class="literal">false</span>&#125;</span><br><span class="line">g.next();  <span class="comment">// &#123;value: Promise, done: false&#125;</span></span><br><span class="line">g.next();  <span class="comment">// &#123;value: 1, done: true&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>将generator函数编译成es5代码</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> __generator = () &#123; ...&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> __generator(<span class="function"><span class="keyword">function</span> (<span class="params">_a</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (_a.label) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>: <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, fetch(<span class="string">'/'</span>)];</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, fetch(<span class="string">'/a'</span>)];</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="number">2</span> <span class="comment">/*return*/</span>, <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="尝试对async函数转换成es5代码"><a href="#尝试对async函数转换成es5代码" class="headerlink" title="尝试对async函数转换成es5代码"></a>尝试对async函数转换成es5代码</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">await</span> fetch(<span class="string">'/'</span>);</span><br><span class="line">    <span class="keyword">await</span> fetch(<span class="string">'/a'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>转换后</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> __awaiter = () &#123;...&#125;</span><br><span class="line"><span class="keyword">var</span> __generator = () &#123; ...&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> __awaiter(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> __generator(<span class="function"><span class="keyword">function</span> (<span class="params">_a</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">switch</span> (_a.label) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">0</span>: <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, fetch(<span class="string">'/'</span>)];</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, fetch(<span class="string">'/a'</span>)];</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">2</span> <span class="comment">/*return*/</span>, <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p> 可以看到 主要是两个函数，<strong>awaiter 还有</strong>generator，__awaiter 函数的大概内容如下</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> __awaiter = <span class="function"><span class="keyword">function</span>(<span class="params">_g</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> generator = _g();</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">fulfilled</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            step(generator.next());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">result</span>) </span>&#123; <span class="comment">// &#123;value: 1, done: true&#125;</span></span><br><span class="line">            result.done ? resolve(result.value) : <span class="built_in">Promise</span>.resolve(result.value).then(fulfilled);</span><br><span class="line">        &#125;</span><br><span class="line">        step(generator.next());   <span class="comment">// &#123;value: Promise, done: fales&#125;</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>它的核心是 订阅Promise的执行完成时机，自动调用generator的next方法，这样就不用每次手动再调用next方法，使用的体验更好也是 async 和 generator 的区别</p>
-<p>结论：<b>async 函数是 generator的语法糖，优点是能够自动调用next</b></p>
-<h3 id="generator函数的简单实现"><a href="#generator函数的简单实现" class="headerlink" title="generator函数的简单实现"></a>generator函数的简单实现</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> __generator = <span class="function"><span class="keyword">function</span>(<span class="params">body</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _ = &#123;</span><br><span class="line">        label: <span class="number">0</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        next: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> op = body(_);</span><br><span class="line">            <span class="keyword">switch</span> (op[<span class="number">0</span>]) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                    _.label++;</span><br><span class="line">                    <span class="keyword">return</span> &#123;</span><br><span class="line">                        value: op[<span class="number">1</span>],</span><br><span class="line">                        done: <span class="literal">false</span></span><br><span class="line">                    &#125;;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>: </span><br><span class="line">                    <span class="keyword">return</span> &#123;</span><br><span class="line">                        value: op[<span class="number">1</span>],</span><br><span class="line">                        done: <span class="literal">true</span></span><br><span class="line">                    &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="如果是并行执行"><a href="#如果是并行执行" class="headerlink" title="如果是并行执行"></a>如果是并行执行</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> 	<span class="keyword">const</span> f1 =  fetch(<span class="string">'/'</span>);</span><br><span class="line"> 	<span class="keyword">const</span> f2 =  fetch(<span class="string">'/a'</span>);</span><br><span class="line">	<span class="keyword">await</span> f1;</span><br><span class="line">	<span class="keyword">await</span> f2;</span><br><span class="line">  	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>转换后</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> __awaiter = () &#123;...&#125;</span><br><span class="line"><span class="keyword">var</span> __generator = () &#123; ...&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> __awaiter(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> f1, f2;</span><br><span class="line">        <span class="keyword">return</span> __generator(<span class="function"><span class="keyword">function</span> (<span class="params">_a</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">switch</span> (_a.label) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                    f1 = fetch(<span class="string">'/'</span>);</span><br><span class="line">                    f2 = fetch(<span class="string">'/a'</span>);</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, f1];</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, f2];</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">2</span> <span class="comment">/*return*/</span>, <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>比较转换后的代码差异</p>
-<p><img data-src="/images/async/5.png" alt="代码"></p>
-<p>可以看到串行时，f1先执行，并且订阅了f1的执行完成事件，完成时 ，再调用f2，订阅f2的执行完成事件，再return 1；</p>
-<p>与此相对并行时，f1和f2先后一起执行，订阅f1的执行完成事件，完成时，再调用f2的执行完成事件，在return 1。</p>
-]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Redis操作文档</title>
     <url>/2020/09/01/redis/index/</url>
     <content><![CDATA[<p>redis 数据类型讲解 以及 适合场景<span class="exturl" data-url="aHR0cDovL3d3dy4zNjBkb2MuY29tL2NvbnRlbnQvMTUvMDMyNC8xNi81MDU0MTg4XzQ1NzcwMzQxNC5zaHRtbA==" title="http://www.360doc.com/content/15/0324/16/5054188_457703414.shtml">http://www.360doc.com/content/15/0324/16/5054188_457703414.shtml<i class="fa fa-external-link"></i></span></p>
@@ -1019,5 +945,84 @@
       <tags>
         <tag>工具</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>promise 和 async await 的联系 常见使用问题 实现原理</title>
+    <url>/2020/09/01/javascript/async/</url>
+    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>CodeReview中发现存在误用Promise, 对Promise相关callback的回调时机控制存在问题的场景</p>
+<p>因此梳理了这份文档, 主要收集了常见的误用场景, 比较复杂的场景如何处理, 如何通过 Promise优化网页体验, 以及 async await 实现原理</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">getStaticConf</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> rollbackToTaskCenterModuleList;</span><br><span class="line">    axios.post(<span class="string">'/rest/wd/kconf/get'</span>, &#123;</span><br><span class="line">        key: <span class="string">'frontend.browserConfig.lowActiveConfig'</span>,</span><br><span class="line">        type: <span class="string">'json'</span>,</span><br><span class="line">    &#125;).then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        rollbackToTaskCenterModuleList = res.data.rollbackToTaskCenterModuleList;</span><br><span class="line">    &#125;, () =&gt; &#123;</span><br><span class="line">        rollbackToTaskCenterModuleList = <span class="literal">false</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> rollbackToTaskCenterModuleList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的例子中，axios.post 执行后发出了异步请求，其链式调用 then 的回调函数是异步执行的, 因此</p>
+<p>rollbackToTaskCenterModuleList 总是返回 undefined</p>
+<p>可以对then的返回值使用await，就能实现我们想要的结果</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">getStaticConf</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> rollbackToTaskCenterModuleList;</span><br><span class="line">    <span class="keyword">await</span> axios.post(<span class="string">'/rest/wd/kconf/get'</span>, &#123;</span><br><span class="line">        key: <span class="string">'frontend.browserConfig.lowActiveConfig'</span>,</span><br><span class="line">        type: <span class="string">'json'</span>,</span><br><span class="line">    &#125;).then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        rollbackToTaskCenterModuleList = res.data.rollbackToTaskCenterModuleList;</span><br><span class="line">    &#125;, () =&gt; &#123;</span><br><span class="line">        rollbackToTaskCenterModuleList = <span class="literal">false</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> rollbackToTaskCenterModuleList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="更进一步-Promise-的各部分回调函数是异步执行的吗"><a href="#更进一步-Promise-的各部分回调函数是异步执行的吗" class="headerlink" title="更进一步: Promise 的各部分回调函数是异步执行的吗"></a>更进一步: Promise 的各部分回调函数是异步执行的吗</h3><p>new Promise 里的代码是同步的，then、catch、finally 都是异步执行的</p>
+<p><img data-src="/images/async/async1.png" alt="代码"></p>
+<p>代码地址 <span class="exturl" data-url="aHR0cHM6Ly9jb2Rlc2FuZGJveC5pby9zLzExLXEydWI3" title="https://codesandbox.io/s/11-q2ub7">https://codesandbox.io/s/11-q2ub7<i class="fa fa-external-link"></i></span></p>
+<h2 id="无意识地充分串行执行"><a href="#无意识地充分串行执行" class="headerlink" title="无意识地充分串行执行"></a>无意识地充分串行执行</h2><p>开发中可能会出现 把可以并行执行的代码 串行执行</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="keyword">await</span> getValue();</span><br><span class="line"><span class="keyword">const</span> b = <span class="keyword">await</span> getValue();</span><br><span class="line"><span class="keyword">const</span> c = <span class="keyword">await</span> getValue();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>() - start); <span class="comment">// 300</span></span><br></pre></td></tr></table></figure>
+
+<p>假设 每个getValue 所需的时间都是100ms, 那么总共所需的时间为 300ms，时间轴如下</p>
+<p><img data-src="/images/async/2.png" alt="代码"></p>
+<p>解决方法</p>
+<p>1)为了将代码并行执行，可以的使用Promise.all的方式</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [a, b, c] = <span class="keyword">await</span> <span class="built_in">Promise</span>.all([</span><br><span class="line">  getValue(), </span><br><span class="line">  getValue(), </span><br><span class="line">  getValue()</span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>() - start); <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
+
+<p>2）还可以 先初始化Promise，在需要获取值得地方 再await</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>();  </span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a1 = getValue();</span><br><span class="line"><span class="keyword">const</span> b1 = getValue();</span><br><span class="line"><span class="keyword">const</span> c1 = getValue();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="keyword">await</span> a1;</span><br><span class="line"><span class="keyword">const</span> b = <span class="keyword">await</span> b1;</span><br><span class="line"><span class="keyword">const</span> c = <span class="keyword">await</span> c1;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>() - start); <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到3个方法都是并行执行的，代码链接: <span class="exturl" data-url="aHR0cHM6Ly9jb2Rlc2FuZGJveC5pby9zLzIyLWRuMGxlP2ZpbGU9L3NyYy9pbmRleC5qcw==" title="https://codesandbox.io/s/22-dn0le?file=/src/index.js">https://codesandbox.io/s/22-dn0le?file=/src/index.js<i class="fa fa-external-link"></i></span></p>
+<p><img data-src="/images/async/3.png" alt="代码"></p>
+<p>为了测试每个值获取到的时间，<span class="exturl" data-url="aHR0cHM6Ly9jb2Rlc2FuZGJveC5pby9zLzIzLWQ1b3Ux" title="https://codesandbox.io/s/23-d5ou1">https://codesandbox.io/s/23-d5ou1<i class="fa fa-external-link"></i></span></p>
+<p><img data-src="/images/async/4.png" alt="代码"></p>
+<p>可以看到，Promise的执行时间虽然是固定的，但在变量赋值的时机上，前面的await会影响后面的await，整体结束的时间取决于时间最长的那个方法</p>
+<p>b方法的执行时间虽然只有200，但是 受限于c的await，需要300ms后才能赋值给b</p>
+<h3 id="异步调用常规习惯是"><a href="#异步调用常规习惯是" class="headerlink" title="异步调用常规习惯是"></a>异步调用常规习惯是</h3><ul>
+<li>不要着急await</li>
+<li>延迟到要用 Promise 中保存的值时, 再 await</li>
+<li>将 Promise 想象成魔法师的帽子, 未来某个时刻可以掏出兔子, 但不一定要现在掏</li>
+</ul>
+<h2 id="可选await的场景（缓存-及其-初始化）"><a href="#可选await的场景（缓存-及其-初始化）" class="headerlink" title="可选await的场景（缓存 及其 初始化）"></a>可选await的场景（缓存 及其 初始化）</h2><p><video src='/images/async/fast-navigation.mp4' controls></video></p>
+<p>需求：某些功能的接口请求，期望能立即返回缓存数据，并显示出来，随后立即对数据进行更新</p>
+<p>方法：对于已缓存数据，优先返回缓存数据，并对数据更新；</p>
+<p>对于未缓存的数据，先表现loading，请求接口并更新数据成功后，loading结束，并替换内容</p>
+<p>在vue中我们可以使用如下伪代码来实现这个功能</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">foo: <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> params = <span class="number">12222</span></span><br><span class="line">    <span class="keyword">const</span> pms = ajax(params)</span><br><span class="line">    <span class="keyword">const</span> update = <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="keyword">this</span>.xx = v</span><br><span class="line">    <span class="keyword">if</span> (cache == <span class="literal">null</span>) &#123;</span><br><span class="line">        cache = <span class="keyword">await</span> pms</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        pms.then(<span class="function"><span class="params">res</span> =&gt;</span> update(res))</span><br><span class="line">    &#125;</span><br><span class="line">    update(cache);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="async-await-原理"><a href="#async-await-原理" class="headerlink" title="async await 原理"></a>async await 原理</h2><h3 id="generator简单介绍"><a href="#generator简单介绍" class="headerlink" title="generator简单介绍"></a>generator简单介绍</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> *<span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> fetch(<span class="string">'/'</span>);</span><br><span class="line">    <span class="keyword">yield</span> fetch(<span class="string">'/a'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这是一个典型的generator函数，使用方法</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> g = <span class="keyword">get</span>();</span><br><span class="line">g.next();  // &#123;value: <span class="built_in">Promise</span>, <span class="attr">done</span>: <span class="literal">false</span>&#125;</span><br><span class="line">g.next();  <span class="comment">// &#123;value: Promise, done: false&#125;</span></span><br><span class="line">g.next();  <span class="comment">// &#123;value: 1, done: true&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>将generator函数编译成es5代码</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> __generator = () &#123; ...&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> __generator(<span class="function"><span class="keyword">function</span> (<span class="params">_a</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (_a.label) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>: <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, fetch(<span class="string">'/'</span>)];</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, fetch(<span class="string">'/a'</span>)];</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="number">2</span> <span class="comment">/*return*/</span>, <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="尝试对async函数转换成es5代码"><a href="#尝试对async函数转换成es5代码" class="headerlink" title="尝试对async函数转换成es5代码"></a>尝试对async函数转换成es5代码</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">await</span> fetch(<span class="string">'/'</span>);</span><br><span class="line">    <span class="keyword">await</span> fetch(<span class="string">'/a'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>转换后</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> __awaiter = () &#123;...&#125;</span><br><span class="line"><span class="keyword">var</span> __generator = () &#123; ...&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> __awaiter(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> __generator(<span class="function"><span class="keyword">function</span> (<span class="params">_a</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">switch</span> (_a.label) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">0</span>: <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, fetch(<span class="string">'/'</span>)];</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, fetch(<span class="string">'/a'</span>)];</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">2</span> <span class="comment">/*return*/</span>, <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 可以看到 主要是两个函数，<strong>awaiter 还有</strong>generator，__awaiter 函数的大概内容如下</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> __awaiter = <span class="function"><span class="keyword">function</span>(<span class="params">_g</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> generator = _g();</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">fulfilled</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            step(generator.next());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">result</span>) </span>&#123; <span class="comment">// &#123;value: 1, done: true&#125;</span></span><br><span class="line">            result.done ? resolve(result.value) : <span class="built_in">Promise</span>.resolve(result.value).then(fulfilled);</span><br><span class="line">        &#125;</span><br><span class="line">        step(generator.next());   <span class="comment">// &#123;value: Promise, done: fales&#125;</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>它的核心是 订阅Promise的执行完成时机，自动调用generator的next方法，这样就不用每次手动再调用next方法，使用的体验更好也是 async 和 generator 的区别</p>
+<p>结论：<b>async 函数是 generator的语法糖，优点是能够自动调用next</b></p>
+<h3 id="generator函数的简单实现"><a href="#generator函数的简单实现" class="headerlink" title="generator函数的简单实现"></a>generator函数的简单实现</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> __generator = <span class="function"><span class="keyword">function</span>(<span class="params">body</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _ = &#123;</span><br><span class="line">        label: <span class="number">0</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        next: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> op = body(_);</span><br><span class="line">            <span class="keyword">switch</span> (op[<span class="number">0</span>]) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                    _.label++;</span><br><span class="line">                    <span class="keyword">return</span> &#123;</span><br><span class="line">                        value: op[<span class="number">1</span>],</span><br><span class="line">                        done: <span class="literal">false</span></span><br><span class="line">                    &#125;;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>: </span><br><span class="line">                    <span class="keyword">return</span> &#123;</span><br><span class="line">                        value: op[<span class="number">1</span>],</span><br><span class="line">                        done: <span class="literal">true</span></span><br><span class="line">                    &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="如果是并行执行"><a href="#如果是并行执行" class="headerlink" title="如果是并行执行"></a>如果是并行执行</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> 	<span class="keyword">const</span> f1 =  fetch(<span class="string">'/'</span>);</span><br><span class="line"> 	<span class="keyword">const</span> f2 =  fetch(<span class="string">'/a'</span>);</span><br><span class="line">	<span class="keyword">await</span> f1;</span><br><span class="line">	<span class="keyword">await</span> f2;</span><br><span class="line">  	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>转换后</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> __awaiter = () &#123;...&#125;</span><br><span class="line"><span class="keyword">var</span> __generator = () &#123; ...&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> __awaiter(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> f1, f2;</span><br><span class="line">        <span class="keyword">return</span> __generator(<span class="function"><span class="keyword">function</span> (<span class="params">_a</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">switch</span> (_a.label) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                    f1 = fetch(<span class="string">'/'</span>);</span><br><span class="line">                    f2 = fetch(<span class="string">'/a'</span>);</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, f1];</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, f2];</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">2</span> <span class="comment">/*return*/</span>, <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>比较转换后的代码差异</p>
+<p><img data-src="/images/async/5.png" alt="代码"></p>
+<p>可以看到串行时，f1先执行，并且订阅了f1的执行完成事件，完成时 ，再调用f2，订阅f2的执行完成事件，再return 1；</p>
+<p>与此相对并行时，f1和f2先后一起执行，订阅f1的执行完成事件，完成时，再调用f2的执行完成事件，在return 1。</p>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
   </entry>
 </search>

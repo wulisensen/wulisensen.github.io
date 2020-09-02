@@ -37,7 +37,7 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/mongodb/join/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/mongodb/object/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -57,7 +57,7 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/mongodb/object/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/mongodb/join/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -97,6 +97,10 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
+    <loc>https://www.wulisensen.com/2020/09/01/git/update/</loc>
+    <lastmod>2020-09-01</lastmod>
+  </url>
+  <url>
     <loc>https://www.wulisensen.com/2020/09/01/javascript/index/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
@@ -105,15 +109,11 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/git/update/</loc>
-    <lastmod>2020-09-01</lastmod>
-  </url>
-  <url>
     <loc>https://www.wulisensen.com/2020/09/01/git/tips/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/git/pull/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/git/remote/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -121,11 +121,7 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/git/ignore/</loc>
-    <lastmod>2020-09-01</lastmod>
-  </url>
-  <url>
-    <loc>https://www.wulisensen.com/2020/09/01/git/index/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/git/branch/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -137,11 +133,15 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/git/branch/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/git/index/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/git/remote/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/git/ignore/</loc>
+    <lastmod>2020-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.wulisensen.com/2020/09/01/git/pull/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>

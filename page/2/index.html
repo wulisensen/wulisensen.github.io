@@ -311,93 +311,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/mongodb/object/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpg">
-      <meta itemprop="name" content="WuLiSenSen">
-      <meta itemprop="description" content="技术改变世界">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WuLiSenSen">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/01/mongodb/object/" class="post-title-link" itemprop="url">MongoDB　对象数组的查询</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-01 20:18:05" itemprop="dateCreated datePublished" datetime="2020-09-01T20:18:05+08:00">2020-09-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mongodb/" itemprop="url" rel="index">
-                    <span itemprop="name">mongodb</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/09/01/mongodb/object/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/mongodb/object/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="数据库中某个字段是对象数组"><a href="#数据库中某个字段是对象数组" class="headerlink" title="数据库中某个字段是对象数组"></a>数据库中某个字段是对象数组</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"tags_cn"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">"type"</span> : <span class="string">"set"</span>,</span><br><span class="line">			<span class="attr">"id"</span> : <span class="string">"5ce4f86824e43e7550bf7b6c"</span>,</span><br><span class="line">			<span class="attr">"setNumberNew"</span> : <span class="string">"10266"</span>,</span><br><span class="line">			<span class="attr">"setName"</span> : <span class="string">"NASA Apollo 11 Lunar Lander"</span>,</span><br><span class="line">			<span class="attr">"setName_cn"</span> : <span class="string">"阿波罗11号登月舱"</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="查询的时候可以通过下列方法查询"><a href="#查询的时候可以通过下列方法查询" class="headerlink" title="查询的时候可以通过下列方法查询"></a>查询的时候可以通过下列方法查询</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.a_test.find(&#123;</span><br><span class="line">    <span class="string">'tags_cn.0'</span>: &#123; <span class="attr">$exists</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    <span class="string">'tags_cn.type'</span>: <span class="string">'set'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>原创内容，转载请说明出处</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/mongodb/join/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -519,6 +432,93 @@
 <p>理想情况下，这个$lookup操作应该不会经常使用，如果你需要经常使用它，那么你就使用了错误的数据存储了（数据库）：如果你有相关联的数据，应该使用关联数据库（SQL）。</p>
 <p>也就是说$lookup是一个MongoDB 3.2新加入的，他解决了当在Nosql数据库中使用一些小的相关联的数据查询的时候一些令人失望的问题。</p>
 <p>参考链接<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vZHVodW8vcC82MDY4ODc5Lmh0bWw=" title="https://www.cnblogs.com/duhuo/p/6068879.html">https://www.cnblogs.com/duhuo/p/6068879.html<i class="fa fa-external-link"></i></span></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/mongodb/object/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="WuLiSenSen">
+      <meta itemprop="description" content="技术改变世界">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WuLiSenSen">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/01/mongodb/object/" class="post-title-link" itemprop="url">MongoDB　对象数组的查询</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-01 20:18:05" itemprop="dateCreated datePublished" datetime="2020-09-01T20:18:05+08:00">2020-09-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mongodb/" itemprop="url" rel="index">
+                    <span itemprop="name">mongodb</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/09/01/mongodb/object/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/mongodb/object/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="数据库中某个字段是对象数组"><a href="#数据库中某个字段是对象数组" class="headerlink" title="数据库中某个字段是对象数组"></a>数据库中某个字段是对象数组</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"tags_cn"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">"type"</span> : <span class="string">"set"</span>,</span><br><span class="line">			<span class="attr">"id"</span> : <span class="string">"5ce4f86824e43e7550bf7b6c"</span>,</span><br><span class="line">			<span class="attr">"setNumberNew"</span> : <span class="string">"10266"</span>,</span><br><span class="line">			<span class="attr">"setName"</span> : <span class="string">"NASA Apollo 11 Lunar Lander"</span>,</span><br><span class="line">			<span class="attr">"setName_cn"</span> : <span class="string">"阿波罗11号登月舱"</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询的时候可以通过下列方法查询"><a href="#查询的时候可以通过下列方法查询" class="headerlink" title="查询的时候可以通过下列方法查询"></a>查询的时候可以通过下列方法查询</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">db.a_test.find(&#123;</span><br><span class="line">    <span class="string">'tags_cn.0'</span>: &#123; <span class="attr">$exists</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    <span class="string">'tags_cn.type'</span>: <span class="string">'set'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>原创内容，转载请说明出处</p>
 
       
     </div>
@@ -1010,7 +1010,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/git/update/">
+    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/git/tips/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpg">
@@ -1024,7 +1024,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/01/git/update/" class="post-title-link" itemprop="url">Git更新全局账户密码</a>
+            <a href="/2020/09/01/git/tips/" class="post-title-link" itemprop="url">Git命令行基础（六）小贴士</a>
         </h2>
 
         <div class="post-meta">
@@ -1057,8 +1057,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/09/01/git/update/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/git/update/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/09/01/git/tips/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/git/tips/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1073,11 +1073,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1、查看当前用户名和邮箱"><a href="#1、查看当前用户名和邮箱" class="headerlink" title="1、查看当前用户名和邮箱"></a>1、查看当前用户名和邮箱</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+          <p>内建的图形化 git：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitk</span><br></pre></td></tr></table></figure>
 
-<h3 id="2、修改"><a href="#2、修改" class="headerlink" title="2、修改"></a>2、修改</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"zhangsan(新的用户名)"</span></span><br><span class="line">git config --global user.email <span class="string">"123456@qq.com(新的邮箱)"</span></span><br><span class="line">git config --global user.password<span class="string">"123456(新的密码)"</span></span><br><span class="line">//这里的zhangsan和邮箱都是你修改之后的用户名和邮箱</span><br></pre></td></tr></table></figure>
+<p>彩色的 git 输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config color.ui <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
-<p>修改完成之后再次查看确认下，是不是自己改后的用户名和邮箱以及密码</p>
+<p>显示历史记录时，只显示一行注释信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config format.pretty oneline</span><br></pre></td></tr></table></figure>
+
+<p>交互地添加文件至缓存区：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add -i</span><br></pre></td></tr></table></figure>
+
+<p>参考资料地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dkdXR4aWFveHUvYXJ0aWNsZS9kZXRhaWxzLzUzNTczMzM5" title="https://blog.csdn.net/gdutxiaoxu/article/details/53573339">https://blog.csdn.net/gdutxiaoxu/article/details/53573339<i class="fa fa-external-link"></i></span></p>
+<p>顺便一提，我平时都是使用图形化客户端工具<span class="exturl" data-url="aHR0cHM6Ly93d3cuc291cmNldHJlZWFwcC5jb20v" title="https://www.sourcetreeapp.com/">Sourcetree<i class="fa fa-external-link"></i></span></p>
+<p>本宝宝才不会使用难看又难用的命令行呢，哈哈:)</p>
 
       
     </div>
@@ -1097,7 +1107,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/linux/start/">
+    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/linux/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpg">
@@ -1111,7 +1121,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/01/linux/start/" class="post-title-link" itemprop="url">Docker5分钟搭建WordPress</a>
+            <a href="/2020/09/01/linux/index/" class="post-title-link" itemprop="url">Linux基础</a>
         </h2>
 
         <div class="post-meta">
@@ -1144,8 +1154,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/09/01/linux/start/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/linux/start/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/09/01/linux/index/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/linux/index/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1160,43 +1170,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>本文不是介绍Docker是什么概念的基础篇，如想了解Docker是什么概念的请自行谷歌（我也是看了好多介绍才开始手动做的:)</p>
-<h2 id="一、安装Docker"><a href="#一、安装Docker" class="headerlink" title="一、安装Docker"></a>一、安装Docker</h2><h4 id="Mac"><a href="#Mac" class="headerlink" title="Mac:"></a>Mac:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew cask install docker</span><br></pre></td></tr></table></figure>
+          <h2 id="初始化分区，挂载到目录"><a href="#初始化分区，挂载到目录" class="headerlink" title="初始化分区，挂载到目录"></a>初始化分区，挂载到目录</h2><h3 id="1、查看硬盘-fdisk-l"><a href="#1、查看硬盘-fdisk-l" class="headerlink" title="1、查看硬盘 fdisk -l"></a>1、查看硬盘 fdisk -l</h3><h3 id="2、执行命令，对数据盘进行分区"><a href="#2、执行命令，对数据盘进行分区" class="headerlink" title="2、执行命令，对数据盘进行分区"></a>2、执行命令，对数据盘进行分区</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk -S 56 /dev/xvdb</span><br></pre></td></tr></table></figure>
 
-<h4 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS:"></a>CentOS:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum update</span><br><span class="line">$ curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line">$ sudo sh get-docker.sh</span><br><span class="line">$ sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+<p>根据提示，依次输入“n”，“p”“1”，两次回车，“wq”，分区就开始了，很快就会完成</p>
+<h3 id="3、对分区格式化"><a href="#3、对分区格式化" class="headerlink" title="3、对分区格式化"></a>3、对分区格式化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext3 /dev/xvdb1</span><br></pre></td></tr></table></figure>
 
-<p>linux稍微麻烦些，反正我是没这样装上，我最后使用pip装上的:)</p>
-<h4 id="验证安装成功"><a href="#验证安装成功" class="headerlink" title="验证安装成功"></a>验证安装成功</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run hello-world</span><br></pre></td></tr></table></figure>
+<h3 id="4、写入新分区信息"><a href="#4、写入新分区信息" class="headerlink" title="4、写入新分区信息"></a>4、写入新分区信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'/dev/xvdb1  /mnt ext3    defaults    0  0'</span> &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure>
 
-<p>如果本地没有相应的Image，就回去pull，后面如果看到<code>Hello from Docker!</code>字样就说明安装成功了</p>
-<h2 id="二、为Docker镜像下载加速"><a href="#二、为Docker镜像下载加速" class="headerlink" title="二、为Docker镜像下载加速"></a>二、为Docker镜像下载加速</h2><p>由于国内网络连接Docker仓库非常慢，所以配置国内镜像加速还是非常必要的，这里没啥坑，自行谷歌吧:)</p>
-<h2 id="三、安装-Docker-Compose"><a href="#三、安装-Docker-Compose" class="headerlink" title="三、安装 Docker Compose"></a>三、安装 Docker Compose</h2><h4 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h4><p>看到这里是不要打人了，尼玛还啥也没干呢就让老子装了这么多东西。</p>
-<p>各位大爷请先将你们的刀收好，听我娓娓道来。</p>
-<p>一般来说我们的起个demo就一个实例就够了，但是一般来说，web应用会有2个或以上个服务，像WordPress这种简单的也有web+db2个，还别说这其中还要相互依赖关系，比如先起DB,再起web。</p>
-<p>Compose 是 Docker 公司推出的一个工具软件，可以管理多个 Docker 容器组成一个应用。你需要定义一个 YAML 格式的配置文件<code>docker-compose.yml</code>，写好多个容器之间的调用关系。然后，只要一个命令，就能同时启动/关闭这些容器。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动所有服务</span></span><br><span class="line">$ docker-compose up</span><br><span class="line"><span class="comment"># 关闭所有服务</span></span><br><span class="line">$ docker-compose stop</span><br></pre></td></tr></table></figure>
+<p>然后使用“cat /etc/fstab”命令查看</p>
+<h3 id="5、挂载新分区"><a href="#5、挂载新分区" class="headerlink" title="5、挂载新分区"></a>5、挂载新分区</h3><p>使用“mount -a”命令挂载新分区，然后用“df -h”命令查看，出现以下信息就说明挂载成功，可以开始使用新的分区了</p>
+<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><h3 id="1、useradd-wuguangsen"><a href="#1、useradd-wuguangsen" class="headerlink" title="1、useradd wuguangsen"></a>1、useradd wuguangsen</h3><h3 id="2、passwd-wuguangsen"><a href="#2、passwd-wuguangsen" class="headerlink" title="2、passwd wuguangsen"></a>2、passwd wuguangsen</h3><h2 id="修改mysql的密码"><a href="#修改mysql的密码" class="headerlink" title="修改mysql的密码"></a>修改mysql的密码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p password <span class="string">"test123"</span></span><br><span class="line">Enter password: 【输入原来的密码】</span><br></pre></td></tr></table></figure>
 
-<h4 id="2、安装"><a href="#2、安装" class="headerlink" title="2、安装"></a>2、安装</h4><p>Mac 和 Windows 在安装 docker 的时候，会一起安装 docker compose。Linux 系统下的安装参考<span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRvY2tlci5jb20vY29tcG9zZS9pbnN0YWxsLyNpbnN0YWxsLWNvbXBvc2U=" title="https://docs.docker.com/compose/install/#install-compose">官方文档<i class="fa fa-external-link"></i></span>。</p>
-<p>安装完成后，运行下面的命令。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker-compose --version</span><br></pre></td></tr></table></figure>
+<h2 id="开放3306端口"><a href="#开放3306端口" class="headerlink" title="开放3306端口"></a>开放3306端口</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT</span><br></pre></td></tr></table></figure>
 
-<h4 id="3、开始创建"><a href="#3、开始创建" class="headerlink" title="3、开始创建"></a>3、开始创建</h4><p>找一空目录，创建文件<code>docker-compose.yml</code>,并写入：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3.3'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">   <span class="attr">db:</span></span><br><span class="line">     <span class="attr">image:</span> <span class="string">mysql:5.7</span></span><br><span class="line">     <span class="attr">volumes:</span></span><br><span class="line">       <span class="bullet">-</span> <span class="string">db_data:/var/lib/mysql</span></span><br><span class="line">     <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">     <span class="attr">environment:</span></span><br><span class="line">       <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">somewordpress</span></span><br><span class="line">       <span class="attr">MYSQL_DATABASE:</span> <span class="string">wordpress</span></span><br><span class="line">       <span class="attr">MYSQL_USER:</span> <span class="string">wordpress</span></span><br><span class="line">       <span class="attr">MYSQL_PASSWORD:</span> <span class="string">wordpress</span></span><br><span class="line"></span><br><span class="line">   <span class="attr">wordpress:</span></span><br><span class="line">     <span class="attr">depends_on:</span></span><br><span class="line">       <span class="bullet">-</span> <span class="string">db</span></span><br><span class="line">     <span class="attr">image:</span> <span class="string">wordpress:latest</span></span><br><span class="line">     <span class="attr">ports:</span></span><br><span class="line">       <span class="bullet">-</span> <span class="string">"8000:80"</span></span><br><span class="line">     <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">     <span class="attr">environment:</span></span><br><span class="line">       <span class="attr">WORDPRESS_DB_HOST:</span> <span class="string">db:3306</span></span><br><span class="line">       <span class="attr">WORDPRESS_DB_USER:</span> <span class="string">wordpress</span></span><br><span class="line">       <span class="attr">WORDPRESS_DB_PASSWORD:</span> <span class="string">wordpress</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">    <span class="attr">db_data:</span></span><br></pre></td></tr></table></figure>
+<h2 id="查看防火墙"><a href="#查看防火墙" class="headerlink" title="查看防火墙"></a>查看防火墙</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables status</span><br></pre></td></tr></table></figure>
 
-<p>启动两个容器</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker-compose up</span><br></pre></td></tr></table></figure>
-
-<p>如果本机，浏览器试着访问下 <code>http://127.0.0.1:808</code>, 如果是外部服务器 将ip改成对应ip, 应该就能看到 WordPress 的安装界面。</p>
-<p>现在关闭两个容器。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker-compose stop</span><br></pre></td></tr></table></figure>
-
-<p>关闭以后，这两个容器文件还是存在的，写在里面的数据不会丢失。下次启动的时候，还可以复用。下面的命令可以把这两个容器文件删除（容器必须已经停止运行）。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker-compose rm</span><br></pre></td></tr></table></figure>
-
-<p>如果问题，查看<span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRvY2tlci5jb20vY29tcG9zZS93b3JkcHJlc3Mv" title="https://docs.docker.com/compose/wordpress/">官方文档<i class="fa fa-external-link"></i></span></p>
-<p>如果不想通过IP+port访问服务的话，可以申请个域名，nginx做下配置，可以看我nginx里那篇文章。</p>
-<h2 id="四、参考链接"><a href="#四、参考链接" class="headerlink" title="四、参考链接"></a>四、参考链接</h2><p>1、<span class="exturl" data-url="aHR0cDovL3d3dy5ydWFueWlmZW5nLmNvbS9ibG9nLzIwMTgvMDIvZG9ja2VyLXdvcmRwcmVzcy10dXRvcmlhbC5odG1s" title="http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html">http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html<i class="fa fa-external-link"></i></span> by ruanyifeng</p>
-
+<p>active表示开启，inactive表示关闭</p>
+<h2 id="将文件中包含某个字符串的行输出到别的文件"><a href="#将文件中包含某个字符串的行输出到别的文件" class="headerlink" title="将文件中包含某个字符串的行输出到别的文件"></a>将文件中包含某个字符串的行输出到别的文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat test1.loglast | grep 1600 &gt; res.log</span><br></pre></td></tr></table></figure>
       
     </div>
 
