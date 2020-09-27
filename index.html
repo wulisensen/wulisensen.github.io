@@ -196,6 +196,97 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/27/javascript/nvs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="WuLiSenSen">
+      <meta itemprop="description" content="技术改变世界">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WuLiSenSen">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/27/javascript/nvs/" class="post-title-link" itemprop="url">nvs自动切换项目node版本</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-09-27 20:32:25 / 修改时间：20:40:05" itemprop="dateCreated datePublished" datetime="2020-09-27T20:32:25+08:00">2020-09-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/09/27/javascript/nvs/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/27/javascript/nvs/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>如今的web前端开发已经离不开node了，那么经常会遇到一个场景，你自己正开发着一个node12的项目，老板突然叫你去修复个 node10 项目的bug，然后你把代码clone下来<code>npm i</code>一下，发现报错了。草，node版本问题。现在你把本地安装了个node10，解决了bug，然后 提交代码，继续装回node12，然后开始搬砖。这时候老板又来了，再解决个bug，然后你修复、提交代码、切回12。如此反复不停地切换node版本，浪费了很多时间，耽误了工作进度，然后年底就被优化掉了。。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/27/javascript/nvs/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/javascript/async/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -219,10 +310,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-09-01 20:24:58 / 修改时间：21:22:07" itemprop="dateCreated datePublished" datetime="2020-09-01T20:24:58+08:00">2020-09-01</time>
+              <time title="创建时间：2020-09-01 20:24:58" itemprop="dateCreated datePublished" datetime="2020-09-01T20:24:58+08:00">2020-09-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-27 20:40:35" itemprop="dateModified" datetime="2020-09-27T20:40:35+08:00">2020-09-27</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -262,76 +359,14 @@
       
           <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>CodeReview中发现存在误用Promise, 对Promise相关callback的回调时机控制存在问题的场景</p>
 <p>因此梳理了这份文档, 主要收集了常见的误用场景, 比较复杂的场景如何处理, 如何通过 Promise优化网页体验, 以及 async await 实现原理</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">getStaticConf</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> rollbackToTaskCenterModuleList;</span><br><span class="line">    axios.post(<span class="string">'/rest/wd/kconf/get'</span>, &#123;</span><br><span class="line">        key: <span class="string">'frontend.browserConfig.lowActiveConfig'</span>,</span><br><span class="line">        type: <span class="string">'json'</span>,</span><br><span class="line">    &#125;).then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        rollbackToTaskCenterModuleList = res.data.rollbackToTaskCenterModuleList;</span><br><span class="line">    &#125;, () =&gt; &#123;</span><br><span class="line">        rollbackToTaskCenterModuleList = <span class="literal">false</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> rollbackToTaskCenterModuleList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上面的例子中，axios.post 执行后发出了异步请求，其链式调用 then 的回调函数是异步执行的, 因此</p>
-<p>rollbackToTaskCenterModuleList 总是返回 undefined</p>
-<p>可以对then的返回值使用await，就能实现我们想要的结果</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">getStaticConf</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> rollbackToTaskCenterModuleList;</span><br><span class="line">    <span class="keyword">await</span> axios.post(<span class="string">'/rest/wd/kconf/get'</span>, &#123;</span><br><span class="line">        key: <span class="string">'frontend.browserConfig.lowActiveConfig'</span>,</span><br><span class="line">        type: <span class="string">'json'</span>,</span><br><span class="line">    &#125;).then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        rollbackToTaskCenterModuleList = res.data.rollbackToTaskCenterModuleList;</span><br><span class="line">    &#125;, () =&gt; &#123;</span><br><span class="line">        rollbackToTaskCenterModuleList = <span class="literal">false</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> rollbackToTaskCenterModuleList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="更进一步-Promise-的各部分回调函数是异步执行的吗"><a href="#更进一步-Promise-的各部分回调函数是异步执行的吗" class="headerlink" title="更进一步: Promise 的各部分回调函数是异步执行的吗"></a>更进一步: Promise 的各部分回调函数是异步执行的吗</h3><p>new Promise 里的代码是同步的，then、catch、finally 都是异步执行的</p>
-<p><img data-src="/images/async/async1.png" alt="代码"></p>
-<p>代码地址 <span class="exturl" data-url="aHR0cHM6Ly9jb2Rlc2FuZGJveC5pby9zLzExLXEydWI3" title="https://codesandbox.io/s/11-q2ub7">https://codesandbox.io/s/11-q2ub7<i class="fa fa-external-link"></i></span></p>
-<h2 id="无意识地充分串行执行"><a href="#无意识地充分串行执行" class="headerlink" title="无意识地充分串行执行"></a>无意识地充分串行执行</h2><p>开发中可能会出现 把可以并行执行的代码 串行执行</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="keyword">await</span> getValue();</span><br><span class="line"><span class="keyword">const</span> b = <span class="keyword">await</span> getValue();</span><br><span class="line"><span class="keyword">const</span> c = <span class="keyword">await</span> getValue();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>() - start); <span class="comment">// 300</span></span><br></pre></td></tr></table></figure>
-
-<p>假设 每个getValue 所需的时间都是100ms, 那么总共所需的时间为 300ms，时间轴如下</p>
-<p><img data-src="/images/async/2.png" alt="代码"></p>
-<p>解决方法</p>
-<p>1)为了将代码并行执行，可以的使用Promise.all的方式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [a, b, c] = <span class="keyword">await</span> <span class="built_in">Promise</span>.all([</span><br><span class="line">  getValue(), </span><br><span class="line">  getValue(), </span><br><span class="line">  getValue()</span><br><span class="line">]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>() - start); <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
-
-<p>2）还可以 先初始化Promise，在需要获取值得地方 再await</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>();  </span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a1 = getValue();</span><br><span class="line"><span class="keyword">const</span> b1 = getValue();</span><br><span class="line"><span class="keyword">const</span> c1 = getValue();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = <span class="keyword">await</span> a1;</span><br><span class="line"><span class="keyword">const</span> b = <span class="keyword">await</span> b1;</span><br><span class="line"><span class="keyword">const</span> c = <span class="keyword">await</span> c1;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>() - start); <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
-
-<p>可以看到3个方法都是并行执行的，代码链接: <span class="exturl" data-url="aHR0cHM6Ly9jb2Rlc2FuZGJveC5pby9zLzIyLWRuMGxlP2ZpbGU9L3NyYy9pbmRleC5qcw==" title="https://codesandbox.io/s/22-dn0le?file=/src/index.js">https://codesandbox.io/s/22-dn0le?file=/src/index.js<i class="fa fa-external-link"></i></span></p>
-<p><img data-src="/images/async/3.png" alt="代码"></p>
-<p>为了测试每个值获取到的时间，<span class="exturl" data-url="aHR0cHM6Ly9jb2Rlc2FuZGJveC5pby9zLzIzLWQ1b3Ux" title="https://codesandbox.io/s/23-d5ou1">https://codesandbox.io/s/23-d5ou1<i class="fa fa-external-link"></i></span></p>
-<p><img data-src="/images/async/4.png" alt="代码"></p>
-<p>可以看到，Promise的执行时间虽然是固定的，但在变量赋值的时机上，前面的await会影响后面的await，整体结束的时间取决于时间最长的那个方法</p>
-<p>b方法的执行时间虽然只有200，但是 受限于c的await，需要300ms后才能赋值给b</p>
-<h3 id="异步调用常规习惯是"><a href="#异步调用常规习惯是" class="headerlink" title="异步调用常规习惯是"></a>异步调用常规习惯是</h3><ul>
-<li>不要着急await</li>
-<li>延迟到要用 Promise 中保存的值时, 再 await</li>
-<li>将 Promise 想象成魔法师的帽子, 未来某个时刻可以掏出兔子, 但不一定要现在掏</li>
-</ul>
-<h2 id="可选await的场景（缓存-及其-初始化）"><a href="#可选await的场景（缓存-及其-初始化）" class="headerlink" title="可选await的场景（缓存 及其 初始化）"></a>可选await的场景（缓存 及其 初始化）</h2><p><video src='/images/async/fast-navigation.mp4' controls></video></p>
-<p>需求：某些功能的接口请求，期望能立即返回缓存数据，并显示出来，随后立即对数据进行更新</p>
-<p>方法：对于已缓存数据，优先返回缓存数据，并对数据更新；</p>
-<p>对于未缓存的数据，先表现loading，请求接口并更新数据成功后，loading结束，并替换内容</p>
-<p>在vue中我们可以使用如下伪代码来实现这个功能</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">foo: <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> params = <span class="number">12222</span></span><br><span class="line">    <span class="keyword">const</span> pms = ajax(params)</span><br><span class="line">    <span class="keyword">const</span> update = <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="keyword">this</span>.xx = v</span><br><span class="line">    <span class="keyword">if</span> (cache == <span class="literal">null</span>) &#123;</span><br><span class="line">        cache = <span class="keyword">await</span> pms</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        pms.then(<span class="function"><span class="params">res</span> =&gt;</span> update(res))</span><br><span class="line">    &#125;</span><br><span class="line">    update(cache);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="async-await-原理"><a href="#async-await-原理" class="headerlink" title="async await 原理"></a>async await 原理</h2><h3 id="generator简单介绍"><a href="#generator简单介绍" class="headerlink" title="generator简单介绍"></a>generator简单介绍</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> *<span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> fetch(<span class="string">'/'</span>);</span><br><span class="line">    <span class="keyword">yield</span> fetch(<span class="string">'/a'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这是一个典型的generator函数，使用方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> g = <span class="keyword">get</span>();</span><br><span class="line">g.next();  // &#123;value: <span class="built_in">Promise</span>, <span class="attr">done</span>: <span class="literal">false</span>&#125;</span><br><span class="line">g.next();  <span class="comment">// &#123;value: Promise, done: false&#125;</span></span><br><span class="line">g.next();  <span class="comment">// &#123;value: 1, done: true&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>将generator函数编译成es5代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> __generator = () &#123; ...&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> __generator(<span class="function"><span class="keyword">function</span> (<span class="params">_a</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (_a.label) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>: <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, fetch(<span class="string">'/'</span>)];</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, fetch(<span class="string">'/a'</span>)];</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                <span class="keyword">return</span> [<span class="number">2</span> <span class="comment">/*return*/</span>, <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="尝试对async函数转换成es5代码"><a href="#尝试对async函数转换成es5代码" class="headerlink" title="尝试对async函数转换成es5代码"></a>尝试对async函数转换成es5代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">await</span> fetch(<span class="string">'/'</span>);</span><br><span class="line">    <span class="keyword">await</span> fetch(<span class="string">'/a'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>转换后</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> __awaiter = () &#123;...&#125;</span><br><span class="line"><span class="keyword">var</span> __generator = () &#123; ...&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> __awaiter(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> __generator(<span class="function"><span class="keyword">function</span> (<span class="params">_a</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">switch</span> (_a.label) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">0</span>: <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, fetch(<span class="string">'/'</span>)];</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, fetch(<span class="string">'/a'</span>)];</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">2</span> <span class="comment">/*return*/</span>, <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p> 可以看到 主要是两个函数，<strong>awaiter 还有</strong>generator，__awaiter 函数的大概内容如下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> __awaiter = <span class="function"><span class="keyword">function</span>(<span class="params">_g</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> generator = _g();</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">fulfilled</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            step(generator.next());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">result</span>) </span>&#123; <span class="comment">// &#123;value: 1, done: true&#125;</span></span><br><span class="line">            result.done ? resolve(result.value) : <span class="built_in">Promise</span>.resolve(result.value).then(fulfilled);</span><br><span class="line">        &#125;</span><br><span class="line">        step(generator.next());   <span class="comment">// &#123;value: Promise, done: fales&#125;</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>它的核心是 订阅Promise的执行完成时机，自动调用generator的next方法，这样就不用每次手动再调用next方法，使用的体验更好也是 async 和 generator 的区别</p>
-<p>结论：<b>async 函数是 generator的语法糖，优点是能够自动调用next</b></p>
-<h3 id="generator函数的简单实现"><a href="#generator函数的简单实现" class="headerlink" title="generator函数的简单实现"></a>generator函数的简单实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> __generator = <span class="function"><span class="keyword">function</span>(<span class="params">body</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _ = &#123;</span><br><span class="line">        label: <span class="number">0</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        next: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> op = body(_);</span><br><span class="line">            <span class="keyword">switch</span> (op[<span class="number">0</span>]) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                    _.label++;</span><br><span class="line">                    <span class="keyword">return</span> &#123;</span><br><span class="line">                        value: op[<span class="number">1</span>],</span><br><span class="line">                        done: <span class="literal">false</span></span><br><span class="line">                    &#125;;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>: </span><br><span class="line">                    <span class="keyword">return</span> &#123;</span><br><span class="line">                        value: op[<span class="number">1</span>],</span><br><span class="line">                        done: <span class="literal">true</span></span><br><span class="line">                    &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="如果是并行执行"><a href="#如果是并行执行" class="headerlink" title="如果是并行执行"></a>如果是并行执行</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> 	<span class="keyword">const</span> f1 =  fetch(<span class="string">'/'</span>);</span><br><span class="line"> 	<span class="keyword">const</span> f2 =  fetch(<span class="string">'/a'</span>);</span><br><span class="line">	<span class="keyword">await</span> f1;</span><br><span class="line">	<span class="keyword">await</span> f2;</span><br><span class="line">  	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>转换后</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> __awaiter = () &#123;...&#125;</span><br><span class="line"><span class="keyword">var</span> __generator = () &#123; ...&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> __awaiter(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> f1, f2;</span><br><span class="line">        <span class="keyword">return</span> __generator(<span class="function"><span class="keyword">function</span> (<span class="params">_a</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">switch</span> (_a.label) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                    f1 = fetch(<span class="string">'/'</span>);</span><br><span class="line">                    f2 = fetch(<span class="string">'/a'</span>);</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, f1];</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">4</span> <span class="comment">/*yield*/</span>, f2];</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    <span class="keyword">return</span> [<span class="number">2</span> <span class="comment">/*return*/</span>, <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>比较转换后的代码差异</p>
-<p><img data-src="/images/async/5.png" alt="代码"></p>
-<p>可以看到串行时，f1先执行，并且订阅了f1的执行完成事件，完成时 ，再调用f2，订阅f2的执行完成事件，再return 1；</p>
-<p>与此相对并行时，f1和f2先后一起执行，订阅f1的执行完成事件，完成时，再调用f2的执行完成事件，在return 1。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/01/javascript/async/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -350,7 +385,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/redis/index/">
+    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/nginx/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpg">
@@ -364,7 +399,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/01/redis/index/" class="post-title-link" itemprop="url">Redis操作文档</a>
+            <a href="/2020/09/01/nginx/index/" class="post-title-link" itemprop="url">Nginx更改配置教程</a>
         </h2>
 
         <div class="post-meta">
@@ -382,8 +417,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/redis/" itemprop="url" rel="index">
-                    <span itemprop="name">redis</span>
+                  <a href="/categories/nginx/" itemprop="url" rel="index">
+                    <span itemprop="name">nginx</span>
                   </a>
                 </span>
             </span>
@@ -397,8 +432,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/09/01/redis/index/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/redis/index/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/09/01/nginx/index/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/nginx/index/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -413,120 +448,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>redis 数据类型讲解 以及 适合场景<span class="exturl" data-url="aHR0cDovL3d3dy4zNjBkb2MuY29tL2NvbnRlbnQvMTUvMDMyNC8xNi81MDU0MTg4XzQ1NzcwMzQxNC5zaHRtbA==" title="http://www.360doc.com/content/15/0324/16/5054188_457703414.shtml">http://www.360doc.com/content/15/0324/16/5054188_457703414.shtml<i class="fa fa-external-link"></i></span></p>
-<h2 id="1-存储结构"><a href="#1-存储结构" class="headerlink" title="1 存储结构"></a>1 存储结构</h2><p>Redis 是以字典的结构存储数据的, 通过键值对的方式进行存储(key=&gt;value) , 在储存类型中有5种 (1)字符串类型, (2)散列类型, (3)列表类型, (4)集合类型, (5)有序集合类型</p>
-<h2 id="2-内存存储持久化"><a href="#2-内存存储持久化" class="headerlink" title="2 内存存储持久化"></a>2 内存存储持久化</h2><p>Redis 可以在一秒内读写超过10万个键值, 并且Redis 可以为每个键值设置生存时间(生存时间到后键会被自动删除)</p>
-<h2 id="3-功能"><a href="#3-功能" class="headerlink" title="3 功能"></a>3 功能</h2><p>Memcached 支持多线程, Redis是单线程模式, Redis支持服务器集群, Redis 可以限定数据占用最大的内存空间(如达到空间, 则可按照规则淘汰不需要的键)<br>Redis的列表行键可用来实现队列, 并且支持阻塞式读取 <code>目前多数公司对Redis的应用以缓存和队列为主 Redis 支持事物 , 不支持回滚</code></p>
-<h2 id="4-Redis-配置"><a href="#4-Redis-配置" class="headerlink" title="4 Redis 配置"></a>4 Redis 配置</h2><p>Redis</p>
-<p>(1)可以通过配置文件来配置/path/to/redis.conf是否开启持久化, 日志级别等.</p>
-<p>(2)也可通过配置文件的模板来配置redis.conf</p>
-<p>(3)还可通过 CONFIG SET命令进行修改配置</p>
-<h2 id="5-多数据库"><a href="#5-多数据库" class="headerlink" title="5 多数据库"></a>5 多数据库</h2><p>Redis 是以字典结构的存储服务器, redis默认支持16个数据库 从0开始递增 可以通过SELECT 1 来切换数据库, Redis数据库不支持自定义命名,数据库以编号命名(从0递增) Redis 不支持为每个数据库设置不同的访问密码</p>
-<h2 id="6-Redis-支持事物"><a href="#6-Redis-支持事物" class="headerlink" title="6 Redis 支持事物"></a>6 Redis 支持事物</h2><h2 id="7-Redis-类型"><a href="#7-Redis-类型" class="headerlink" title="7 Redis 类型"></a>7 Redis 类型</h2><h3 id="1-字符串类型-命令"><a href="#1-字符串类型-命令" class="headerlink" title="1, 字符串类型 命令 :"></a>1, 字符串类型 命令 :</h3><p>赋值: SET chace_name xzq<br>取值: GET chace_name (return xzq)<br>递增数字: INCR chace_name (return 1 , 如当前值为整数,可以会自动递增 再次输入 INCR chace_name return = 2)<br>增加指定的整数 : INCRBY chace_name 2 (chace_name = 1 return 3 )<br>递减数字 : DECR chace_name (chace_name = 2 return = 1 )<br>减少指定的整数 : DECRBY chace_name 2 (chace_name = 3 reutrn 1)<br>增加指定的浮点数 : INCRBYFLOAT chace_name 2.7<br>增加指定的科学计数法: INCRBYFLOAT chace_name 5E+4<br>向尾部追加值 : APPEND chace_name “ word!” (chace_name = hello return = “hello word!”)<br>获取字符串长度 : STRLEN chace_name (一个中文字符 占三个字节)<br>同时设置多个键值 : MSET key1 a key2 b key3 3<br>同时获取多个值 : MGET key1 key2 ( return = {2,3} )<br>位操作 : 左移右移 (由于本人对左移 右移 迷糊 请参考相关文档)<br>总结: 字符串类型如果存储文章类信息 需要 先将文章序列化 之后在进行存储 , 存储比较简单.可以用来存储文章类信息(缺点: 如果我只想取出文章标题 , 那么需要将整个字符串取出 然后进行反序列化 )</p>
-<h3 id="2-散列类型-命令"><a href="#2-散列类型-命令" class="headerlink" title="2, 散列类型 命令 :"></a>2, 散列类型 命令 :</h3><p>赋值 : HSET chace_name zhangsan 20<br>赋值 : HSET chace_name lisi 30<br>取值 : HGET chace_name zhangsan ( return = 20 )<br>同时设置多个值 : HMSET chace_name key1 v1 key2 v2<br>同时获取多个值 : HMGET chace_name key1 key2 ( return = {v1, v2} )<br>获取所有键值 : HGETALL chace_name {return = {key1:v1, key2: v2} 返回值为对象 }<br>判断字段是否存在 : HEXISTS chace_name key1 (存在return = 1 , 不存在 return=0 )<br>当字段不存在时赋值 : HSETNX chace_name key3 v3 (如: key3不存在 则赋值 , 如存在则不变)<br>增加数字 : CHINCRBY chace_name key1 15 (key1 = 10 return 25 返回结果为增长后的结果)<br>删除一个或多个字段 : HDEL chace_name key1 (return = 1 当键存在删除成功则返回值为1 当键不存在则返回值为0)<br>只获取字段名 : HKEYS chace_name ( return = {key1, key2} )<br>只获取字段值 : HVALS chace_name ( return = {v1, v2 } )</p>
-<p>总结 : 我个人认为 可以将散列类型当做一维数组 进行操作</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$chace_name = array(</span><br><span class="line">    title =&gt; '文章1',</span><br><span class="line">    time =&gt; '20161117',</span><br><span class="line">    content =&gt; '内容.....',</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+          <h2 id="1、远程连接ssh"><a href="#1、远程连接ssh" class="headerlink" title="1、远程连接ssh"></a>1、远程连接ssh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@ip</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-列表类型-命令"><a href="#3-列表类型-命令" class="headerlink" title="3, 列表类型 命令 :"></a>3, 列表类型 命令 :</h3><p>向列表左侧增加元素 : LPUSH chace_name v1<br>向列表右侧增加元素 : RPUSH chace_name v1<br>列表左边弹出一个元素 : LPOP chace_name<br>列表左边弹出一个元素 : RPOP chace_name<br>获取列表中元素的个数 : LLEN chace_name ( 类似于 select count(*) from table_name )<br>获得列表片段 : LRANGE chace_name 0 100 (return {v1, v2})(如果 参数100 大于实际范围 那么将会获取都最右边的元素)<br>删除列表中指定的值 : LREM chace_name -1 2 (删除从右边开始第一个值为2的元素)<br>获取列表指定索引的值 : LINDEX chace_name 0 (第0个索引值 , -1 最后一个索引值)<br>索引赋值 : LSET chace_name 1 lisi (为索引为1的 赋值为 lisi)<br>删除指定索引范围之外的元素 : LTRIM chace_name 0 2 (与 LRANGE 命令相似)<br>LITRIM 此命令通常与LPUSH 联合使用 : 应用场景: 如 我只想保留最新的100条记录 LPUSH chace_name $log1 , LTRIM chace_name 0 99<br>向列表中差入元素 : LINSERT chace_name AFTER 2 zhangsan (会根据 第二个参数决定 是差入到 该元素的前边或后边 , AFTER / BEFORE )<br>将元素从一个列表转入到另一个列表 : RPOPLPUSH chace_name chace_name2 (此命令会从 name1 最右边弹出一个 加入到name2 的左边)</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$chace_name = array(</span><br><span class="line">    0 =&gt; zhangsan</span><br><span class="line">    1 =&gt; lisi</span><br><span class="line">    2 =&gt; wangwu</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="2、查看有没有nginx"><a href="#2、查看有没有nginx" class="headerlink" title="2、查看有没有nginx"></a>2、查看有没有nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure>
 
-<h3 id="4-无序集合类型-命令"><a href="#4-无序集合类型-命令" class="headerlink" title="4, 无序集合类型, 命令:"></a>4, 无序集合类型, 命令:</h3><p>应用场景: 目前观象台应用到权限列表中,<br>赋值: SADD chace_name string(a b) (如果 a 存在 那么将追加b)<br>删除: SREM chace_name string(a b c)<br>取值: SMEMBERS chace_name (获取集合中所有的元素)<br>验证: SISMEMBERS chace_name (判断一个元素是否在集合中, 是返回1, 否返回0 )<br>集合间运算<br>两个参数取差集: SDIFF setA setB 此命令用于A-B 的差集 以A为主 A{1,2,3} B{2,3,4} A-B = {1}<br>多个参数取差集: SDIFF setA setB setC 此命令支持 多个参数取差集 (先计算A-B 在用结果 与C 取差集)<br>两个参数取交集: SINTER setA setB 此命令用于A 与 B的交集<br>多个参数取交集: SINTER setA setB setC 此命令支持多个参数取交集<br>两个参数取并集: SUNION setA setB 代表所有属于A 或属于B的元素构成的集合 A{1,2,3} B{2,3,4} = {1,2,3,4}<br>多个参数取并集: SUNION setA setB setC 此命令支持多个参数取并集<br>获取集合中元素的个数: SCARD chace_name (return 个数)<br>获取集合中的随机元素: SRANDMEMBER chace_name<br>随机弹出一个元素: SPOP chace_name<br>从列表左边弹出一个元素: LPOP chace_name<br>获取集合中指定个数随机元素: SRANDMEMBER chace_name 5(第二个参数为个数,正数(获取不重复的值,如个数大于元素总个数将获取所有 , -5(负数将会获取指定个数的元素, 会出现重复元素)))<br>总结: SADD命令 用来向集合增加一个或多个元素, 如果键不存在 则自动创建. (在一个集合中不能有相同的元素)<br>元素在redis 中存储格式为一维数组</p>
-<h3 id="5-有序集合-命令"><a href="#5-有序集合-命令" class="headerlink" title="5, 有序集合, 命令 :"></a>5, 有序集合, 命令 :</h3><p>应用场景: 适用于文章访问量, 考试分数, 等等. 存储格式array(lisi,80,zs,90,xzq,100)<br>赋值: ZADD chace_name 80 lisi 90 zs 100 xzq (分数支持正数, 科学技术法, 双精度浮点数 17E+307 xzq , 10.8 xzq)<br>修改: ZADD chace_name 200 xzq<br>取值: ZSCORE chace_name xzq (return ‘200’ )<br>取值并携带分数: ZRANGE chace_name 0 -1 WITHSCORES (在末尾增加 WINTHSCORES 参数) (return {lisi:80 , zs:90 , xzq:100})<br>取值并携带分数: ZREVRANGE chace_name 0 -1 WITHSCORES (return 结果 为从大到小返回结果的)<br>获取分数在某个范围元素列表 : ZRANGE chace_name 50 80 (return {zhangsan,lisi}) (索引是从0开始, -1从后向前查找)<br>跳跃性取值: ZRANGEBYSCORE chace_name 50 +inf limit 1 3 (获取分 数高于50分 并且从第二个人开始的, 从小到大开始排序)<br>增加元素分数: ZINCRBY chace_name 20 xzq (return 120 返回结果为 更改后的分数) (个人认为适用于点击量,访问量等)<br>减少元素分数: ZINCRBY chace_name -10 xzq (return 110 返回结果为更改后的分数)<br>其他命令:<br>获取有序集合中的个数: ZCARD chace_name<br>获取指定分数范围的元素个数 : ZCOUNT chace_name 80 100<br>删除一个或多个元素 :<br>按照排名范围删除元素 :<br>按照分数范围删除元素 :<br>计算有序集合的交集 :<br>总结 : 列表不能简单的条整某个元素的位置,而有序集合要比列表烈性更耗内存, 有序集合类型算是redis中最高级的类型了,有序集合为每一个元素都关联了一个分数, 虽然集合中每个元素都是不同的,但是他们的分数 却可以相同. 有序集合类型在某些方面与列表类型有些相似(具体区别查看相关文档)</p>
-<p>flushall ——&gt; 清空整个 Redis 服务器的数据(删除所有数据库的所有 key )<br>flushdb ——&gt; 清空当前数据库中的所有 key</p>
-<h3 id="6-Redis-任务队列"><a href="#6-Redis-任务队列" class="headerlink" title="6, Redis 任务队列"></a>6, Redis 任务队列</h3><h3 id="1-什么是任务队列"><a href="#1-什么是任务队列" class="headerlink" title="1 , 什么是任务队列 :"></a>1 , 什么是任务队列 :</h3><p>超市买东西 -&gt; 排队 -&gt; 结账</p>
-<h3 id="2-使用Redis-实现任务队列"><a href="#2-使用Redis-实现任务队列" class="headerlink" title="2 , 使用Redis 实现任务队列"></a>2 , 使用Redis 实现任务队列</h3><p>实现简单的任务队列 : 可使用 LPUSH 和 RPOP</p>
-<p>使用 python 实现任务队列</p>
-<h2 id="连接远程redis"><a href="#连接远程redis" class="headerlink" title="连接远程redis"></a>连接远程redis</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -h 127.0.0.1 -p 6379 -a 123456</span><br></pre></td></tr></table></figure>
-      
-    </div>
+<h2 id="3、查看nginx有没有安装"><a href="#3、查看nginx有没有安装" class="headerlink" title="3、查看nginx有没有安装"></a>3、查看nginx有没有安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure>
+<h2 id="4、通过ip试下能不能访问nginx"><a href="#4、通过ip试下能不能访问nginx" class="headerlink" title="4、通过ip试下能不能访问nginx"></a>4、通过ip试下能不能访问nginx</h2><h2 id="5、检查nginx配置是否正确"><a href="#5、检查nginx配置是否正确" class="headerlink" title="5、检查nginx配置是否正确"></a>5、检查nginx配置是否正确</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+<h2 id="6、去目录-etc-nginx-conf-d"><a href="#6、去目录-etc-nginx-conf-d" class="headerlink" title="6、去目录 /etc/nginx/conf.d"></a>6、去目录 /etc/nginx/conf.d</h2><p>如果目录内为空，这创建web.conf</p>
+<p>配置web.conf</p>
+<h2 id="7、配置好后，检查配置是否正确"><a href="#7、配置好后，检查配置是否正确" class="headerlink" title="7、配置好后，检查配置是否正确"></a>7、配置好后，检查配置是否正确</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/python/index/">
+<h2 id="8、重启nginx"><a href="#8、重启nginx" class="headerlink" title="8、重启nginx"></a>8、重启nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpg">
-      <meta itemprop="name" content="WuLiSenSen">
-      <meta itemprop="description" content="技术改变世界">
-    </span>
+<p>再试试能否访问</p>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WuLiSenSen">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/01/python/index/" class="post-title-link" itemprop="url">Python基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-01 20:18:05" itemprop="dateCreated datePublished" datetime="2020-09-01T20:18:05+08:00">2020-09-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/09/01/python/index/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/python/index/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1、写入文件"><a href="#1、写入文件" class="headerlink" title="1、写入文件"></a>1、写入文件</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.write(json.dumps(log_json))</span><br></pre></td></tr></table></figure>
-
-<h2 id="2、读取文件行号"><a href="#2、读取文件行号" class="headerlink" title="2、读取文件行号"></a>2、读取文件行号</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum(<span class="number">1</span> <span class="keyword">for</span> x <span class="keyword">in</span> fp)</span><br></pre></td></tr></table></figure>
-
-<h3 id="3、map-reduce"><a href="#3、map-reduce" class="headerlink" title="3、map reduce"></a>3、map reduce</h3><p>map()函数接收两个参数，一个是函数，一个是Iterable，map将传入的函数依次作用到序列的每个元素，并把结果作为新的Iterator返回。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def f(x):</span><br><span class="line">...     <span class="built_in">return</span> x * x</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; r = map(f, [1, 2, 3, 4, 5, 6, 7, 8, 9])</span><br><span class="line">&gt;&gt;&gt; list(r)</span><br><span class="line">[1, 4, 9, 16, 25, 36, 49, 64, 81]</span><br></pre></td></tr></table></figure>
-
-<p>reduce把一个函数作用在一个序列[x1, x2, x3, …]上，这个函数必须接收两个参数，reduce把结果继续和序列的下一个元素做累积计算</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from functools import reduce</span><br><span class="line">&gt;&gt;&gt; def add(x, y):</span><br><span class="line">...     <span class="built_in">return</span> x + y</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; reduce(add, [1, 3, 5, 7, 9])</span><br><span class="line">25</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -637,7 +573,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/nginx/index/">
+    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/python/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpg">
@@ -651,7 +587,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/01/nginx/index/" class="post-title-link" itemprop="url">Nginx更改配置教程</a>
+            <a href="/2020/09/01/python/index/" class="post-title-link" itemprop="url">Python基础</a>
         </h2>
 
         <div class="post-meta">
@@ -669,8 +605,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/nginx/" itemprop="url" rel="index">
-                    <span itemprop="name">nginx</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
             </span>
@@ -684,8 +620,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/09/01/nginx/index/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/nginx/index/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/09/01/python/index/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/python/index/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -700,21 +636,120 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="1、远程连接ssh"><a href="#1、远程连接ssh" class="headerlink" title="1、远程连接ssh"></a>1、远程连接ssh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@ip</span><br></pre></td></tr></table></figure>
+          <h2 id="1、写入文件"><a href="#1、写入文件" class="headerlink" title="1、写入文件"></a>1、写入文件</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.write(json.dumps(log_json))</span><br></pre></td></tr></table></figure>
 
-<h2 id="2、查看有没有nginx"><a href="#2、查看有没有nginx" class="headerlink" title="2、查看有没有nginx"></a>2、查看有没有nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure>
+<h2 id="2、读取文件行号"><a href="#2、读取文件行号" class="headerlink" title="2、读取文件行号"></a>2、读取文件行号</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum(<span class="number">1</span> <span class="keyword">for</span> x <span class="keyword">in</span> fp)</span><br></pre></td></tr></table></figure>
 
-<h2 id="3、查看nginx有没有安装"><a href="#3、查看nginx有没有安装" class="headerlink" title="3、查看nginx有没有安装"></a>3、查看nginx有没有安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure>
-<h2 id="4、通过ip试下能不能访问nginx"><a href="#4、通过ip试下能不能访问nginx" class="headerlink" title="4、通过ip试下能不能访问nginx"></a>4、通过ip试下能不能访问nginx</h2><h2 id="5、检查nginx配置是否正确"><a href="#5、检查nginx配置是否正确" class="headerlink" title="5、检查nginx配置是否正确"></a>5、检查nginx配置是否正确</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
+<h3 id="3、map-reduce"><a href="#3、map-reduce" class="headerlink" title="3、map reduce"></a>3、map reduce</h3><p>map()函数接收两个参数，一个是函数，一个是Iterable，map将传入的函数依次作用到序列的每个元素，并把结果作为新的Iterator返回。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def f(x):</span><br><span class="line">...     <span class="built_in">return</span> x * x</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; r = map(f, [1, 2, 3, 4, 5, 6, 7, 8, 9])</span><br><span class="line">&gt;&gt;&gt; list(r)</span><br><span class="line">[1, 4, 9, 16, 25, 36, 49, 64, 81]</span><br></pre></td></tr></table></figure>
 
-<h2 id="6、去目录-etc-nginx-conf-d"><a href="#6、去目录-etc-nginx-conf-d" class="headerlink" title="6、去目录 /etc/nginx/conf.d"></a>6、去目录 /etc/nginx/conf.d</h2><p>如果目录内为空，这创建web.conf</p>
-<p>配置web.conf</p>
-<h2 id="7、配置好后，检查配置是否正确"><a href="#7、配置好后，检查配置是否正确" class="headerlink" title="7、配置好后，检查配置是否正确"></a>7、配置好后，检查配置是否正确</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
+<p>reduce把一个函数作用在一个序列[x1, x2, x3, …]上，这个函数必须接收两个参数，reduce把结果继续和序列的下一个元素做累积计算</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from functools import reduce</span><br><span class="line">&gt;&gt;&gt; def add(x, y):</span><br><span class="line">...     <span class="built_in">return</span> x + y</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; reduce(add, [1, 3, 5, 7, 9])</span><br><span class="line">25</span><br></pre></td></tr></table></figure>
+      
+    </div>
 
-<h2 id="8、重启nginx"><a href="#8、重启nginx" class="headerlink" title="8、重启nginx"></a>8、重启nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<p>再试试能否访问</p>
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/redis/index/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="WuLiSenSen">
+      <meta itemprop="description" content="技术改变世界">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WuLiSenSen">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/01/redis/index/" class="post-title-link" itemprop="url">Redis操作文档</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-01 20:18:05" itemprop="dateCreated datePublished" datetime="2020-09-01T20:18:05+08:00">2020-09-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/redis/" itemprop="url" rel="index">
+                    <span itemprop="name">redis</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/09/01/redis/index/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/redis/index/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>redis 数据类型讲解 以及 适合场景<span class="exturl" data-url="aHR0cDovL3d3dy4zNjBkb2MuY29tL2NvbnRlbnQvMTUvMDMyNC8xNi81MDU0MTg4XzQ1NzcwMzQxNC5zaHRtbA==" title="http://www.360doc.com/content/15/0324/16/5054188_457703414.shtml">http://www.360doc.com/content/15/0324/16/5054188_457703414.shtml<i class="fa fa-external-link"></i></span></p>
+<h2 id="1-存储结构"><a href="#1-存储结构" class="headerlink" title="1 存储结构"></a>1 存储结构</h2><p>Redis 是以字典的结构存储数据的, 通过键值对的方式进行存储(key=&gt;value) , 在储存类型中有5种 (1)字符串类型, (2)散列类型, (3)列表类型, (4)集合类型, (5)有序集合类型</p>
+<h2 id="2-内存存储持久化"><a href="#2-内存存储持久化" class="headerlink" title="2 内存存储持久化"></a>2 内存存储持久化</h2><p>Redis 可以在一秒内读写超过10万个键值, 并且Redis 可以为每个键值设置生存时间(生存时间到后键会被自动删除)</p>
+<h2 id="3-功能"><a href="#3-功能" class="headerlink" title="3 功能"></a>3 功能</h2><p>Memcached 支持多线程, Redis是单线程模式, Redis支持服务器集群, Redis 可以限定数据占用最大的内存空间(如达到空间, 则可按照规则淘汰不需要的键)<br>Redis的列表行键可用来实现队列, 并且支持阻塞式读取 <code>目前多数公司对Redis的应用以缓存和队列为主 Redis 支持事物 , 不支持回滚</code></p>
+<h2 id="4-Redis-配置"><a href="#4-Redis-配置" class="headerlink" title="4 Redis 配置"></a>4 Redis 配置</h2><p>Redis</p>
+<p>(1)可以通过配置文件来配置/path/to/redis.conf是否开启持久化, 日志级别等.</p>
+<p>(2)也可通过配置文件的模板来配置redis.conf</p>
+<p>(3)还可通过 CONFIG SET命令进行修改配置</p>
+<h2 id="5-多数据库"><a href="#5-多数据库" class="headerlink" title="5 多数据库"></a>5 多数据库</h2><p>Redis 是以字典结构的存储服务器, redis默认支持16个数据库 从0开始递增 可以通过SELECT 1 来切换数据库, Redis数据库不支持自定义命名,数据库以编号命名(从0递增) Redis 不支持为每个数据库设置不同的访问密码</p>
+<h2 id="6-Redis-支持事物"><a href="#6-Redis-支持事物" class="headerlink" title="6 Redis 支持事物"></a>6 Redis 支持事物</h2><h2 id="7-Redis-类型"><a href="#7-Redis-类型" class="headerlink" title="7 Redis 类型"></a>7 Redis 类型</h2><h3 id="1-字符串类型-命令"><a href="#1-字符串类型-命令" class="headerlink" title="1, 字符串类型 命令 :"></a>1, 字符串类型 命令 :</h3><p>赋值: SET chace_name xzq<br>取值: GET chace_name (return xzq)<br>递增数字: INCR chace_name (return 1 , 如当前值为整数,可以会自动递增 再次输入 INCR chace_name return = 2)<br>增加指定的整数 : INCRBY chace_name 2 (chace_name = 1 return 3 )<br>递减数字 : DECR chace_name (chace_name = 2 return = 1 )<br>减少指定的整数 : DECRBY chace_name 2 (chace_name = 3 reutrn 1)<br>增加指定的浮点数 : INCRBYFLOAT chace_name 2.7<br>增加指定的科学计数法: INCRBYFLOAT chace_name 5E+4<br>向尾部追加值 : APPEND chace_name “ word!” (chace_name = hello return = “hello word!”)<br>获取字符串长度 : STRLEN chace_name (一个中文字符 占三个字节)<br>同时设置多个键值 : MSET key1 a key2 b key3 3<br>同时获取多个值 : MGET key1 key2 ( return = {2,3} )<br>位操作 : 左移右移 (由于本人对左移 右移 迷糊 请参考相关文档)<br>总结: 字符串类型如果存储文章类信息 需要 先将文章序列化 之后在进行存储 , 存储比较简单.可以用来存储文章类信息(缺点: 如果我只想取出文章标题 , 那么需要将整个字符串取出 然后进行反序列化 )</p>
+<h3 id="2-散列类型-命令"><a href="#2-散列类型-命令" class="headerlink" title="2, 散列类型 命令 :"></a>2, 散列类型 命令 :</h3><p>赋值 : HSET chace_name zhangsan 20<br>赋值 : HSET chace_name lisi 30<br>取值 : HGET chace_name zhangsan ( return = 20 )<br>同时设置多个值 : HMSET chace_name key1 v1 key2 v2<br>同时获取多个值 : HMGET chace_name key1 key2 ( return = {v1, v2} )<br>获取所有键值 : HGETALL chace_name {return = {key1:v1, key2: v2} 返回值为对象 }<br>判断字段是否存在 : HEXISTS chace_name key1 (存在return = 1 , 不存在 return=0 )<br>当字段不存在时赋值 : HSETNX chace_name key3 v3 (如: key3不存在 则赋值 , 如存在则不变)<br>增加数字 : CHINCRBY chace_name key1 15 (key1 = 10 return 25 返回结果为增长后的结果)<br>删除一个或多个字段 : HDEL chace_name key1 (return = 1 当键存在删除成功则返回值为1 当键不存在则返回值为0)<br>只获取字段名 : HKEYS chace_name ( return = {key1, key2} )<br>只获取字段值 : HVALS chace_name ( return = {v1, v2 } )</p>
+<p>总结 : 我个人认为 可以将散列类型当做一维数组 进行操作</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$chace_name = array(</span><br><span class="line">    title =&gt; '文章1',</span><br><span class="line">    time =&gt; '20161117',</span><br><span class="line">    content =&gt; '内容.....',</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-列表类型-命令"><a href="#3-列表类型-命令" class="headerlink" title="3, 列表类型 命令 :"></a>3, 列表类型 命令 :</h3><p>向列表左侧增加元素 : LPUSH chace_name v1<br>向列表右侧增加元素 : RPUSH chace_name v1<br>列表左边弹出一个元素 : LPOP chace_name<br>列表左边弹出一个元素 : RPOP chace_name<br>获取列表中元素的个数 : LLEN chace_name ( 类似于 select count(*) from table_name )<br>获得列表片段 : LRANGE chace_name 0 100 (return {v1, v2})(如果 参数100 大于实际范围 那么将会获取都最右边的元素)<br>删除列表中指定的值 : LREM chace_name -1 2 (删除从右边开始第一个值为2的元素)<br>获取列表指定索引的值 : LINDEX chace_name 0 (第0个索引值 , -1 最后一个索引值)<br>索引赋值 : LSET chace_name 1 lisi (为索引为1的 赋值为 lisi)<br>删除指定索引范围之外的元素 : LTRIM chace_name 0 2 (与 LRANGE 命令相似)<br>LITRIM 此命令通常与LPUSH 联合使用 : 应用场景: 如 我只想保留最新的100条记录 LPUSH chace_name $log1 , LTRIM chace_name 0 99<br>向列表中差入元素 : LINSERT chace_name AFTER 2 zhangsan (会根据 第二个参数决定 是差入到 该元素的前边或后边 , AFTER / BEFORE )<br>将元素从一个列表转入到另一个列表 : RPOPLPUSH chace_name chace_name2 (此命令会从 name1 最右边弹出一个 加入到name2 的左边)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$chace_name = array(</span><br><span class="line">    0 =&gt; zhangsan</span><br><span class="line">    1 =&gt; lisi</span><br><span class="line">    2 =&gt; wangwu</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-无序集合类型-命令"><a href="#4-无序集合类型-命令" class="headerlink" title="4, 无序集合类型, 命令:"></a>4, 无序集合类型, 命令:</h3><p>应用场景: 目前观象台应用到权限列表中,<br>赋值: SADD chace_name string(a b) (如果 a 存在 那么将追加b)<br>删除: SREM chace_name string(a b c)<br>取值: SMEMBERS chace_name (获取集合中所有的元素)<br>验证: SISMEMBERS chace_name (判断一个元素是否在集合中, 是返回1, 否返回0 )<br>集合间运算<br>两个参数取差集: SDIFF setA setB 此命令用于A-B 的差集 以A为主 A{1,2,3} B{2,3,4} A-B = {1}<br>多个参数取差集: SDIFF setA setB setC 此命令支持 多个参数取差集 (先计算A-B 在用结果 与C 取差集)<br>两个参数取交集: SINTER setA setB 此命令用于A 与 B的交集<br>多个参数取交集: SINTER setA setB setC 此命令支持多个参数取交集<br>两个参数取并集: SUNION setA setB 代表所有属于A 或属于B的元素构成的集合 A{1,2,3} B{2,3,4} = {1,2,3,4}<br>多个参数取并集: SUNION setA setB setC 此命令支持多个参数取并集<br>获取集合中元素的个数: SCARD chace_name (return 个数)<br>获取集合中的随机元素: SRANDMEMBER chace_name<br>随机弹出一个元素: SPOP chace_name<br>从列表左边弹出一个元素: LPOP chace_name<br>获取集合中指定个数随机元素: SRANDMEMBER chace_name 5(第二个参数为个数,正数(获取不重复的值,如个数大于元素总个数将获取所有 , -5(负数将会获取指定个数的元素, 会出现重复元素)))<br>总结: SADD命令 用来向集合增加一个或多个元素, 如果键不存在 则自动创建. (在一个集合中不能有相同的元素)<br>元素在redis 中存储格式为一维数组</p>
+<h3 id="5-有序集合-命令"><a href="#5-有序集合-命令" class="headerlink" title="5, 有序集合, 命令 :"></a>5, 有序集合, 命令 :</h3><p>应用场景: 适用于文章访问量, 考试分数, 等等. 存储格式array(lisi,80,zs,90,xzq,100)<br>赋值: ZADD chace_name 80 lisi 90 zs 100 xzq (分数支持正数, 科学技术法, 双精度浮点数 17E+307 xzq , 10.8 xzq)<br>修改: ZADD chace_name 200 xzq<br>取值: ZSCORE chace_name xzq (return ‘200’ )<br>取值并携带分数: ZRANGE chace_name 0 -1 WITHSCORES (在末尾增加 WINTHSCORES 参数) (return {lisi:80 , zs:90 , xzq:100})<br>取值并携带分数: ZREVRANGE chace_name 0 -1 WITHSCORES (return 结果 为从大到小返回结果的)<br>获取分数在某个范围元素列表 : ZRANGE chace_name 50 80 (return {zhangsan,lisi}) (索引是从0开始, -1从后向前查找)<br>跳跃性取值: ZRANGEBYSCORE chace_name 50 +inf limit 1 3 (获取分 数高于50分 并且从第二个人开始的, 从小到大开始排序)<br>增加元素分数: ZINCRBY chace_name 20 xzq (return 120 返回结果为 更改后的分数) (个人认为适用于点击量,访问量等)<br>减少元素分数: ZINCRBY chace_name -10 xzq (return 110 返回结果为更改后的分数)<br>其他命令:<br>获取有序集合中的个数: ZCARD chace_name<br>获取指定分数范围的元素个数 : ZCOUNT chace_name 80 100<br>删除一个或多个元素 :<br>按照排名范围删除元素 :<br>按照分数范围删除元素 :<br>计算有序集合的交集 :<br>总结 : 列表不能简单的条整某个元素的位置,而有序集合要比列表烈性更耗内存, 有序集合类型算是redis中最高级的类型了,有序集合为每一个元素都关联了一个分数, 虽然集合中每个元素都是不同的,但是他们的分数 却可以相同. 有序集合类型在某些方面与列表类型有些相似(具体区别查看相关文档)</p>
+<p>flushall ——&gt; 清空整个 Redis 服务器的数据(删除所有数据库的所有 key )<br>flushdb ——&gt; 清空当前数据库中的所有 key</p>
+<h3 id="6-Redis-任务队列"><a href="#6-Redis-任务队列" class="headerlink" title="6, Redis 任务队列"></a>6, Redis 任务队列</h3><h3 id="1-什么是任务队列"><a href="#1-什么是任务队列" class="headerlink" title="1 , 什么是任务队列 :"></a>1 , 什么是任务队列 :</h3><p>超市买东西 -&gt; 排队 -&gt; 结账</p>
+<h3 id="2-使用Redis-实现任务队列"><a href="#2-使用Redis-实现任务队列" class="headerlink" title="2 , 使用Redis 实现任务队列"></a>2 , 使用Redis 实现任务队列</h3><p>实现简单的任务队列 : 可使用 LPUSH 和 RPOP</p>
+<p>使用 python 实现任务队列</p>
+<h2 id="连接远程redis"><a href="#连接远程redis" class="headerlink" title="连接远程redis"></a>连接远程redis</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -h 127.0.0.1 -p 6379 -a 123456</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1009,7 +1044,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/mongodb/unwind/">
+    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/mongodb/join/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpg">
@@ -1023,7 +1058,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/09/01/mongodb/unwind/" class="post-title-link" itemprop="url">MongoDB 　聚合使用 $unwind 解构数组</a>
+            <a href="/2020/09/01/mongodb/join/" class="post-title-link" itemprop="url">在MongoDB中使用JOIN操作</a>
         </h2>
 
         <div class="post-meta">
@@ -1056,8 +1091,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/09/01/mongodb/unwind/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/mongodb/unwind/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/09/01/mongodb/join/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/mongodb/join/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -1072,100 +1107,64 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="原测试数据"><a href="#原测试数据" class="headerlink" title="原测试数据:"></a>原测试数据:</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"Host"</span>: <span class="string">"abc.com"</span>, <span class="attr">"ArtId"</span>: <span class="string">"123"</span>, <span class="attr">"tags"</span>: [<span class="string">"tag1"</span>, <span class="string">"tag2"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"Host"</span>: <span class="string">"abc.com"</span>, <span class="attr">"ArtId"</span>: <span class="string">"123"</span>, <span class="attr">"tags"</span>: [<span class="string">"tag3"</span>, <span class="string">"tag4"</span>] &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+          <h3 id="1、SQL"><a href="#1、SQL" class="headerlink" title="1、SQL"></a>1、SQL</h3><p>SQL与NoSQL最大的不同之一就是不支持JOIN，在传统的数据库中，SQL JOIN子句允许你使用普通的字段，在两个或者是更多表中的组合表中的每行数据。例如，如果你有表books和publishers，你可以像下面这样写命令：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> book.title, publisher.name</span><br><span class="line"><span class="keyword">FROM</span> book</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> book.publisher_id <span class="keyword">ON</span> publisher.id;</span><br></pre></td></tr></table></figure>
 
-<h2 id="把所有的-tags-合并成-1-个数组"><a href="#把所有的-tags-合并成-1-个数组" class="headerlink" title="把所有的 tags 合并成 1 个数组"></a>把所有的 tags 合并成 1 个数组</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">db.a_test.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $unwind: <span class="string">'$tags'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $group: &#123;</span><br><span class="line">            _id: <span class="literal">null</span>,</span><br><span class="line">            tags: &#123;</span><br><span class="line">                $push: <span class="string">'$tags'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+<p>换句话说，book表中的publisher_id字段引用了publishers表中的id字典。这些都是很常见的例子：对于每个publisher都可以拥有成千上万本书，如果你想更新publisher的信息的时候，我们只需要更改一条记录。数据的冗余是很小的，因为我们不需要为每本书来重复更新他的publisher信息，这种技术已基本当做一种规范化的东西了。SQL数据库提供了一些列的规范与约束条件来保障数据关联性。</p>
+<p>NoSQL == No JOIN?<br>并不都是这样吧。。。。。</p>
+<p>面向文档的数据库，例如MongoDB，被设计用来存储非结构化的数据，理想情况下，这些数据是在数据集合中是相互没有关联的，如果一条数据包含两次或者更多次，那数据就重复了。因为大部分情况下我们还是需要数据关联的，只有很少的情况下才会不需要关联数据，</p>
+<p>，看来NoSQL这些特性看来让人失望啊。MongoDB 3.2 介绍了一个新的$lookup操作，这个操作可以提供一个类似于LEFT OUTER JOIN的操作在两个或者是更多的条件下。</p>
+<h3 id="2、MongoDB-Aggregation"><a href="#2、MongoDB-Aggregation" class="headerlink" title="2、MongoDB Aggregation"></a>2、MongoDB Aggregation</h3><p>$lookup仅仅在 aggregation操作中才被允许使用，想想他作为一个管道操作：查询，过滤，组合结果。一个操作的输出被作为下一个的输入。Aggregation比简单的查询操作更难于理解，而且这些操作通常运行很慢，然而他们很高效，Aggregation可以使用一个很好的例子来解释，假设我们使用user数据集合来创建一个社交平台，在每个独立的文档中存储没个用户的信息，例如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"_id"</span>: ObjectID(<span class="string">"45b83bda421238c76f5c1969"</span>),</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"User One"</span>,</span><br><span class="line">  <span class="string">"email: "</span>userone@email.com<span class="string">",</span></span><br><span class="line"><span class="string">  "</span>country<span class="string">": "</span>UK<span class="string">",</span></span><br><span class="line"><span class="string">  "</span>dob<span class="string">": ISODate("</span><span class="number">1999</span><span class="number">-09</span><span class="number">-13</span>T00:<span class="number">00</span>:<span class="number">00.000</span>Z<span class="string">")</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="获取到的数据"><a href="#获取到的数据" class="headerlink" title="获取到的数据"></a>获取到的数据</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#123; <span class="attr">"_id"</span>: <span class="literal">null</span>, <span class="attr">"tags"</span>: [<span class="string">"tag1"</span>, <span class="string">"tag2"</span>, <span class="string">"tag3"</span>, <span class="string">"tag4"</span>] &#125;]</span><br></pre></td></tr></table></figure>
+<p>我们可以向user这个集合中添加足够多的用户，但是每个MongoDB文档都必须有一个为一个_id字段值，这个_id字段值就像SQL中的键，在我们没有明确指定_id的时候会被自动的加入到文档中。我们的社交网站现在需要一个post集合，这个结合存储用户的评论，这个文档存储纯文本，时间，评分，一个被写到user_id字段的玩家引用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"_id"</span>: ObjectID(<span class="string">"17c9812acff9ac0bba018cc1"</span>),</span><br><span class="line">  <span class="string">"user_id"</span>: ObjectID(<span class="string">"45b83bda421238c76f5c1969"</span>),</span><br><span class="line">  <span class="string">"date: ISODate("</span><span class="number">2016</span><span class="number">-09</span><span class="number">-05</span>T03:<span class="number">05</span>:<span class="number">00.123</span>Z<span class="string">"),</span></span><br><span class="line"><span class="string">  "</span>text<span class="string">": "</span>My life story so far<span class="string">",</span></span><br><span class="line"><span class="string">  "</span>rating<span class="string">": "</span>important<span class="string">"</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
 
-      
-    </div>
+<p>我们现在想要显示最近具有important评论的二十条数据，这些数据来自所有的用户，并且是按照时间排序的。每一个返回的文档中应该包含评论的文本，发布评论的时间，以及相关的用户的名字和国家。</p>
+<p>MongoDB数据库的aggregate查询是通过传递管道操作的数组，这个数组中顺序的定了每个操作。首先，我们需要从所有的post集合中提取出所有的文档，这些文档使用$match记性准确rating过滤。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">"$match"</span>: &#123; <span class="string">"rating"</span>: <span class="string">"important"</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/mongodb/push/">
+<p>MongoDB数据库的aggregate查询是通过传递管道操作的数组，这个数组中顺序的定了每个操作。首先，我们需要从所有的post集合中提取出所有的文档，这些文档使用$match记性准确rating过滤。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">"$match"</span>: &#123; <span class="string">"rating"</span>: <span class="string">"important"</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpg">
-      <meta itemprop="name" content="WuLiSenSen">
-      <meta itemprop="description" content="技术改变世界">
-    </span>
+<p>我们现在需要对过滤出来的文档按照时间，使用$sort操作进行排序。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">"$sort"</span>: &#123; <span class="string">"date"</span>: <span class="number">-1</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WuLiSenSen">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/01/mongodb/push/" class="post-title-link" itemprop="url">MongoDB　聚合使用 $push 指定字段 转为数组</a>
-        </h2>
+<p>因为我们要仅仅返回二十条数据，我们可以使用$limit来限制我们需要处理的文档数量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">"$limit"</span>: <span class="number">20</span> &#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
+<p>我们现在使用$lookup操作从user集合中连接数据，这个操作需要一个四个参数的对象：</p>
+<p>1、localField：在输入文档中的查找字段</p>
+<p>2、from：需要连接的集合</p>
+<p>3、foreignField：需要在from集合中查找的字段</p>
+<p>4、as：输出的字段名字</p>
+<p>所以我们的操作是这样的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">"$lookup"</span>: &#123;</span><br><span class="line">  <span class="string">"localField"</span>: <span class="string">"user_id"</span>,</span><br><span class="line">  <span class="string">"from"</span>: <span class="string">"user"</span>,</span><br><span class="line">  <span class="string">"foreignField"</span>: <span class="string">"_id"</span>,</span><br><span class="line">  <span class="string">"as"</span>: <span class="string">"userinfo"</span></span><br><span class="line">&#125; &#125;</span><br></pre></td></tr></table></figure>
 
-              <time title="创建时间：2020-09-01 20:18:05" itemprop="dateCreated datePublished" datetime="2020-09-01T20:18:05+08:00">2020-09-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mongodb/" itemprop="url" rel="index">
-                    <span itemprop="name">mongodb</span>
-                  </a>
-                </span>
-            </span>
+<p>在我们的输出中将会创建一个名为userinfo的新字段，他是一个数组，其中每个元素都是在user集合中匹配的元素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"userinfo"</span>: [</span><br><span class="line">  &#123; <span class="string">"name"</span>: <span class="string">"User One"</span>, ... &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/09/01/mongodb/push/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/mongodb/push/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
+<p>在post.user_id与user._id之间，我们具有一对一的关系，因为对于每一个post只有一个用户。因此我们的userinfo数组将会仅仅包含一个元素，我们可以说使用 $unwind操作来解构他并插入到一个自文档中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">"$unwind"</span>: <span class="string">"$userinfo"</span> &#125;</span><br></pre></td></tr></table></figure>
 
-        </div>
-      </header>
+<p>现在的输出将会转化成更加常用的结构：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"userinfo"</span>: &#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"User One"</span>,</span><br><span class="line">  <span class="string">"email: "</span>userone@email.com<span class="string">",</span></span><br><span class="line"><span class="string">  …</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+<p>最终我们可以在管道中使用 $project操作返回评论信息，评论的时间，评论的用户名，国家等。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">"$project"</span>: &#123;</span><br><span class="line">  <span class="string">"text"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="string">"date"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="string">"userinfo.name"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="string">"userinfo.country"</span>: <span class="number">1</span></span><br><span class="line">&#125; &#125;</span><br></pre></td></tr></table></figure>
 
-      
-          <h2 id="原测试数据"><a href="#原测试数据" class="headerlink" title="原测试数据:"></a>原测试数据:</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"jack"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"lucy"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"lili"</span>, <span class="attr">"age"</span>: <span class="number">18</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"jame"</span>, <span class="attr">"age"</span>: <span class="number">17</span>, <span class="attr">"sex"</span>: <span class="string">"unknown"</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>合并上面所有的操作</p>
+<p>我们最终的聚合查询匹配的评论，按照顺序排序，限制最新的二十条信息，连接用户的数据，扁平用户数组，最后只返回我们需要的必须数据，总的命令如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">db.post.aggregate([</span><br><span class="line">  &#123; <span class="string">"$match"</span>: &#123; <span class="string">"rating"</span>: <span class="string">"important"</span> &#125; &#125;,</span><br><span class="line">  &#123; <span class="string">"$sort"</span>: &#123; <span class="string">"date"</span>: <span class="number">-1</span> &#125; &#125;,</span><br><span class="line">  &#123; <span class="string">"$limit"</span>: <span class="number">20</span> &#125;,</span><br><span class="line">  &#123; <span class="string">"$lookup"</span>: &#123;</span><br><span class="line">    <span class="string">"localField"</span>: <span class="string">"user_id"</span>,</span><br><span class="line">    <span class="string">"from"</span>: <span class="string">"user"</span>,</span><br><span class="line">    <span class="string">"foreignField"</span>: <span class="string">"_id"</span>,</span><br><span class="line">    <span class="string">"as"</span>: <span class="string">"userinfo"</span></span><br><span class="line">  &#125; &#125;,</span><br><span class="line">  &#123; <span class="string">"$unwind"</span>: <span class="string">"$userinfo"</span> &#125;,</span><br><span class="line">  &#123; <span class="string">"$project"</span>: &#123;</span><br><span class="line">    <span class="string">"text"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">"date"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">"userinfo.name"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">"userinfo.country"</span>: <span class="number">1</span></span><br><span class="line">  &#125; &#125;</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
 
-<h2 id="以-age-聚合，把-name-输出为数组"><a href="#以-age-聚合，把-name-输出为数组" class="headerlink" title="以 age 聚合，把 name 输出为数组"></a>以 age 聚合，把 name 输出为数组</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.a_test.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $group: &#123;</span><br><span class="line">            _id: <span class="string">'$age'</span>,</span><br><span class="line">            name: &#123;</span><br><span class="line">                <span class="string">'$push'</span>: <span class="string">'$name'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+<p>结果是一个拥有二十个文档的集合，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">"text"</span>: <span class="string">"The latest post"</span>,</span><br><span class="line">    <span class="string">"date: ISODate("</span><span class="number">2016</span><span class="number">-09</span><span class="number">-27</span>T00:<span class="number">00</span>:<span class="number">00.000</span>Z<span class="string">"),</span></span><br><span class="line"><span class="string">    "</span>userinfo<span class="string">": &#123;</span></span><br><span class="line"><span class="string">      "</span>name<span class="string">": "</span>User One<span class="string">",</span></span><br><span class="line"><span class="string">      "</span>country<span class="string">": "</span>UK<span class="string">"</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;,</span></span><br><span class="line"><span class="string">  &#123;</span></span><br><span class="line"><span class="string">    "</span>text<span class="string">": "</span>Another post<span class="string">",</span></span><br><span class="line"><span class="string">    "</span>date: ISODate(<span class="string">"2016-09-26T00:00:00.000Z"</span>),</span><br><span class="line">    <span class="string">"userinfo"</span>: &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"User One"</span>,</span><br><span class="line">      <span class="string">"country"</span>: <span class="string">"UK"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
-<h2 id="获取到的数据"><a href="#获取到的数据" class="headerlink" title="获取到的数据"></a>获取到的数据</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">16</span>,  <span class="attr">"name"</span>: [<span class="string">"jack"</span>, <span class="string">"lucy"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">17</span>,  <span class="attr">"name"</span>: [<span class="string">"jame"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">18</span>,  <span class="attr">"name"</span>: [<span class="string">"lili"</span>] &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<p><span class="exturl" data-url="aHR0cDovL2NuLnZvaWRjYy5jb20vcXVlc3Rpb24vcC10Y2V2b2Fkcy1iY3YuaHRtbA==" title="http://cn.voidcc.com/question/p-tcevoads-bcv.html">参考链接http://cn.voidcc.com/question/p-tcevoads-bcv.html<i class="fa fa-external-link"></i></span></p>
+<p>MongoDB的$lookup很好用而且很高效，但是上面这个基础的例子只是一个组合的集合查询。他不是一个对SQL中的更加高效的JOIN子句的替代。而且MongoDB也提供了一些限制，如果user集合被删除了，post文档还是会保留。</p>
+<p>理想情况下，这个$lookup操作应该不会经常使用，如果你需要经常使用它，那么你就使用了错误的数据存储了（数据库）：如果你有相关联的数据，应该使用关联数据库（SQL）。</p>
+<p>也就是说$lookup是一个MongoDB 3.2新加入的，他解决了当在Nosql数据库中使用一些小的相关联的数据查询的时候一些令人失望的问题。</p>
+<p>参考链接<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vZHVodW8vcC82MDY4ODc5Lmh0bWw=" title="https://www.cnblogs.com/duhuo/p/6068879.html">https://www.cnblogs.com/duhuo/p/6068879.html<i class="fa fa-external-link"></i></span></p>
 
       
     </div>
@@ -1253,7 +1252,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1266,7 +1265,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
