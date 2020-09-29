@@ -22,23 +22,19 @@
     var CONFIG = {"hostname":"www.wulisensen.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="众所周知微信小程序本身打包体积有 2M 的限制，但是业务也多，体积也就越大。 虽然会有各种瘦身的方法，但是始终不能治本。 幸好微信官方提供了小程序分包的方法，主包和分包每个不能超过 2M，加一起不能超过 8M（截止发博客前）.">
+  <meta name="description" content="1. 问题vue项目 3个页面引用了相同的一个css文件 index.d3ec8bd9.css。 该3个css文件有3个页面的不同css，虽然有scoped做了限制，但是显然不符合我们的预期，我们希望不同的页面引入不同的css文件。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序拆包实战">
-<meta property="og:url" content="https://www.wulisensen.com/2020/02/14/mini-app/split/index.html">
+<meta property="og:title" content="vue项目多个页面css被提取到同一文件中的解决办法">
+<meta property="og:url" content="https://www.wulisensen.com/2020/09/29/javascript/vuePagesCss/index.html">
 <meta property="og:site_name" content="WuLiSenSen">
-<meta property="og:description" content="众所周知微信小程序本身打包体积有 2M 的限制，但是业务也多，体积也就越大。 虽然会有各种瘦身的方法，但是始终不能治本。 幸好微信官方提供了小程序分包的方法，主包和分包每个不能超过 2M，加一起不能超过 8M（截止发博客前）.">
+<meta property="og:description" content="1. 问题vue项目 3个页面引用了相同的一个css文件 index.d3ec8bd9.css。 该3个css文件有3个页面的不同css，虽然有scoped做了限制，但是显然不符合我们的预期，我们希望不同的页面引入不同的css文件。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://www.wulisensen.com/images/old.png">
-<meta property="og:image" content="https://www.wulisensen.com/images/new.png">
-<meta property="article:published_time" content="2020-02-14T09:55:14.000Z">
-<meta property="article:modified_time" content="2020-09-01T12:18:05.492Z">
+<meta property="article:published_time" content="2020-09-29T12:53:50.000Z">
+<meta property="article:modified_time" content="2020-09-29T12:59:03.842Z">
 <meta property="article:author" content="WuLiSenSen">
-<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.wulisensen.com/images/old.png">
 
-<link rel="canonical" href="https://www.wulisensen.com/2020/02/14/mini-app/split/">
+<link rel="canonical" href="https://www.wulisensen.com/2020/09/29/javascript/vuePagesCss/">
 
 
 <script id="page-configurations">
@@ -50,7 +46,7 @@
   };
 </script>
 
-  <title>微信小程序拆包实战 | WuLiSenSen</title>
+  <title>vue项目多个页面css被提取到同一文件中的解决办法 | WuLiSenSen</title>
   
 
 
@@ -202,7 +198,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/02/14/mini-app/split/">
+    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/29/javascript/vuePagesCss/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpg">
@@ -215,7 +211,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          微信小程序拆包实战
+          vue项目多个页面css被提取到同一文件中的解决办法
         </h2>
 
         <div class="post-meta">
@@ -224,24 +220,18 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-02-14 17:55:14" itemprop="dateCreated datePublished" datetime="2020-02-14T17:55:14+08:00">2020-02-14</time>
+              <time title="创建时间：2020-09-29 20:53:50 / 修改时间：20:59:03" itemprop="dateCreated datePublished" datetime="2020-09-29T20:53:50+08:00">2020-09-29</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-01 20:18:05" itemprop="dateModified" datetime="2020-09-01T20:18:05+08:00">2020-09-01</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mini-app/" itemprop="url" rel="index">
-                    <span itemprop="name">mini-app</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
             </span>
@@ -262,8 +252,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/02/14/mini-app/split/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/14/mini-app/split/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/09/29/javascript/vuePagesCss/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/29/javascript/vuePagesCss/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -278,23 +268,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>众所周知微信小程序本身打包体积有 2M 的限制，但是业务也多，体积也就越大。</p>
-<p>虽然会有各种瘦身的方法，但是始终不能治本。</p>
-<p>幸好微信官方提供了<code>小程序分包</code>的方法，主包和分包每个不能超过 2M，加一起不能超过 8M（截止发博客前）.</p>
+        <h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>vue项目 3个页面引用了相同的一个css文件 index.d3ec8bd9.css。</p>
+<p>该3个css文件有3个页面的不同css，虽然有scoped做了限制，但是显然不符合我们的预期，我们希望不同的页面引入不同的css文件。</p>
 <a id="more"></a>
 
-<p>具体方法：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"pages"</span>: [</span><br><span class="line">        <span class="string">"pages/newIndex/index"</span>,</span><br><span class="line">        <span class="string">"pages/news/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/my"</span>,</span><br><span class="line">        <span class="string">"pages/index/search/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchMore/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchParts/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchMinifigs/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchClassify/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/bannerDetail/bannerDetail"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/setDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/partMinifigs/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/partMinifigsDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/bigPartsDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/shop/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/myHistoryCollect/index"</span>,</span><br><span class="line">        <span class="string">"pages/login/telphone/telphone"</span>,</span><br><span class="line">        <span class="string">"pages/picture/detail/index"</span>,</span><br><span class="line">        <span class="string">"pages/activity/bill/index/index"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-原因"><a href="#2-原因" class="headerlink" title="2. 原因"></a>2. 原因</h2><p>经过仔细排查，发现只有这三个项目的css存在该问题，那么应该不是项目配置的问题；</p>
+<p>最后发现是页面路由配置的问题，龙舟项目的路由是如下配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">routes: [</span><br><span class="line">​</span><br><span class="line">            &#123;</span><br><span class="line">​</span><br><span class="line">                path: <span class="string">'/'</span>,</span><br><span class="line">​</span><br><span class="line">                name: <span class="string">'index'</span>,</span><br><span class="line">​</span><br><span class="line">                component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "index" */</span><span class="string">'./modules/index'</span>),</span><br><span class="line">​</span><br><span class="line">            &#125;,</span><br><span class="line">​</span><br><span class="line">            &#123;</span><br><span class="line">​</span><br><span class="line">                path: <span class="string">'/rule'</span>,</span><br><span class="line">​</span><br><span class="line">                name: <span class="string">'rule'</span>,</span><br><span class="line">​</span><br><span class="line">                component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "rule" */</span><span class="string">'./modules/rule'</span>),</span><br><span class="line">​</span><br><span class="line">            &#125;,</span><br><span class="line">​</span><br><span class="line">            &#123;</span><br><span class="line">​</span><br><span class="line">                path: <span class="string">'/ranking'</span>,</span><br><span class="line">​</span><br><span class="line">                name: <span class="string">'ranking'</span>,</span><br><span class="line">​</span><br><span class="line">                component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "ranking" */</span><span class="string">'./modules/ranking'</span>),</span><br><span class="line">​</span><br><span class="line">            &#125;,</span><br><span class="line">​</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
 
-<p>以上是旧的版本，可以看到页面非常多，所有页面都是<code>pages</code>下面，最终打包出来的体积也非常大。</p>
-<p>经过优化，我们把非入口页面 移到 单独目录<code>packageSub</code>下</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"pages"</span>: [</span><br><span class="line">        <span class="string">"pages/newIndex/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/my"</span>,</span><br><span class="line">        <span class="string">"pages/login/login"</span>,</span><br><span class="line">        <span class="string">"pages/login/telphone/telphone"</span>,</span><br><span class="line">        <span class="string">"pages/activity/bill/index/index"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"subPackages"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"root"</span>: <span class="string">"packageSub"</span>,</span><br><span class="line">            <span class="attr">"pages"</span>: [</span><br><span class="line">                <span class="string">"shop/index"</span>,</span><br><span class="line">                <span class="string">"shop/shopDetail/index"</span>,</span><br><span class="line">                <span class="string">"shop/shopCar/index"</span>,</span><br><span class="line">                <span class="string">"shop/payPage/index"</span>,</span><br><span class="line">                <span class="string">"shop/remark/index"</span>,</span><br><span class="line">                <span class="string">"shop/rate/index"</span>,</span><br><span class="line">                <span class="string">"community/index"</span>,</span><br><span class="line">                <span class="string">"community/sendCommunity/index"</span>,</span><br><span class="line">                <span class="string">"community/sendComment/index"</span>,</span><br><span class="line">                <span class="string">"community/detail/index"</span>,</span><br><span class="line">                <span class="string">"my/myHistoryCollect/index"</span>,</span><br><span class="line">                <span class="string">"news/index"</span>,</span><br><span class="line">                <span class="string">"offline/offline"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而后两个是复制的 第一个的项目路由，代码如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">routes: [</span><br><span class="line">​</span><br><span class="line">            &#123;</span><br><span class="line">​</span><br><span class="line">                path: <span class="string">'/'</span>,</span><br><span class="line">​</span><br><span class="line">                name: <span class="string">'index'</span>,</span><br><span class="line">​</span><br><span class="line">                component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "index" */</span><span class="string">'./modules/index'</span>),</span><br><span class="line">​</span><br><span class="line">            &#125;,</span><br><span class="line">​</span><br><span class="line">        ],</span><br></pre></td></tr></table></figure>
 
-<p>文件目录页面变化:</p>
-<p><img data-src="/images/old.png" alt="旧的"></p>
-<p><img data-src="/images/new.png" alt="新的"></p>
-<p>最后最重要的问题也是最麻烦的，就是 手动修改 <code>wx.navigateTo</code> 方法，推荐改成绝对路径，如果改动太大，用相对也是可以的。值得注意的是，pages 下引用 packageSub 下页面，都要修改路径.</p>
+<p>发现异步加载的页面 webpackChunkName 都为 index，所以最后 会把 3个页面的 css 都提取到 index 开头的css文件中</p>
+<h2 id="3-解决方案"><a href="#3-解决方案" class="headerlink" title="3. 解决方案"></a>3. 解决方案</h2><h3 id="a-放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName"><a href="#a-放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName" class="headerlink" title="a) 放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName"></a>a) 放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">routes: [&#123;</span><br><span class="line">​</span><br><span class="line">        path: <span class="string">'/'</span>,</span><br><span class="line">​</span><br><span class="line">        name: <span class="string">'index'</span>,</span><br><span class="line">​</span><br><span class="line">        component: index,</span><br><span class="line">​</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="b-使用与页面相关的-webpackChunkName"><a href="#b-使用与页面相关的-webpackChunkName" class="headerlink" title="b) 使用与页面相关的 webpackChunkName"></a>b) 使用与页面相关的 webpackChunkName</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">routes: [&#123;</span><br><span class="line">​</span><br><span class="line">        path: <span class="string">'/trace'</span>,</span><br><span class="line">​</span><br><span class="line">        name: <span class="string">'trace'</span>,</span><br><span class="line">​</span><br><span class="line">        component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "2019-ncov-more" */</span><span class="string">'./pages/trace'</span>),</span><br><span class="line">​</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="推荐-首页不使用异步加载，其他页使用异步加载"><a href="#推荐-首页不使用异步加载，其他页使用异步加载" class="headerlink" title="推荐 首页不使用异步加载，其他页使用异步加载"></a>推荐 首页不使用异步加载，其他页使用异步加载</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">routes: [&#123;</span><br><span class="line">​</span><br><span class="line">        path: <span class="string">'/'</span>,</span><br><span class="line">​</span><br><span class="line">        name: <span class="string">'index'</span>,</span><br><span class="line">​</span><br><span class="line">        component: index,</span><br><span class="line">​</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">​</span><br><span class="line">        path: <span class="string">'/trace'</span>,</span><br><span class="line">​</span><br><span class="line">        name: <span class="string">'trace'</span>,</span><br><span class="line">​</span><br><span class="line">        component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "2019-ncov-more" */</span><span class="string">'./pages/trace'</span>),</span><br><span class="line">​</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
         <br />
         <br />
@@ -308,20 +298,17 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
-          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/02/21/yarn/tyarn/" rel="next" title="npm与cnpm、yarn、tyarn、pnpm的区别">
-      npm与cnpm、yarn、tyarn、pnpm的区别 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/09/27/javascript/nvs/" rel="prev" title="nvs自动切换项目node版本">
+      <i class="fa fa-chevron-left"></i> nvs自动切换项目node版本
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -382,6 +369,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-问题"><span class="nav-number">1.</span> <span class="nav-text">1. 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-原因"><span class="nav-number">2.</span> <span class="nav-text">2. 原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-解决方案"><span class="nav-number">3.</span> <span class="nav-text">3. 解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName"><span class="nav-number">3.1.</span> <span class="nav-text">a) 放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-使用与页面相关的-webpackChunkName"><span class="nav-number">3.2.</span> <span class="nav-text">b) 使用与页面相关的 webpackChunkName</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐-首页不使用异步加载，其他页使用异步加载"><span class="nav-number">3.3.</span> <span class="nav-text">推荐 首页不使用异步加载，其他页使用异步加载</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -605,7 +593,7 @@ window.addEventListener('pjax:success', () => {
       quicklink({
         timeout: 3000,
         priority: true,
-        ignores: [uri => uri.includes('#'),uri => uri == 'https://www.wulisensen.com/2020/02/14/mini-app/split/',]
+        ignores: [uri => uri.includes('#'),uri => uri == 'https://www.wulisensen.com/2020/09/29/javascript/vuePagesCss/',]
       });
       });
   </script>

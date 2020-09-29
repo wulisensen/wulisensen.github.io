@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.wulisensen.com/2020/09/29/javascript/vuePagesCss/</loc>
+    <lastmod>2020-09-29</lastmod>
+  </url>
+  <url>
     <loc>https://www.wulisensen.com/2020/09/01/javascript/async/</loc>
     <lastmod>2020-09-27</lastmod>
   </url>
@@ -53,15 +57,11 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/mongodb/optimize/</loc>
-    <lastmod>2020-09-01</lastmod>
-  </url>
-  <url>
     <loc>https://www.wulisensen.com/2020/09/01/mongodb/push/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/mongodb/unwind/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/mongodb/optimize/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -69,11 +69,11 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/linux/start/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/mongodb/unwind/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/03/21/mongodb/collation/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/linux/start/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -81,7 +81,7 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/mongodb/good/</loc>
+    <loc>https://www.wulisensen.com/2020/03/21/mongodb/collation/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -93,15 +93,11 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
+    <loc>https://www.wulisensen.com/2020/09/01/mongodb/good/</loc>
+    <lastmod>2020-09-01</lastmod>
+  </url>
+  <url>
     <loc>https://www.wulisensen.com/2020/09/01/mongodb/index/</loc>
-    <lastmod>2020-09-01</lastmod>
-  </url>
-  <url>
-    <loc>https://www.wulisensen.com/2020/09/01/gulp/index/</loc>
-    <lastmod>2020-09-01</lastmod>
-  </url>
-  <url>
-    <loc>https://www.wulisensen.com/2020/09/01/git/tips/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -109,7 +105,11 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/linux/index/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/git/tips/</loc>
+    <lastmod>2020-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.wulisensen.com/2020/09/01/gulp/index/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -117,11 +117,15 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
+    <loc>https://www.wulisensen.com/2020/09/01/linux/index/</loc>
+    <lastmod>2020-09-01</lastmod>
+  </url>
+  <url>
     <loc>https://www.wulisensen.com/2020/09/01/git/branch/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/git/ignore/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/git/index/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -129,7 +133,7 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/git/index/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/git/ignore/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
