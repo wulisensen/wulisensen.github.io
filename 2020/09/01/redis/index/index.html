@@ -30,7 +30,7 @@
 <meta property="og:description" content="redis 数据类型讲解 以及 适合场景http:&#x2F;&#x2F;www.360doc.com&#x2F;content&#x2F;15&#x2F;0324&#x2F;16&#x2F;5054188_457703414.shtml 1 存储结构Redis 是以字典的结构存储数据的, 通过键值对的方式进行存储(key&#x3D;&gt;value) , 在储存类型中有5种 (1)字符串类型, (2)散列类型, (3)列表类型, (4)集合类型, (5)有序集合类型 2">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-01T12:18:05.495Z">
-<meta property="article:modified_time" content="2020-09-01T12:18:05.495Z">
+<meta property="article:modified_time" content="2021-01-07T03:38:13.091Z">
 <meta property="article:author" content="WuLiSenSen">
 <meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
@@ -224,6 +224,13 @@
 
               <time title="创建时间：2020-09-01 20:18:05" itemprop="dateCreated datePublished" datetime="2020-09-01T20:18:05+08:00">2020-09-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-07 11:38:13" itemprop="dateModified" datetime="2021-01-07T11:38:13+08:00">2021-01-07</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -271,6 +278,8 @@
         <p>redis 数据类型讲解 以及 适合场景<span class="exturl" data-url="aHR0cDovL3d3dy4zNjBkb2MuY29tL2NvbnRlbnQvMTUvMDMyNC8xNi81MDU0MTg4XzQ1NzcwMzQxNC5zaHRtbA==" title="http://www.360doc.com/content/15/0324/16/5054188_457703414.shtml">http://www.360doc.com/content/15/0324/16/5054188_457703414.shtml<i class="fa fa-external-link"></i></span></p>
 <h2 id="1-存储结构"><a href="#1-存储结构" class="headerlink" title="1 存储结构"></a>1 存储结构</h2><p>Redis 是以字典的结构存储数据的, 通过键值对的方式进行存储(key=&gt;value) , 在储存类型中有5种 (1)字符串类型, (2)散列类型, (3)列表类型, (4)集合类型, (5)有序集合类型</p>
 <h2 id="2-内存存储持久化"><a href="#2-内存存储持久化" class="headerlink" title="2 内存存储持久化"></a>2 内存存储持久化</h2><p>Redis 可以在一秒内读写超过10万个键值, 并且Redis 可以为每个键值设置生存时间(生存时间到后键会被自动删除)</p>
+<a id="more"></a>
+
 <h2 id="3-功能"><a href="#3-功能" class="headerlink" title="3 功能"></a>3 功能</h2><p>Memcached 支持多线程, Redis是单线程模式, Redis支持服务器集群, Redis 可以限定数据占用最大的内存空间(如达到空间, 则可按照规则淘汰不需要的键)<br>Redis的列表行键可用来实现队列, 并且支持阻塞式读取 <code>目前多数公司对Redis的应用以缓存和队列为主 Redis 支持事物 , 不支持回滚</code></p>
 <h2 id="4-Redis-配置"><a href="#4-Redis-配置" class="headerlink" title="4 Redis 配置"></a>4 Redis 配置</h2><p>Redis</p>
 <p>(1)可以通过配置文件来配置/path/to/redis.conf是否开启持久化, 日志级别等.</p>
@@ -315,12 +324,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/09/01/mysql/index/" rel="prev" title="int类型bug解决">
-      <i class="fa fa-chevron-left"></i> int类型bug解决
+    <a href="/2020/09/01/nginx/second/" rel="prev" title="Nginx配置二级域名">
+      <i class="fa fa-chevron-left"></i> Nginx配置二级域名
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/09/01/python/index/" rel="next" title="Python基础">
-      Python基础 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/09/01/javascript/async/" rel="next" title="promise 和 async await 的联系 常见使用问题 实现原理">
+      promise 和 async await 的联系 常见使用问题 实现原理 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -440,7 +449,7 @@
     <footer class="footer">
       <div class="footer-inner">
         
-  <div class="beian"><span class="exturl" data-url="aHR0cDovL3d3dy5iZWlhbi5taWl0Lmdvdi5jbg==">京ICP备18052356号 </span>
+  <div class="beian"><span class="exturl" data-url="aHR0cHM6Ly9iZWlhbi5taWl0Lmdvdi5jbg==">京ICP备18052356号 </span>
       <img src="/images/备案图标.png" style="display: inline-block;">
   </div>
 
