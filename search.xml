@@ -35,33 +35,18 @@
       </tags>
   </entry>
   <entry>
-    <title>Gulp实现项目一键部署</title>
-    <url>/2020/09/01/gulp/index/</url>
-    <content><![CDATA[<h2 id="1、安装gulp和gulp-sftp"><a href="#1、安装gulp和gulp-sftp" class="headerlink" title="1、安装gulp和gulp-sftp"></a>1、安装gulp和gulp-sftp</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm i gulp gulp-sftp --save-dev</span></span><br></pre></td></tr></table></figure>
+    <title>CSS3</title>
+    <url>/2020/09/01/css/index/</url>
+    <content><![CDATA[<h2 id="1、CSS3-calc-属性-尺寸计算"><a href="#1、CSS3-calc-属性-尺寸计算" class="headerlink" title="1、CSS3  calc()  属性  尺寸计算"></a>1、CSS3  calc()  属性  尺寸计算</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="built_in">-webkit-calc</span>(<span class="number">100%</span> - <span class="number">50px</span>);</span><br><span class="line">    <span class="attribute">width</span>: <span class="built_in">-moz-calc</span>(<span class="number">100%</span> - <span class="number">50px</span>);</span><br><span class="line">    <span class="attribute">width</span>: <span class="built_in">calc</span>(<span class="number">100%</span> - <span class="number">50px</span>);</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#FF0000</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="2、在项目根目录新建gulp配置文件gulpfile-js"><a href="#2、在项目根目录新建gulp配置文件gulpfile-js" class="headerlink" title="2、在项目根目录新建gulp配置文件gulpfile.js"></a>2、在项目根目录新建gulp配置文件<code>gulpfile.js</code></h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> sftp = <span class="built_in">require</span>(<span class="string">'gulp-sftp'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sftpOption = &#123;</span><br><span class="line">host: <span class="string">'120.77.221.25'</span>, <span class="comment">// FTP主机地址</span></span><br><span class="line">auth: <span class="string">'FTPServer1'</span>, <span class="comment">// 下一步创建的 .ftppass 文件里面对应的授权方式</span></span><br><span class="line">remotePath: <span class="string">'/data/www/xxxx.com/'</span>, <span class="comment">// FTP需要上传的位置</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'upload'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'dist/**'</span>)</span><br><span class="line">        .pipe(sftp(sftpOption));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="2、判断屏幕宽度"><a href="#2、判断屏幕宽度" class="headerlink" title="2、判断屏幕宽度"></a>2、判断屏幕宽度</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">1201px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.abc</span> &#123;<span class="attribute">width</span>: <span class="number">1200px</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">1200px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.abc</span> &#123;<span class="attribute">width</span>: <span class="number">900px</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="3、创建gulp-sftp配置文件-ftppass"><a href="#3、创建gulp-sftp配置文件-ftppass" class="headerlink" title="3、创建gulp-sftp配置文件.ftppass"></a>3、创建gulp-sftp配置文件.ftppass</h2><blockquote>
-<p>为了保证ftp账号安全，将FTP账号密码配置放在单独的文件中，并添加至版本控制系统的禁用列表中</p>
-</blockquote>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"FTPServer1"</span>: &#123;</span><br><span class="line">        <span class="attr">"user"</span>: <span class="string">"root"</span>,</span><br><span class="line">        <span class="attr">"pass"</span>: <span class="string">"xxxxxxx"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4、至此我们可以使用gulp来执行定义的上传任务了"><a href="#4、至此我们可以使用gulp来执行定义的上传任务了" class="headerlink" title="4、至此我们可以使用gulp来执行定义的上传任务了"></a>4、至此我们可以使用gulp来执行定义的上传任务了</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> gulp upload</span></span><br></pre></td></tr></table></figure>
-
-<p>执行命令后我们项目的dist目录下的所有文件都上传到服务器/data/www/xxxx.com/目录下了</p>
-<h2 id="5、创建命令"><a href="#5、创建命令" class="headerlink" title="5、创建命令"></a>5、创建命令</h2><p>为了方便我们构建完成后自动上传可以<code>package.json</code>中定义一个命令</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"upload"</span>: <span class="string">"gulp upload"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这样我们就可以直接执行<code>npm run upload</code>命令来编译并上传我们的应用了</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm run upload</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="6、参考链接"><a href="#6、参考链接" class="headerlink" title="6、参考链接"></a>6、参考链接</h2><p><span class="exturl" data-url="aHR0cHM6Ly94aWFvemh1YW5sYW4uY29tL3RvcGljLzEzNzk2ODA1MjQ=" title="https://xiaozhuanlan.com/topic/1379680524">https://xiaozhuanlan.com/topic/1379680524<i class="fa fa-external-link"></i></span></p>
-]]></content>
+<h2 id="3、横屏和竖屏"><a href="#3、横屏和竖屏" class="headerlink" title="3、横屏和竖屏"></a>3、横屏和竖屏</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">orientation:</span> landscape) &#123;</span><br><span class="line">        仅仅竖屏下</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">orientation:</span> portrait) &#123;</span><br><span class="line">        仅横屏</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>gulp</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>工具</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -87,46 +72,9 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS3</title>
-    <url>/2020/09/01/css/index/</url>
-    <content><![CDATA[<h2 id="1、CSS3-calc-属性-尺寸计算"><a href="#1、CSS3-calc-属性-尺寸计算" class="headerlink" title="1、CSS3  calc()  属性  尺寸计算"></a>1、CSS3  calc()  属性  尺寸计算</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="built_in">-webkit-calc</span>(<span class="number">100%</span> - <span class="number">50px</span>);</span><br><span class="line">    <span class="attribute">width</span>: <span class="built_in">-moz-calc</span>(<span class="number">100%</span> - <span class="number">50px</span>);</span><br><span class="line">    <span class="attribute">width</span>: <span class="built_in">calc</span>(<span class="number">100%</span> - <span class="number">50px</span>);</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#FF0000</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2、判断屏幕宽度"><a href="#2、判断屏幕宽度" class="headerlink" title="2、判断屏幕宽度"></a>2、判断屏幕宽度</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">1201px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.abc</span> &#123;<span class="attribute">width</span>: <span class="number">1200px</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">1200px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.abc</span> &#123;<span class="attribute">width</span>: <span class="number">900px</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3、横屏和竖屏"><a href="#3、横屏和竖屏" class="headerlink" title="3、横屏和竖屏"></a>3、横屏和竖屏</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">orientation:</span> landscape) &#123;</span><br><span class="line">        仅仅竖屏下</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">orientation:</span> portrait) &#123;</span><br><span class="line">        仅横屏</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>css</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>.gitignore失效解决办法</title>
     <url>/2020/09/01/git/ignore/</url>
     <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'We really don'</span>t want Git to track this anymore!<span class="string">'</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git命令行基础（三）更新与合并</title>
-    <url>/2020/09/01/git/pull/</url>
-    <content><![CDATA[<h3 id="1、更新代码"><a href="#1、更新代码" class="headerlink" title="1、更新代码"></a>1、更新代码</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<p>以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动。</p>
-<h3 id="2、合并"><a href="#2、合并" class="headerlink" title="2、合并"></a>2、合并</h3><p>要合并其他分支到你的当前分支（例如 master），执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-
-<p>两种情况下，git 都会尝试去自动合并改动。不幸的是，自动合并并非次次都能成功，并可能导致 冲突（conflicts）。 这时候就需要你修改这些文件来人肉合并这些 冲突（conflicts） 了。改完之后，你需要执行如下命令以将它们标记为合并成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-
-<p>在合并改动之前，也可以使用如下命令查看：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git diff &lt;source_branch&gt; &lt;target_branch&gt;</span><br></pre></td></tr></table></figure>
-]]></content>
       <categories>
         <category>git</category>
       </categories>
@@ -164,6 +112,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Git命令行基础（三）更新与合并</title>
+    <url>/2020/09/01/git/pull/</url>
+    <content><![CDATA[<h3 id="1、更新代码"><a href="#1、更新代码" class="headerlink" title="1、更新代码"></a>1、更新代码</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<p>以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动。</p>
+<h3 id="2、合并"><a href="#2、合并" class="headerlink" title="2、合并"></a>2、合并</h3><p>要合并其他分支到你的当前分支（例如 master），执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+
+<p>两种情况下，git 都会尝试去自动合并改动。不幸的是，自动合并并非次次都能成功，并可能导致 冲突（conflicts）。 这时候就需要你修改这些文件来人肉合并这些 冲突（conflicts） 了。改完之后，你需要执行如下命令以将它们标记为合并成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在合并改动之前，也可以使用如下命令查看：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git diff &lt;source_branch&gt; &lt;target_branch&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git迁移</title>
     <url>/2020/09/01/git/remote/</url>
     <content><![CDATA[<h3 id="git-仓库迁移"><a href="#git-仓库迁移" class="headerlink" title="git 仓库迁移"></a>git 仓库迁移</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote rename origin old-origin <span class="comment"># 先把旧的git源删除</span></span><br><span class="line">git remote add origin git@git.ifengidc.com:wugs/11111.git <span class="comment"># 设置新的源</span></span><br><span class="line">git push -u origin --all <span class="comment"># 将所有分支上传</span></span><br><span class="line">git push -u origin --tags <span class="comment"># 将所以tag上传</span></span><br></pre></td></tr></table></figure>
@@ -184,18 +154,6 @@
 <p>此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件。已添加到缓存区的改动，以及新文件，都不受影响。</p>
 <p>假如你想要丢弃你所有的本地改动与提交，可以到服务器上获取最新的版本并将你本地主分支指向到它：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>查看本地修改状态</title>
-    <url>/2020/09/01/git/status/</url>
-    <content><![CDATA[<p>想查看本地修改了哪些文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>git</category>
       </categories>
@@ -246,6 +204,64 @@
 ]]></content>
       <categories>
         <category>git</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git更新全局账户密码</title>
+    <url>/2020/09/01/git/update/</url>
+    <content><![CDATA[<h3 id="1、查看当前用户名和邮箱"><a href="#1、查看当前用户名和邮箱" class="headerlink" title="1、查看当前用户名和邮箱"></a>1、查看当前用户名和邮箱</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、修改"><a href="#2、修改" class="headerlink" title="2、修改"></a>2、修改</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"zhangsan(新的用户名)"</span></span><br><span class="line">git config --global user.email <span class="string">"123456@qq.com(新的邮箱)"</span></span><br><span class="line">git config --global user.password<span class="string">"123456(新的密码)"</span></span><br><span class="line">//这里的zhangsan和邮箱都是你修改之后的用户名和邮箱</span><br></pre></td></tr></table></figure>
+
+<p>修改完成之后再次查看确认下，是不是自己改后的用户名和邮箱以及密码</p>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>查看本地修改状态</title>
+    <url>/2020/09/01/git/status/</url>
+    <content><![CDATA[<p>想查看本地修改了哪些文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Gulp实现项目一键部署</title>
+    <url>/2020/09/01/gulp/index/</url>
+    <content><![CDATA[<h2 id="1、安装gulp和gulp-sftp"><a href="#1、安装gulp和gulp-sftp" class="headerlink" title="1、安装gulp和gulp-sftp"></a>1、安装gulp和gulp-sftp</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm i gulp gulp-sftp --save-dev</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2、在项目根目录新建gulp配置文件gulpfile-js"><a href="#2、在项目根目录新建gulp配置文件gulpfile-js" class="headerlink" title="2、在项目根目录新建gulp配置文件gulpfile.js"></a>2、在项目根目录新建gulp配置文件<code>gulpfile.js</code></h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> sftp = <span class="built_in">require</span>(<span class="string">'gulp-sftp'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sftpOption = &#123;</span><br><span class="line">host: <span class="string">'120.77.221.25'</span>, <span class="comment">// FTP主机地址</span></span><br><span class="line">auth: <span class="string">'FTPServer1'</span>, <span class="comment">// 下一步创建的 .ftppass 文件里面对应的授权方式</span></span><br><span class="line">remotePath: <span class="string">'/data/www/xxxx.com/'</span>, <span class="comment">// FTP需要上传的位置</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'upload'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'dist/**'</span>)</span><br><span class="line">        .pipe(sftp(sftpOption));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、创建gulp-sftp配置文件-ftppass"><a href="#3、创建gulp-sftp配置文件-ftppass" class="headerlink" title="3、创建gulp-sftp配置文件.ftppass"></a>3、创建gulp-sftp配置文件.ftppass</h2><blockquote>
+<p>为了保证ftp账号安全，将FTP账号密码配置放在单独的文件中，并添加至版本控制系统的禁用列表中</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"FTPServer1"</span>: &#123;</span><br><span class="line">        <span class="attr">"user"</span>: <span class="string">"root"</span>,</span><br><span class="line">        <span class="attr">"pass"</span>: <span class="string">"xxxxxxx"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、至此我们可以使用gulp来执行定义的上传任务了"><a href="#4、至此我们可以使用gulp来执行定义的上传任务了" class="headerlink" title="4、至此我们可以使用gulp来执行定义的上传任务了"></a>4、至此我们可以使用gulp来执行定义的上传任务了</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> gulp upload</span></span><br></pre></td></tr></table></figure>
+
+<p>执行命令后我们项目的dist目录下的所有文件都上传到服务器/data/www/xxxx.com/目录下了</p>
+<h2 id="5、创建命令"><a href="#5、创建命令" class="headerlink" title="5、创建命令"></a>5、创建命令</h2><p>为了方便我们构建完成后自动上传可以<code>package.json</code>中定义一个命令</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"upload"</span>: <span class="string">"gulp upload"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就可以直接执行<code>npm run upload</code>命令来编译并上传我们的应用了</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm run upload</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6、参考链接"><a href="#6、参考链接" class="headerlink" title="6、参考链接"></a>6、参考链接</h2><p><span class="exturl" data-url="aHR0cHM6Ly94aWFvemh1YW5sYW4uY29tL3RvcGljLzEzNzk2ODA1MjQ=" title="https://xiaozhuanlan.com/topic/1379680524">https://xiaozhuanlan.com/topic/1379680524<i class="fa fa-external-link"></i></span></p>
+]]></content>
+      <categories>
+        <category>gulp</category>
       </categories>
       <tags>
         <tag>工具</tag>
@@ -331,22 +347,6 @@
       <categories>
         <category>javascript</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Git更新全局账户密码</title>
-    <url>/2020/09/01/git/update/</url>
-    <content><![CDATA[<h3 id="1、查看当前用户名和邮箱"><a href="#1、查看当前用户名和邮箱" class="headerlink" title="1、查看当前用户名和邮箱"></a>1、查看当前用户名和邮箱</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、修改"><a href="#2、修改" class="headerlink" title="2、修改"></a>2、修改</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"zhangsan(新的用户名)"</span></span><br><span class="line">git config --global user.email <span class="string">"123456@qq.com(新的邮箱)"</span></span><br><span class="line">git config --global user.password<span class="string">"123456(新的密码)"</span></span><br><span class="line">//这里的zhangsan和邮箱都是你修改之后的用户名和邮箱</span><br></pre></td></tr></table></figure>
-
-<p>修改完成之后再次查看确认下，是不是自己改后的用户名和邮箱以及密码</p>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
   </entry>
   <entry>
     <title>ES6简介</title>
@@ -517,46 +517,6 @@
       </tags>
   </entry>
   <entry>
-    <title>微信小程序拆包实战</title>
-    <url>/2020/02/14/mini-app/split/</url>
-    <content><![CDATA[<p>众所周知微信小程序本身打包体积有 2M 的限制，但是业务也多，体积也就越大。</p>
-<p>虽然会有各种瘦身的方法，但是始终不能治本。</p>
-<p>幸好微信官方提供了<code>小程序分包</code>的方法，主包和分包每个不能超过 2M，加一起不能超过 8M（截止发博客前）.</p>
-<a id="more"></a>
-
-<p>具体方法：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"pages"</span>: [</span><br><span class="line">        <span class="string">"pages/newIndex/index"</span>,</span><br><span class="line">        <span class="string">"pages/news/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/my"</span>,</span><br><span class="line">        <span class="string">"pages/index/search/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchMore/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchParts/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchMinifigs/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchClassify/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/bannerDetail/bannerDetail"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/setDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/partMinifigs/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/partMinifigsDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/bigPartsDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/shop/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/myHistoryCollect/index"</span>,</span><br><span class="line">        <span class="string">"pages/login/telphone/telphone"</span>,</span><br><span class="line">        <span class="string">"pages/picture/detail/index"</span>,</span><br><span class="line">        <span class="string">"pages/activity/bill/index/index"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以上是旧的版本，可以看到页面非常多，所有页面都是<code>pages</code>下面，最终打包出来的体积也非常大。</p>
-<p>经过优化，我们把非入口页面 移到 单独目录<code>packageSub</code>下</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"pages"</span>: [</span><br><span class="line">        <span class="string">"pages/newIndex/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/my"</span>,</span><br><span class="line">        <span class="string">"pages/login/login"</span>,</span><br><span class="line">        <span class="string">"pages/login/telphone/telphone"</span>,</span><br><span class="line">        <span class="string">"pages/activity/bill/index/index"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"subPackages"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"root"</span>: <span class="string">"packageSub"</span>,</span><br><span class="line">            <span class="attr">"pages"</span>: [</span><br><span class="line">                <span class="string">"shop/index"</span>,</span><br><span class="line">                <span class="string">"shop/shopDetail/index"</span>,</span><br><span class="line">                <span class="string">"shop/shopCar/index"</span>,</span><br><span class="line">                <span class="string">"shop/payPage/index"</span>,</span><br><span class="line">                <span class="string">"shop/remark/index"</span>,</span><br><span class="line">                <span class="string">"shop/rate/index"</span>,</span><br><span class="line">                <span class="string">"community/index"</span>,</span><br><span class="line">                <span class="string">"community/sendCommunity/index"</span>,</span><br><span class="line">                <span class="string">"community/sendComment/index"</span>,</span><br><span class="line">                <span class="string">"community/detail/index"</span>,</span><br><span class="line">                <span class="string">"my/myHistoryCollect/index"</span>,</span><br><span class="line">                <span class="string">"news/index"</span>,</span><br><span class="line">                <span class="string">"offline/offline"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>文件目录页面变化:</p>
-<p><img data-src="/images/old.png" alt="旧的"></p>
-<p><img data-src="/images/new.png" alt="新的"></p>
-<p>最后最重要的问题也是最麻烦的，就是 手动修改 <code>wx.navigateTo</code> 方法，推荐改成绝对路径，如果改动太大，用相对也是可以的。值得注意的是，pages 下引用 packageSub 下页面，都要修改路径.</p>
-]]></content>
-      <categories>
-        <category>mini-app</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>int类型bug解决</title>
-    <url>/2020/09/01/mysql/index/</url>
-    <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>int类型 存入11位数字会变成2147483647</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>改成bigint类型</p>
-]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Mongodb collation</title>
     <url>/2020/03/21/mongodb/collation/</url>
     <content><![CDATA[<p>一般来说，对 mongodb 中某个<code>字符串字段</code> 进行排序 是按 <code>二进制</code> 排序的</p>
@@ -642,24 +602,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MongoDB　group 使用　$first 获取指定字段</title>
-    <url>/2020/09/01/mongodb/first/</url>
-    <content><![CDATA[<h2 id="原测试数据"><a href="#原测试数据" class="headerlink" title="原测试数据:"></a>原测试数据:</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59a221054afa291a4e0a974d"</span>), <span class="attr">"name"</span>: <span class="string">"jack"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59a221144afa291a4e0a974e"</span>), <span class="attr">"name"</span>: <span class="string">"lucy"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59a221304afa291a4e0a9750"</span>), <span class="attr">"name"</span>: <span class="string">"lili"</span>, <span class="attr">"age"</span>: <span class="number">18</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59b0a98bf4eee74a4359353d"</span>), <span class="attr">"name"</span>: <span class="string">"jack"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59e5c25a483b8642c5ac3ded"</span>), <span class="attr">"name"</span>: <span class="string">"jame"</span>, <span class="attr">"age"</span>: <span class="number">17</span>, <span class="attr">"sex"</span>: <span class="string">"unknown"</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h2 id="以-age-和-sex-分组，获取-age-sex-name-字段"><a href="#以-age-和-sex-分组，获取-age-sex-name-字段" class="headerlink" title="以 age 和 sex 分组，获取 age, sex, name 字段"></a>以 age 和 sex 分组，获取 age, sex, name 字段</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.a_test.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $group: &#123;</span><br><span class="line">            _id: &#123; <span class="attr">age</span>: <span class="string">'$age'</span>, <span class="attr">sex</span>: <span class="string">'$sex'</span> &#125;,</span><br><span class="line">            name: &#123; <span class="attr">$first</span>: <span class="string">'$name'</span> &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123;</span><br><span class="line">            _id: <span class="literal">false</span>,</span><br><span class="line">            age: <span class="string">'$_id.age'</span>,</span><br><span class="line">            sex: <span class="string">'$_id.sex'</span>,</span><br><span class="line">            name: <span class="string">'$name'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
-
-<h2 id="获取到的数据"><a href="#获取到的数据" class="headerlink" title="获取到的数据"></a>获取到的数据</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">17</span>, <span class="attr">"sex"</span>: <span class="string">"unknown"</span>, <span class="attr">"name"</span>: <span class="string">"jame"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">18</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span>, <span class="attr">"name"</span>: <span class="string">"lili"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span>, <span class="attr">"name"</span>: <span class="string">"lucy"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span>, <span class="attr">"name"</span>: <span class="string">"jack"</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpb2ppbmc4MjUvYXJ0aWNsZS9kZXRhaWxzLzc4MzYyOTcy" title="https://blog.csdn.net/xiojing825/article/details/78362972">参考链接https://blog.csdn.net/xiojing825/article/details/78362972<i class="fa fa-external-link"></i></span></p>
-]]></content>
-      <categories>
-        <category>mongodb</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MongoDB 另类优化</title>
     <url>/2020/09/01/mongodb/good/</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>上次 实现后，发现速度很慢，因为 要聚合 几十次</p>
@@ -691,6 +633,65 @@
 <h3 id="4、启动MongoDb（安装成功后命令行有提示"><a href="#4、启动MongoDb（安装成功后命令行有提示" class="headerlink" title="4、启动MongoDb（安装成功后命令行有提示"></a>4、启动MongoDb（安装成功后命令行有提示</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mongod --config /usr/<span class="built_in">local</span>/etc/mongod.conf</span><br></pre></td></tr></table></figure>
 
 <h3 id="5、连接到mongo"><a href="#5、连接到mongo" class="headerlink" title="5、连接到mongo"></a>5、连接到mongo</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mongo</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>mongodb</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB　group 使用　$first 获取指定字段</title>
+    <url>/2020/09/01/mongodb/first/</url>
+    <content><![CDATA[<h2 id="原测试数据"><a href="#原测试数据" class="headerlink" title="原测试数据:"></a>原测试数据:</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59a221054afa291a4e0a974d"</span>), <span class="attr">"name"</span>: <span class="string">"jack"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59a221144afa291a4e0a974e"</span>), <span class="attr">"name"</span>: <span class="string">"lucy"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59a221304afa291a4e0a9750"</span>), <span class="attr">"name"</span>: <span class="string">"lili"</span>, <span class="attr">"age"</span>: <span class="number">18</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59b0a98bf4eee74a4359353d"</span>), <span class="attr">"name"</span>: <span class="string">"jack"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59e5c25a483b8642c5ac3ded"</span>), <span class="attr">"name"</span>: <span class="string">"jame"</span>, <span class="attr">"age"</span>: <span class="number">17</span>, <span class="attr">"sex"</span>: <span class="string">"unknown"</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="以-age-和-sex-分组，获取-age-sex-name-字段"><a href="#以-age-和-sex-分组，获取-age-sex-name-字段" class="headerlink" title="以 age 和 sex 分组，获取 age, sex, name 字段"></a>以 age 和 sex 分组，获取 age, sex, name 字段</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.a_test.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $group: &#123;</span><br><span class="line">            _id: &#123; <span class="attr">age</span>: <span class="string">'$age'</span>, <span class="attr">sex</span>: <span class="string">'$sex'</span> &#125;,</span><br><span class="line">            name: &#123; <span class="attr">$first</span>: <span class="string">'$name'</span> &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $project: &#123;</span><br><span class="line">            _id: <span class="literal">false</span>,</span><br><span class="line">            age: <span class="string">'$_id.age'</span>,</span><br><span class="line">            sex: <span class="string">'$_id.sex'</span>,</span><br><span class="line">            name: <span class="string">'$name'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取到的数据"><a href="#获取到的数据" class="headerlink" title="获取到的数据"></a>获取到的数据</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">17</span>, <span class="attr">"sex"</span>: <span class="string">"unknown"</span>, <span class="attr">"name"</span>: <span class="string">"jame"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">18</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span>, <span class="attr">"name"</span>: <span class="string">"lili"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span>, <span class="attr">"name"</span>: <span class="string">"lucy"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span>, <span class="attr">"name"</span>: <span class="string">"jack"</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpb2ppbmc4MjUvYXJ0aWNsZS9kZXRhaWxzLzc4MzYyOTcy" title="https://blog.csdn.net/xiojing825/article/details/78362972">参考链接https://blog.csdn.net/xiojing825/article/details/78362972<i class="fa fa-external-link"></i></span></p>
+]]></content>
+      <categories>
+        <category>mongodb</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB 初始化</title>
+    <url>/2020/09/01/mongodb/init/</url>
+    <content><![CDATA[<h2 id="1、-查看数据库"><a href="#1、-查看数据库" class="headerlink" title="1、 查看数据库"></a>1、 查看数据库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">mongo</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">show dbs;</span></span><br><span class="line">admin    0.000GB</span><br><span class="line">config   0.000GB</span><br><span class="line">local    0.000GB</span><br></pre></td></tr></table></figure>
+
+<p>在命令行工具中 输入 mongo 回车 就可以输入 mongo 命令</p>
+<p>show dbs 是查看当前 有哪些数据库</p>
+<a id="more"></a>
+
+<h2 id="2、初始化数据库"><a href="#2、初始化数据库" class="headerlink" title="2、初始化数据库"></a>2、初始化数据库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">use comment</span></span><br><span class="line">switched to db comment</span><br></pre></td></tr></table></figure>
+
+<p>use comment 意思是 使用 comment 这个数据库</p>
+<p>如果没有，就会 新创建 1 个</p>
+<h2 id="3、初始化-用户"><a href="#3、初始化-用户" class="headerlink" title="3、初始化 用户"></a>3、初始化 用户</h2><p>为当前 数据库 创建 1 个 只有 当前数据库的 权限的 用户</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">db.createUser(&#123;</span></span><br><span class="line">    user:"wugs_comment",</span><br><span class="line">    pwd:"123456",</span><br><span class="line">    roles:[&#123;</span><br><span class="line">        role:"readWrite",</span><br><span class="line">        db:"comment"</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Successfully added user: &#123;</span><br><span class="line">	"user" : "wugs_comment",</span><br><span class="line">	"roles" : [</span><br><span class="line">		&#123;</span><br><span class="line">			"role" : "readWrite",</span><br><span class="line">			"db" : "comment"</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>成功创建了 一个 用户名为 wugs_comment 的用户， 拥有 数据库 comment 的读写权限</p>
+<h2 id="4、端口不是-默认的-27017"><a href="#4、端口不是-默认的-27017" class="headerlink" title="4、端口不是 默认的 27017"></a>4、端口不是 默认的 27017</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mongo --port 10001</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>mongodb</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB　对象数组的查询</title>
+    <url>/2020/09/01/mongodb/object/</url>
+    <content><![CDATA[<h2 id="数据库中某个字段是对象数组"><a href="#数据库中某个字段是对象数组" class="headerlink" title="数据库中某个字段是对象数组"></a>数据库中某个字段是对象数组</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"tags_cn"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">"type"</span> : <span class="string">"set"</span>,</span><br><span class="line">			<span class="attr">"id"</span> : <span class="string">"5ce4f86824e43e7550bf7b6c"</span>,</span><br><span class="line">			<span class="attr">"setNumberNew"</span> : <span class="string">"10266"</span>,</span><br><span class="line">			<span class="attr">"setName"</span> : <span class="string">"NASA Apollo 11 Lunar Lander"</span>,</span><br><span class="line">			<span class="attr">"setName_cn"</span> : <span class="string">"阿波罗11号登月舱"</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询的时候可以通过下列方法查询"><a href="#查询的时候可以通过下列方法查询" class="headerlink" title="查询的时候可以通过下列方法查询"></a>查询的时候可以通过下列方法查询</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.a_test.find(&#123;</span><br><span class="line">    <span class="string">'tags_cn.0'</span>: &#123; <span class="attr">$exists</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    <span class="string">'tags_cn.type'</span>: <span class="string">'set'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>原创内容，转载请说明出处</p>
+]]></content>
       <categories>
         <category>mongodb</category>
       </categories>
@@ -768,22 +769,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MongoDB　对象数组的查询</title>
-    <url>/2020/09/01/mongodb/object/</url>
-    <content><![CDATA[<h2 id="数据库中某个字段是对象数组"><a href="#数据库中某个字段是对象数组" class="headerlink" title="数据库中某个字段是对象数组"></a>数据库中某个字段是对象数组</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"tags_cn"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">"type"</span> : <span class="string">"set"</span>,</span><br><span class="line">			<span class="attr">"id"</span> : <span class="string">"5ce4f86824e43e7550bf7b6c"</span>,</span><br><span class="line">			<span class="attr">"setNumberNew"</span> : <span class="string">"10266"</span>,</span><br><span class="line">			<span class="attr">"setName"</span> : <span class="string">"NASA Apollo 11 Lunar Lander"</span>,</span><br><span class="line">			<span class="attr">"setName_cn"</span> : <span class="string">"阿波罗11号登月舱"</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="查询的时候可以通过下列方法查询"><a href="#查询的时候可以通过下列方法查询" class="headerlink" title="查询的时候可以通过下列方法查询"></a>查询的时候可以通过下列方法查询</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.a_test.find(&#123;</span><br><span class="line">    <span class="string">'tags_cn.0'</span>: &#123; <span class="attr">$exists</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    <span class="string">'tags_cn.type'</span>: <span class="string">'set'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>原创内容，转载请说明出处</p>
-]]></content>
-      <categories>
-        <category>mongodb</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MongoDB 聚合优化</title>
     <url>/2020/09/01/mongodb/optimize/</url>
     <content><![CDATA[<h2 id="聚合管道优化"><a href="#聚合管道优化" class="headerlink" title="聚合管道优化"></a>聚合管道优化</h2><p>1、$group 不使用 索引，想要使用 要借助 $match、$sort</p>
@@ -828,31 +813,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MongoDB 初始化</title>
-    <url>/2020/09/01/mongodb/init/</url>
-    <content><![CDATA[<h2 id="1、-查看数据库"><a href="#1、-查看数据库" class="headerlink" title="1、 查看数据库"></a>1、 查看数据库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">mongo</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">show dbs;</span></span><br><span class="line">admin    0.000GB</span><br><span class="line">config   0.000GB</span><br><span class="line">local    0.000GB</span><br></pre></td></tr></table></figure>
-
-<p>在命令行工具中 输入 mongo 回车 就可以输入 mongo 命令</p>
-<p>show dbs 是查看当前 有哪些数据库</p>
-<a id="more"></a>
-
-<h2 id="2、初始化数据库"><a href="#2、初始化数据库" class="headerlink" title="2、初始化数据库"></a>2、初始化数据库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">use comment</span></span><br><span class="line">switched to db comment</span><br></pre></td></tr></table></figure>
-
-<p>use comment 意思是 使用 comment 这个数据库</p>
-<p>如果没有，就会 新创建 1 个</p>
-<h2 id="3、初始化-用户"><a href="#3、初始化-用户" class="headerlink" title="3、初始化 用户"></a>3、初始化 用户</h2><p>为当前 数据库 创建 1 个 只有 当前数据库的 权限的 用户</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">db.createUser(&#123;</span></span><br><span class="line">    user:"wugs_comment",</span><br><span class="line">    pwd:"123456",</span><br><span class="line">    roles:[&#123;</span><br><span class="line">        role:"readWrite",</span><br><span class="line">        db:"comment"</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Successfully added user: &#123;</span><br><span class="line">	"user" : "wugs_comment",</span><br><span class="line">	"roles" : [</span><br><span class="line">		&#123;</span><br><span class="line">			"role" : "readWrite",</span><br><span class="line">			"db" : "comment"</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>成功创建了 一个 用户名为 wugs_comment 的用户， 拥有 数据库 comment 的读写权限</p>
-<h2 id="4、端口不是-默认的-27017"><a href="#4、端口不是-默认的-27017" class="headerlink" title="4、端口不是 默认的 27017"></a>4、端口不是 默认的 27017</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mongo --port 10001</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>mongodb</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MongoDB　聚合使用 $push 指定字段 转为数组</title>
     <url>/2020/09/01/mongodb/push/</url>
     <content><![CDATA[<h2 id="原测试数据"><a href="#原测试数据" class="headerlink" title="原测试数据:"></a>原测试数据:</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"jack"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"lucy"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"lili"</span>, <span class="attr">"age"</span>: <span class="number">18</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"jame"</span>, <span class="attr">"age"</span>: <span class="number">17</span>, <span class="attr">"sex"</span>: <span class="string">"unknown"</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
@@ -887,33 +847,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Nginx更改配置教程</title>
-    <url>/2020/09/01/nginx/index/</url>
-    <content><![CDATA[<h2 id="1、远程连接ssh"><a href="#1、远程连接ssh" class="headerlink" title="1、远程连接ssh"></a>1、远程连接ssh</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh root@ip</span><br></pre></td></tr></table></figure>
-
-<h2 id="2、查看有没有nginx"><a href="#2、查看有没有nginx" class="headerlink" title="2、查看有没有nginx"></a>2、查看有没有nginx</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure>
-
-<h2 id="3、查看nginx有没有安装"><a href="#3、查看nginx有没有安装" class="headerlink" title="3、查看nginx有没有安装"></a>3、查看nginx有没有安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure>
-<h2 id="4、通过ip试下能不能访问nginx"><a href="#4、通过ip试下能不能访问nginx" class="headerlink" title="4、通过ip试下能不能访问nginx"></a>4、通过ip试下能不能访问nginx</h2><a id="more"></a>
-
-<h2 id="5、检查nginx配置是否正确"><a href="#5、检查nginx配置是否正确" class="headerlink" title="5、检查nginx配置是否正确"></a>5、检查nginx配置是否正确</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
-
-<h2 id="6、去目录-etc-nginx-conf-d"><a href="#6、去目录-etc-nginx-conf-d" class="headerlink" title="6、去目录 /etc/nginx/conf.d"></a>6、去目录 /etc/nginx/conf.d</h2><p>如果目录内为空，这创建web.conf</p>
-<p>配置web.conf</p>
-<h2 id="7、配置好后，检查配置是否正确"><a href="#7、配置好后，检查配置是否正确" class="headerlink" title="7、配置好后，检查配置是否正确"></a>7、配置好后，检查配置是否正确</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
-
-<h2 id="8、重启nginx"><a href="#8、重启nginx" class="headerlink" title="8、重启nginx"></a>8、重启nginx</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
-
-<p>再试试能否访问</p>
-]]></content>
-      <categories>
-        <category>nginx</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MongoDB更新数据</title>
     <url>/2020/09/01/mongodb/update/</url>
     <content><![CDATA[<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.collection.update(</span><br><span class="line">   &lt;query&gt;,</span><br><span class="line">   &lt;update&gt;,</span><br><span class="line">   &#123;</span><br><span class="line">     upsert: <span class="xml"><span class="tag">&lt;<span class="name">boolean</span>&gt;</span>,</span></span><br><span class="line">     multi: &lt;boolean&gt;,</span><br><span class="line">     writeConcern: &lt;document&gt;</span><br><span class="line">   &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
@@ -943,6 +876,60 @@
       </categories>
       <tags>
         <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信小程序拆包实战</title>
+    <url>/2020/02/14/mini-app/split/</url>
+    <content><![CDATA[<p>众所周知微信小程序本身打包体积有 2M 的限制，但是业务也多，体积也就越大。</p>
+<p>虽然会有各种瘦身的方法，但是始终不能治本。</p>
+<p>幸好微信官方提供了<code>小程序分包</code>的方法，主包和分包每个不能超过 2M，加一起不能超过 8M（截止发博客前）.</p>
+<a id="more"></a>
+
+<p>具体方法：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"pages"</span>: [</span><br><span class="line">        <span class="string">"pages/newIndex/index"</span>,</span><br><span class="line">        <span class="string">"pages/news/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/my"</span>,</span><br><span class="line">        <span class="string">"pages/index/search/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchMore/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchParts/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchMinifigs/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchClassify/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/bannerDetail/bannerDetail"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/setDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/partMinifigs/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/partMinifigsDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/bigPartsDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/shop/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/myHistoryCollect/index"</span>,</span><br><span class="line">        <span class="string">"pages/login/telphone/telphone"</span>,</span><br><span class="line">        <span class="string">"pages/picture/detail/index"</span>,</span><br><span class="line">        <span class="string">"pages/activity/bill/index/index"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上是旧的版本，可以看到页面非常多，所有页面都是<code>pages</code>下面，最终打包出来的体积也非常大。</p>
+<p>经过优化，我们把非入口页面 移到 单独目录<code>packageSub</code>下</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"pages"</span>: [</span><br><span class="line">        <span class="string">"pages/newIndex/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/my"</span>,</span><br><span class="line">        <span class="string">"pages/login/login"</span>,</span><br><span class="line">        <span class="string">"pages/login/telphone/telphone"</span>,</span><br><span class="line">        <span class="string">"pages/activity/bill/index/index"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"subPackages"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"root"</span>: <span class="string">"packageSub"</span>,</span><br><span class="line">            <span class="attr">"pages"</span>: [</span><br><span class="line">                <span class="string">"shop/index"</span>,</span><br><span class="line">                <span class="string">"shop/shopDetail/index"</span>,</span><br><span class="line">                <span class="string">"shop/shopCar/index"</span>,</span><br><span class="line">                <span class="string">"shop/payPage/index"</span>,</span><br><span class="line">                <span class="string">"shop/remark/index"</span>,</span><br><span class="line">                <span class="string">"shop/rate/index"</span>,</span><br><span class="line">                <span class="string">"community/index"</span>,</span><br><span class="line">                <span class="string">"community/sendCommunity/index"</span>,</span><br><span class="line">                <span class="string">"community/sendComment/index"</span>,</span><br><span class="line">                <span class="string">"community/detail/index"</span>,</span><br><span class="line">                <span class="string">"my/myHistoryCollect/index"</span>,</span><br><span class="line">                <span class="string">"news/index"</span>,</span><br><span class="line">                <span class="string">"offline/offline"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>文件目录页面变化:</p>
+<p><img data-src="/images/old.png" alt="旧的"></p>
+<p><img data-src="/images/new.png" alt="新的"></p>
+<p>最后最重要的问题也是最麻烦的，就是 手动修改 <code>wx.navigateTo</code> 方法，推荐改成绝对路径，如果改动太大，用相对也是可以的。值得注意的是，pages 下引用 packageSub 下页面，都要修改路径.</p>
+]]></content>
+      <categories>
+        <category>mini-app</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nginx更改配置教程</title>
+    <url>/2020/09/01/nginx/index/</url>
+    <content><![CDATA[<h2 id="1、远程连接ssh"><a href="#1、远程连接ssh" class="headerlink" title="1、远程连接ssh"></a>1、远程连接ssh</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh root@ip</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、查看有没有nginx"><a href="#2、查看有没有nginx" class="headerlink" title="2、查看有没有nginx"></a>2、查看有没有nginx</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、查看nginx有没有安装"><a href="#3、查看nginx有没有安装" class="headerlink" title="3、查看nginx有没有安装"></a>3、查看nginx有没有安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure>
+<h2 id="4、通过ip试下能不能访问nginx"><a href="#4、通过ip试下能不能访问nginx" class="headerlink" title="4、通过ip试下能不能访问nginx"></a>4、通过ip试下能不能访问nginx</h2><a id="more"></a>
+
+<h2 id="5、检查nginx配置是否正确"><a href="#5、检查nginx配置是否正确" class="headerlink" title="5、检查nginx配置是否正确"></a>5、检查nginx配置是否正确</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
+
+<h2 id="6、去目录-etc-nginx-conf-d"><a href="#6、去目录-etc-nginx-conf-d" class="headerlink" title="6、去目录 /etc/nginx/conf.d"></a>6、去目录 /etc/nginx/conf.d</h2><p>如果目录内为空，这创建web.conf</p>
+<p>配置web.conf</p>
+<h2 id="7、配置好后，检查配置是否正确"><a href="#7、配置好后，检查配置是否正确" class="headerlink" title="7、配置好后，检查配置是否正确"></a>7、配置好后，检查配置是否正确</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
+
+<h2 id="8、重启nginx"><a href="#8、重启nginx" class="headerlink" title="8、重启nginx"></a>8、重启nginx</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<p>再试试能否访问</p>
+]]></content>
+      <categories>
+        <category>nginx</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -988,36 +975,13 @@
       </tags>
   </entry>
   <entry>
-    <title>Redis操作文档</title>
-    <url>/2020/09/01/redis/index/</url>
-    <content><![CDATA[<p>redis 数据类型讲解 以及 适合场景<span class="exturl" data-url="aHR0cDovL3d3dy4zNjBkb2MuY29tL2NvbnRlbnQvMTUvMDMyNC8xNi81MDU0MTg4XzQ1NzcwMzQxNC5zaHRtbA==" title="http://www.360doc.com/content/15/0324/16/5054188_457703414.shtml">http://www.360doc.com/content/15/0324/16/5054188_457703414.shtml<i class="fa fa-external-link"></i></span></p>
-<h2 id="1-存储结构"><a href="#1-存储结构" class="headerlink" title="1 存储结构"></a>1 存储结构</h2><p>Redis 是以字典的结构存储数据的, 通过键值对的方式进行存储(key=&gt;value) , 在储存类型中有5种 (1)字符串类型, (2)散列类型, (3)列表类型, (4)集合类型, (5)有序集合类型</p>
-<h2 id="2-内存存储持久化"><a href="#2-内存存储持久化" class="headerlink" title="2 内存存储持久化"></a>2 内存存储持久化</h2><p>Redis 可以在一秒内读写超过10万个键值, 并且Redis 可以为每个键值设置生存时间(生存时间到后键会被自动删除)</p>
-<a id="more"></a>
-
-<h2 id="3-功能"><a href="#3-功能" class="headerlink" title="3 功能"></a>3 功能</h2><p>Memcached 支持多线程, Redis是单线程模式, Redis支持服务器集群, Redis 可以限定数据占用最大的内存空间(如达到空间, 则可按照规则淘汰不需要的键)<br>Redis的列表行键可用来实现队列, 并且支持阻塞式读取 <code>目前多数公司对Redis的应用以缓存和队列为主 Redis 支持事物 , 不支持回滚</code></p>
-<h2 id="4-Redis-配置"><a href="#4-Redis-配置" class="headerlink" title="4 Redis 配置"></a>4 Redis 配置</h2><p>Redis</p>
-<p>(1)可以通过配置文件来配置/path/to/redis.conf是否开启持久化, 日志级别等.</p>
-<p>(2)也可通过配置文件的模板来配置redis.conf</p>
-<p>(3)还可通过 CONFIG SET命令进行修改配置</p>
-<h2 id="5-多数据库"><a href="#5-多数据库" class="headerlink" title="5 多数据库"></a>5 多数据库</h2><p>Redis 是以字典结构的存储服务器, redis默认支持16个数据库 从0开始递增 可以通过SELECT 1 来切换数据库, Redis数据库不支持自定义命名,数据库以编号命名(从0递增) Redis 不支持为每个数据库设置不同的访问密码</p>
-<h2 id="6-Redis-支持事物"><a href="#6-Redis-支持事物" class="headerlink" title="6 Redis 支持事物"></a>6 Redis 支持事物</h2><h2 id="7-Redis-类型"><a href="#7-Redis-类型" class="headerlink" title="7 Redis 类型"></a>7 Redis 类型</h2><h3 id="1-字符串类型-命令"><a href="#1-字符串类型-命令" class="headerlink" title="1, 字符串类型 命令 :"></a>1, 字符串类型 命令 :</h3><p>赋值: SET chace_name xzq<br>取值: GET chace_name (return xzq)<br>递增数字: INCR chace_name (return 1 , 如当前值为整数,可以会自动递增 再次输入 INCR chace_name return = 2)<br>增加指定的整数 : INCRBY chace_name 2 (chace_name = 1 return 3 )<br>递减数字 : DECR chace_name (chace_name = 2 return = 1 )<br>减少指定的整数 : DECRBY chace_name 2 (chace_name = 3 reutrn 1)<br>增加指定的浮点数 : INCRBYFLOAT chace_name 2.7<br>增加指定的科学计数法: INCRBYFLOAT chace_name 5E+4<br>向尾部追加值 : APPEND chace_name “ word!” (chace_name = hello return = “hello word!”)<br>获取字符串长度 : STRLEN chace_name (一个中文字符 占三个字节)<br>同时设置多个键值 : MSET key1 a key2 b key3 3<br>同时获取多个值 : MGET key1 key2 ( return = {2,3} )<br>位操作 : 左移右移 (由于本人对左移 右移 迷糊 请参考相关文档)<br>总结: 字符串类型如果存储文章类信息 需要 先将文章序列化 之后在进行存储 , 存储比较简单.可以用来存储文章类信息(缺点: 如果我只想取出文章标题 , 那么需要将整个字符串取出 然后进行反序列化 )</p>
-<h3 id="2-散列类型-命令"><a href="#2-散列类型-命令" class="headerlink" title="2, 散列类型 命令 :"></a>2, 散列类型 命令 :</h3><p>赋值 : HSET chace_name zhangsan 20<br>赋值 : HSET chace_name lisi 30<br>取值 : HGET chace_name zhangsan ( return = 20 )<br>同时设置多个值 : HMSET chace_name key1 v1 key2 v2<br>同时获取多个值 : HMGET chace_name key1 key2 ( return = {v1, v2} )<br>获取所有键值 : HGETALL chace_name {return = {key1:v1, key2: v2} 返回值为对象 }<br>判断字段是否存在 : HEXISTS chace_name key1 (存在return = 1 , 不存在 return=0 )<br>当字段不存在时赋值 : HSETNX chace_name key3 v3 (如: key3不存在 则赋值 , 如存在则不变)<br>增加数字 : CHINCRBY chace_name key1 15 (key1 = 10 return 25 返回结果为增长后的结果)<br>删除一个或多个字段 : HDEL chace_name key1 (return = 1 当键存在删除成功则返回值为1 当键不存在则返回值为0)<br>只获取字段名 : HKEYS chace_name ( return = {key1, key2} )<br>只获取字段值 : HVALS chace_name ( return = {v1, v2 } )</p>
-<p>总结 : 我个人认为 可以将散列类型当做一维数组 进行操作</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$chace_name = array(</span><br><span class="line">    title =&gt; '文章1',</span><br><span class="line">    time =&gt; '20161117',</span><br><span class="line">    content =&gt; '内容.....',</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-列表类型-命令"><a href="#3-列表类型-命令" class="headerlink" title="3, 列表类型 命令 :"></a>3, 列表类型 命令 :</h3><p>向列表左侧增加元素 : LPUSH chace_name v1<br>向列表右侧增加元素 : RPUSH chace_name v1<br>列表左边弹出一个元素 : LPOP chace_name<br>列表左边弹出一个元素 : RPOP chace_name<br>获取列表中元素的个数 : LLEN chace_name ( 类似于 select count(*) from table_name )<br>获得列表片段 : LRANGE chace_name 0 100 (return {v1, v2})(如果 参数100 大于实际范围 那么将会获取都最右边的元素)<br>删除列表中指定的值 : LREM chace_name -1 2 (删除从右边开始第一个值为2的元素)<br>获取列表指定索引的值 : LINDEX chace_name 0 (第0个索引值 , -1 最后一个索引值)<br>索引赋值 : LSET chace_name 1 lisi (为索引为1的 赋值为 lisi)<br>删除指定索引范围之外的元素 : LTRIM chace_name 0 2 (与 LRANGE 命令相似)<br>LITRIM 此命令通常与LPUSH 联合使用 : 应用场景: 如 我只想保留最新的100条记录 LPUSH chace_name $log1 , LTRIM chace_name 0 99<br>向列表中差入元素 : LINSERT chace_name AFTER 2 zhangsan (会根据 第二个参数决定 是差入到 该元素的前边或后边 , AFTER / BEFORE )<br>将元素从一个列表转入到另一个列表 : RPOPLPUSH chace_name chace_name2 (此命令会从 name1 最右边弹出一个 加入到name2 的左边)</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$chace_name = array(</span><br><span class="line">    0 =&gt; zhangsan</span><br><span class="line">    1 =&gt; lisi</span><br><span class="line">    2 =&gt; wangwu</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-无序集合类型-命令"><a href="#4-无序集合类型-命令" class="headerlink" title="4, 无序集合类型, 命令:"></a>4, 无序集合类型, 命令:</h3><p>应用场景: 目前观象台应用到权限列表中,<br>赋值: SADD chace_name string(a b) (如果 a 存在 那么将追加b)<br>删除: SREM chace_name string(a b c)<br>取值: SMEMBERS chace_name (获取集合中所有的元素)<br>验证: SISMEMBERS chace_name (判断一个元素是否在集合中, 是返回1, 否返回0 )<br>集合间运算<br>两个参数取差集: SDIFF setA setB 此命令用于A-B 的差集 以A为主 A{1,2,3} B{2,3,4} A-B = {1}<br>多个参数取差集: SDIFF setA setB setC 此命令支持 多个参数取差集 (先计算A-B 在用结果 与C 取差集)<br>两个参数取交集: SINTER setA setB 此命令用于A 与 B的交集<br>多个参数取交集: SINTER setA setB setC 此命令支持多个参数取交集<br>两个参数取并集: SUNION setA setB 代表所有属于A 或属于B的元素构成的集合 A{1,2,3} B{2,3,4} = {1,2,3,4}<br>多个参数取并集: SUNION setA setB setC 此命令支持多个参数取并集<br>获取集合中元素的个数: SCARD chace_name (return 个数)<br>获取集合中的随机元素: SRANDMEMBER chace_name<br>随机弹出一个元素: SPOP chace_name<br>从列表左边弹出一个元素: LPOP chace_name<br>获取集合中指定个数随机元素: SRANDMEMBER chace_name 5(第二个参数为个数,正数(获取不重复的值,如个数大于元素总个数将获取所有 , -5(负数将会获取指定个数的元素, 会出现重复元素)))<br>总结: SADD命令 用来向集合增加一个或多个元素, 如果键不存在 则自动创建. (在一个集合中不能有相同的元素)<br>元素在redis 中存储格式为一维数组</p>
-<h3 id="5-有序集合-命令"><a href="#5-有序集合-命令" class="headerlink" title="5, 有序集合, 命令 :"></a>5, 有序集合, 命令 :</h3><p>应用场景: 适用于文章访问量, 考试分数, 等等. 存储格式array(lisi,80,zs,90,xzq,100)<br>赋值: ZADD chace_name 80 lisi 90 zs 100 xzq (分数支持正数, 科学技术法, 双精度浮点数 17E+307 xzq , 10.8 xzq)<br>修改: ZADD chace_name 200 xzq<br>取值: ZSCORE chace_name xzq (return ‘200’ )<br>取值并携带分数: ZRANGE chace_name 0 -1 WITHSCORES (在末尾增加 WINTHSCORES 参数) (return {lisi:80 , zs:90 , xzq:100})<br>取值并携带分数: ZREVRANGE chace_name 0 -1 WITHSCORES (return 结果 为从大到小返回结果的)<br>获取分数在某个范围元素列表 : ZRANGE chace_name 50 80 (return {zhangsan,lisi}) (索引是从0开始, -1从后向前查找)<br>跳跃性取值: ZRANGEBYSCORE chace_name 50 +inf limit 1 3 (获取分 数高于50分 并且从第二个人开始的, 从小到大开始排序)<br>增加元素分数: ZINCRBY chace_name 20 xzq (return 120 返回结果为 更改后的分数) (个人认为适用于点击量,访问量等)<br>减少元素分数: ZINCRBY chace_name -10 xzq (return 110 返回结果为更改后的分数)<br>其他命令:<br>获取有序集合中的个数: ZCARD chace_name<br>获取指定分数范围的元素个数 : ZCOUNT chace_name 80 100<br>删除一个或多个元素 :<br>按照排名范围删除元素 :<br>按照分数范围删除元素 :<br>计算有序集合的交集 :<br>总结 : 列表不能简单的条整某个元素的位置,而有序集合要比列表烈性更耗内存, 有序集合类型算是redis中最高级的类型了,有序集合为每一个元素都关联了一个分数, 虽然集合中每个元素都是不同的,但是他们的分数 却可以相同. 有序集合类型在某些方面与列表类型有些相似(具体区别查看相关文档)</p>
-<p>flushall ——&gt; 清空整个 Redis 服务器的数据(删除所有数据库的所有 key )<br>flushdb ——&gt; 清空当前数据库中的所有 key</p>
-<h3 id="6-Redis-任务队列"><a href="#6-Redis-任务队列" class="headerlink" title="6, Redis 任务队列"></a>6, Redis 任务队列</h3><h3 id="1-什么是任务队列"><a href="#1-什么是任务队列" class="headerlink" title="1 , 什么是任务队列 :"></a>1 , 什么是任务队列 :</h3><p>超市买东西 -&gt; 排队 -&gt; 结账</p>
-<h3 id="2-使用Redis-实现任务队列"><a href="#2-使用Redis-实现任务队列" class="headerlink" title="2 , 使用Redis 实现任务队列"></a>2 , 使用Redis 实现任务队列</h3><p>实现简单的任务队列 : 可使用 LPUSH 和 RPOP</p>
-<p>使用 python 实现任务队列</p>
-<h2 id="连接远程redis"><a href="#连接远程redis" class="headerlink" title="连接远程redis"></a>连接远程redis</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">redis-cli -h 127.0.0.1 -p 6379 -a 123456</span><br></pre></td></tr></table></figure>]]></content>
+    <title>int类型bug解决</title>
+    <url>/2020/09/01/mysql/index/</url>
+    <content><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>int类型 存入11位数字会变成2147483647</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>改成bigint类型</p>
+]]></content>
       <categories>
-        <category>redis</category>
+        <category>mysql</category>
       </categories>
       <tags>
         <tag>数据库</tag>
@@ -1065,6 +1029,42 @@
       </categories>
       <tags>
         <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis操作文档</title>
+    <url>/2020/09/01/redis/index/</url>
+    <content><![CDATA[<p>redis 数据类型讲解 以及 适合场景<span class="exturl" data-url="aHR0cDovL3d3dy4zNjBkb2MuY29tL2NvbnRlbnQvMTUvMDMyNC8xNi81MDU0MTg4XzQ1NzcwMzQxNC5zaHRtbA==" title="http://www.360doc.com/content/15/0324/16/5054188_457703414.shtml">http://www.360doc.com/content/15/0324/16/5054188_457703414.shtml<i class="fa fa-external-link"></i></span></p>
+<h2 id="1-存储结构"><a href="#1-存储结构" class="headerlink" title="1 存储结构"></a>1 存储结构</h2><p>Redis 是以字典的结构存储数据的, 通过键值对的方式进行存储(key=&gt;value) , 在储存类型中有5种 (1)字符串类型, (2)散列类型, (3)列表类型, (4)集合类型, (5)有序集合类型</p>
+<h2 id="2-内存存储持久化"><a href="#2-内存存储持久化" class="headerlink" title="2 内存存储持久化"></a>2 内存存储持久化</h2><p>Redis 可以在一秒内读写超过10万个键值, 并且Redis 可以为每个键值设置生存时间(生存时间到后键会被自动删除)</p>
+<a id="more"></a>
+
+<h2 id="3-功能"><a href="#3-功能" class="headerlink" title="3 功能"></a>3 功能</h2><p>Memcached 支持多线程, Redis是单线程模式, Redis支持服务器集群, Redis 可以限定数据占用最大的内存空间(如达到空间, 则可按照规则淘汰不需要的键)<br>Redis的列表行键可用来实现队列, 并且支持阻塞式读取 <code>目前多数公司对Redis的应用以缓存和队列为主 Redis 支持事物 , 不支持回滚</code></p>
+<h2 id="4-Redis-配置"><a href="#4-Redis-配置" class="headerlink" title="4 Redis 配置"></a>4 Redis 配置</h2><p>Redis</p>
+<p>(1)可以通过配置文件来配置/path/to/redis.conf是否开启持久化, 日志级别等.</p>
+<p>(2)也可通过配置文件的模板来配置redis.conf</p>
+<p>(3)还可通过 CONFIG SET命令进行修改配置</p>
+<h2 id="5-多数据库"><a href="#5-多数据库" class="headerlink" title="5 多数据库"></a>5 多数据库</h2><p>Redis 是以字典结构的存储服务器, redis默认支持16个数据库 从0开始递增 可以通过SELECT 1 来切换数据库, Redis数据库不支持自定义命名,数据库以编号命名(从0递增) Redis 不支持为每个数据库设置不同的访问密码</p>
+<h2 id="6-Redis-支持事物"><a href="#6-Redis-支持事物" class="headerlink" title="6 Redis 支持事物"></a>6 Redis 支持事物</h2><h2 id="7-Redis-类型"><a href="#7-Redis-类型" class="headerlink" title="7 Redis 类型"></a>7 Redis 类型</h2><h3 id="1-字符串类型-命令"><a href="#1-字符串类型-命令" class="headerlink" title="1, 字符串类型 命令 :"></a>1, 字符串类型 命令 :</h3><p>赋值: SET chace_name xzq<br>取值: GET chace_name (return xzq)<br>递增数字: INCR chace_name (return 1 , 如当前值为整数,可以会自动递增 再次输入 INCR chace_name return = 2)<br>增加指定的整数 : INCRBY chace_name 2 (chace_name = 1 return 3 )<br>递减数字 : DECR chace_name (chace_name = 2 return = 1 )<br>减少指定的整数 : DECRBY chace_name 2 (chace_name = 3 reutrn 1)<br>增加指定的浮点数 : INCRBYFLOAT chace_name 2.7<br>增加指定的科学计数法: INCRBYFLOAT chace_name 5E+4<br>向尾部追加值 : APPEND chace_name “ word!” (chace_name = hello return = “hello word!”)<br>获取字符串长度 : STRLEN chace_name (一个中文字符 占三个字节)<br>同时设置多个键值 : MSET key1 a key2 b key3 3<br>同时获取多个值 : MGET key1 key2 ( return = {2,3} )<br>位操作 : 左移右移 (由于本人对左移 右移 迷糊 请参考相关文档)<br>总结: 字符串类型如果存储文章类信息 需要 先将文章序列化 之后在进行存储 , 存储比较简单.可以用来存储文章类信息(缺点: 如果我只想取出文章标题 , 那么需要将整个字符串取出 然后进行反序列化 )</p>
+<h3 id="2-散列类型-命令"><a href="#2-散列类型-命令" class="headerlink" title="2, 散列类型 命令 :"></a>2, 散列类型 命令 :</h3><p>赋值 : HSET chace_name zhangsan 20<br>赋值 : HSET chace_name lisi 30<br>取值 : HGET chace_name zhangsan ( return = 20 )<br>同时设置多个值 : HMSET chace_name key1 v1 key2 v2<br>同时获取多个值 : HMGET chace_name key1 key2 ( return = {v1, v2} )<br>获取所有键值 : HGETALL chace_name {return = {key1:v1, key2: v2} 返回值为对象 }<br>判断字段是否存在 : HEXISTS chace_name key1 (存在return = 1 , 不存在 return=0 )<br>当字段不存在时赋值 : HSETNX chace_name key3 v3 (如: key3不存在 则赋值 , 如存在则不变)<br>增加数字 : CHINCRBY chace_name key1 15 (key1 = 10 return 25 返回结果为增长后的结果)<br>删除一个或多个字段 : HDEL chace_name key1 (return = 1 当键存在删除成功则返回值为1 当键不存在则返回值为0)<br>只获取字段名 : HKEYS chace_name ( return = {key1, key2} )<br>只获取字段值 : HVALS chace_name ( return = {v1, v2 } )</p>
+<p>总结 : 我个人认为 可以将散列类型当做一维数组 进行操作</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$chace_name = array(</span><br><span class="line">    title =&gt; '文章1',</span><br><span class="line">    time =&gt; '20161117',</span><br><span class="line">    content =&gt; '内容.....',</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-列表类型-命令"><a href="#3-列表类型-命令" class="headerlink" title="3, 列表类型 命令 :"></a>3, 列表类型 命令 :</h3><p>向列表左侧增加元素 : LPUSH chace_name v1<br>向列表右侧增加元素 : RPUSH chace_name v1<br>列表左边弹出一个元素 : LPOP chace_name<br>列表左边弹出一个元素 : RPOP chace_name<br>获取列表中元素的个数 : LLEN chace_name ( 类似于 select count(*) from table_name )<br>获得列表片段 : LRANGE chace_name 0 100 (return {v1, v2})(如果 参数100 大于实际范围 那么将会获取都最右边的元素)<br>删除列表中指定的值 : LREM chace_name -1 2 (删除从右边开始第一个值为2的元素)<br>获取列表指定索引的值 : LINDEX chace_name 0 (第0个索引值 , -1 最后一个索引值)<br>索引赋值 : LSET chace_name 1 lisi (为索引为1的 赋值为 lisi)<br>删除指定索引范围之外的元素 : LTRIM chace_name 0 2 (与 LRANGE 命令相似)<br>LITRIM 此命令通常与LPUSH 联合使用 : 应用场景: 如 我只想保留最新的100条记录 LPUSH chace_name $log1 , LTRIM chace_name 0 99<br>向列表中差入元素 : LINSERT chace_name AFTER 2 zhangsan (会根据 第二个参数决定 是差入到 该元素的前边或后边 , AFTER / BEFORE )<br>将元素从一个列表转入到另一个列表 : RPOPLPUSH chace_name chace_name2 (此命令会从 name1 最右边弹出一个 加入到name2 的左边)</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$chace_name = array(</span><br><span class="line">    0 =&gt; zhangsan</span><br><span class="line">    1 =&gt; lisi</span><br><span class="line">    2 =&gt; wangwu</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-无序集合类型-命令"><a href="#4-无序集合类型-命令" class="headerlink" title="4, 无序集合类型, 命令:"></a>4, 无序集合类型, 命令:</h3><p>应用场景: 目前观象台应用到权限列表中,<br>赋值: SADD chace_name string(a b) (如果 a 存在 那么将追加b)<br>删除: SREM chace_name string(a b c)<br>取值: SMEMBERS chace_name (获取集合中所有的元素)<br>验证: SISMEMBERS chace_name (判断一个元素是否在集合中, 是返回1, 否返回0 )<br>集合间运算<br>两个参数取差集: SDIFF setA setB 此命令用于A-B 的差集 以A为主 A{1,2,3} B{2,3,4} A-B = {1}<br>多个参数取差集: SDIFF setA setB setC 此命令支持 多个参数取差集 (先计算A-B 在用结果 与C 取差集)<br>两个参数取交集: SINTER setA setB 此命令用于A 与 B的交集<br>多个参数取交集: SINTER setA setB setC 此命令支持多个参数取交集<br>两个参数取并集: SUNION setA setB 代表所有属于A 或属于B的元素构成的集合 A{1,2,3} B{2,3,4} = {1,2,3,4}<br>多个参数取并集: SUNION setA setB setC 此命令支持多个参数取并集<br>获取集合中元素的个数: SCARD chace_name (return 个数)<br>获取集合中的随机元素: SRANDMEMBER chace_name<br>随机弹出一个元素: SPOP chace_name<br>从列表左边弹出一个元素: LPOP chace_name<br>获取集合中指定个数随机元素: SRANDMEMBER chace_name 5(第二个参数为个数,正数(获取不重复的值,如个数大于元素总个数将获取所有 , -5(负数将会获取指定个数的元素, 会出现重复元素)))<br>总结: SADD命令 用来向集合增加一个或多个元素, 如果键不存在 则自动创建. (在一个集合中不能有相同的元素)<br>元素在redis 中存储格式为一维数组</p>
+<h3 id="5-有序集合-命令"><a href="#5-有序集合-命令" class="headerlink" title="5, 有序集合, 命令 :"></a>5, 有序集合, 命令 :</h3><p>应用场景: 适用于文章访问量, 考试分数, 等等. 存储格式array(lisi,80,zs,90,xzq,100)<br>赋值: ZADD chace_name 80 lisi 90 zs 100 xzq (分数支持正数, 科学技术法, 双精度浮点数 17E+307 xzq , 10.8 xzq)<br>修改: ZADD chace_name 200 xzq<br>取值: ZSCORE chace_name xzq (return ‘200’ )<br>取值并携带分数: ZRANGE chace_name 0 -1 WITHSCORES (在末尾增加 WINTHSCORES 参数) (return {lisi:80 , zs:90 , xzq:100})<br>取值并携带分数: ZREVRANGE chace_name 0 -1 WITHSCORES (return 结果 为从大到小返回结果的)<br>获取分数在某个范围元素列表 : ZRANGE chace_name 50 80 (return {zhangsan,lisi}) (索引是从0开始, -1从后向前查找)<br>跳跃性取值: ZRANGEBYSCORE chace_name 50 +inf limit 1 3 (获取分 数高于50分 并且从第二个人开始的, 从小到大开始排序)<br>增加元素分数: ZINCRBY chace_name 20 xzq (return 120 返回结果为 更改后的分数) (个人认为适用于点击量,访问量等)<br>减少元素分数: ZINCRBY chace_name -10 xzq (return 110 返回结果为更改后的分数)<br>其他命令:<br>获取有序集合中的个数: ZCARD chace_name<br>获取指定分数范围的元素个数 : ZCOUNT chace_name 80 100<br>删除一个或多个元素 :<br>按照排名范围删除元素 :<br>按照分数范围删除元素 :<br>计算有序集合的交集 :<br>总结 : 列表不能简单的条整某个元素的位置,而有序集合要比列表烈性更耗内存, 有序集合类型算是redis中最高级的类型了,有序集合为每一个元素都关联了一个分数, 虽然集合中每个元素都是不同的,但是他们的分数 却可以相同. 有序集合类型在某些方面与列表类型有些相似(具体区别查看相关文档)</p>
+<p>flushall ——&gt; 清空整个 Redis 服务器的数据(删除所有数据库的所有 key )<br>flushdb ——&gt; 清空当前数据库中的所有 key</p>
+<h3 id="6-Redis-任务队列"><a href="#6-Redis-任务队列" class="headerlink" title="6, Redis 任务队列"></a>6, Redis 任务队列</h3><h3 id="1-什么是任务队列"><a href="#1-什么是任务队列" class="headerlink" title="1 , 什么是任务队列 :"></a>1 , 什么是任务队列 :</h3><p>超市买东西 -&gt; 排队 -&gt; 结账</p>
+<h3 id="2-使用Redis-实现任务队列"><a href="#2-使用Redis-实现任务队列" class="headerlink" title="2 , 使用Redis 实现任务队列"></a>2 , 使用Redis 实现任务队列</h3><p>实现简单的任务队列 : 可使用 LPUSH 和 RPOP</p>
+<p>使用 python 实现任务队列</p>
+<h2 id="连接远程redis"><a href="#连接远程redis" class="headerlink" title="连接远程redis"></a>连接远程redis</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">redis-cli -h 127.0.0.1 -p 6379 -a 123456</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>

@@ -49,11 +49,11 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/mongodb/join/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/mongodb/object/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/mongodb/object/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/mongodb/join/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -77,19 +77,11 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/02/14/mini-app/split/</loc>
-    <lastmod>2020-09-01</lastmod>
-  </url>
-  <url>
     <loc>https://www.wulisensen.com/2020/03/21/mongodb/collation/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
     <loc>https://www.wulisensen.com/2020/09/01/mongodb/example/</loc>
-    <lastmod>2020-09-01</lastmod>
-  </url>
-  <url>
-    <loc>https://www.wulisensen.com/2020/09/01/mongodb/first/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -101,7 +93,11 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/gulp/index/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/mongodb/first/</loc>
+    <lastmod>2020-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.wulisensen.com/2020/02/14/mini-app/split/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -110,6 +106,10 @@
   </url>
   <url>
     <loc>https://www.wulisensen.com/2020/09/01/git/update/</loc>
+    <lastmod>2020-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.wulisensen.com/2020/09/01/gulp/index/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -129,11 +129,11 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/git/pull/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/git/index/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/git/index/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/git/pull/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
@@ -145,11 +145,11 @@
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/git/status/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/git/tag/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>
-    <loc>https://www.wulisensen.com/2020/09/01/git/tag/</loc>
+    <loc>https://www.wulisensen.com/2020/09/01/git/status/</loc>
     <lastmod>2020-09-01</lastmod>
   </url>
   <url>

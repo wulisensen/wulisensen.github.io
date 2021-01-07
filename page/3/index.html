@@ -196,107 +196,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/gulp/index/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpg">
-      <meta itemprop="name" content="WuLiSenSen">
-      <meta itemprop="description" content="技术改变世界">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WuLiSenSen">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/01/gulp/index/" class="post-title-link" itemprop="url">Gulp实现项目一键部署</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-01 20:18:05" itemprop="dateCreated datePublished" datetime="2020-09-01T20:18:05+08:00">2020-09-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/gulp/" itemprop="url" rel="index">
-                    <span itemprop="name">gulp</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/09/01/gulp/index/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/gulp/index/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1、安装gulp和gulp-sftp"><a href="#1、安装gulp和gulp-sftp" class="headerlink" title="1、安装gulp和gulp-sftp"></a>1、安装gulp和gulp-sftp</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm i gulp gulp-sftp --save-dev</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2、在项目根目录新建gulp配置文件gulpfile-js"><a href="#2、在项目根目录新建gulp配置文件gulpfile-js" class="headerlink" title="2、在项目根目录新建gulp配置文件gulpfile.js"></a>2、在项目根目录新建gulp配置文件<code>gulpfile.js</code></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> sftp = <span class="built_in">require</span>(<span class="string">'gulp-sftp'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sftpOption = &#123;</span><br><span class="line">host: <span class="string">'120.77.221.25'</span>, <span class="comment">// FTP主机地址</span></span><br><span class="line">auth: <span class="string">'FTPServer1'</span>, <span class="comment">// 下一步创建的 .ftppass 文件里面对应的授权方式</span></span><br><span class="line">remotePath: <span class="string">'/data/www/xxxx.com/'</span>, <span class="comment">// FTP需要上传的位置</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'upload'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'dist/**'</span>)</span><br><span class="line">        .pipe(sftp(sftpOption));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="3、创建gulp-sftp配置文件-ftppass"><a href="#3、创建gulp-sftp配置文件-ftppass" class="headerlink" title="3、创建gulp-sftp配置文件.ftppass"></a>3、创建gulp-sftp配置文件.ftppass</h2><blockquote>
-<p>为了保证ftp账号安全，将FTP账号密码配置放在单独的文件中，并添加至版本控制系统的禁用列表中</p>
-</blockquote>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"FTPServer1"</span>: &#123;</span><br><span class="line">        <span class="attr">"user"</span>: <span class="string">"root"</span>,</span><br><span class="line">        <span class="attr">"pass"</span>: <span class="string">"xxxxxxx"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4、至此我们可以使用gulp来执行定义的上传任务了"><a href="#4、至此我们可以使用gulp来执行定义的上传任务了" class="headerlink" title="4、至此我们可以使用gulp来执行定义的上传任务了"></a>4、至此我们可以使用gulp来执行定义的上传任务了</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> gulp upload</span></span><br></pre></td></tr></table></figure>
-
-<p>执行命令后我们项目的dist目录下的所有文件都上传到服务器/data/www/xxxx.com/目录下了</p>
-<h2 id="5、创建命令"><a href="#5、创建命令" class="headerlink" title="5、创建命令"></a>5、创建命令</h2><p>为了方便我们构建完成后自动上传可以<code>package.json</code>中定义一个命令</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"upload"</span>: <span class="string">"gulp upload"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这样我们就可以直接执行<code>npm run upload</code>命令来编译并上传我们的应用了</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm run upload</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="6、参考链接"><a href="#6、参考链接" class="headerlink" title="6、参考链接"></a>6、参考链接</h2><p><span class="exturl" data-url="aHR0cHM6Ly94aWFvemh1YW5sYW4uY29tL3RvcGljLzEzNzk2ODA1MjQ=" title="https://xiaozhuanlan.com/topic/1379680524">https://xiaozhuanlan.com/topic/1379680524<i class="fa fa-external-link"></i></span></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/git/tips/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -462,6 +361,107 @@
 <h3 id="2、修改"><a href="#2、修改" class="headerlink" title="2、修改"></a>2、修改</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"zhangsan(新的用户名)"</span></span><br><span class="line">git config --global user.email <span class="string">"123456@qq.com(新的邮箱)"</span></span><br><span class="line">git config --global user.password<span class="string">"123456(新的密码)"</span></span><br><span class="line">//这里的zhangsan和邮箱都是你修改之后的用户名和邮箱</span><br></pre></td></tr></table></figure>
 
 <p>修改完成之后再次查看确认下，是不是自己改后的用户名和邮箱以及密码</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/gulp/index/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="WuLiSenSen">
+      <meta itemprop="description" content="技术改变世界">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WuLiSenSen">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/01/gulp/index/" class="post-title-link" itemprop="url">Gulp实现项目一键部署</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-01 20:18:05" itemprop="dateCreated datePublished" datetime="2020-09-01T20:18:05+08:00">2020-09-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/gulp/" itemprop="url" rel="index">
+                    <span itemprop="name">gulp</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/09/01/gulp/index/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/gulp/index/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1、安装gulp和gulp-sftp"><a href="#1、安装gulp和gulp-sftp" class="headerlink" title="1、安装gulp和gulp-sftp"></a>1、安装gulp和gulp-sftp</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm i gulp gulp-sftp --save-dev</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2、在项目根目录新建gulp配置文件gulpfile-js"><a href="#2、在项目根目录新建gulp配置文件gulpfile-js" class="headerlink" title="2、在项目根目录新建gulp配置文件gulpfile.js"></a>2、在项目根目录新建gulp配置文件<code>gulpfile.js</code></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> sftp = <span class="built_in">require</span>(<span class="string">'gulp-sftp'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sftpOption = &#123;</span><br><span class="line">host: <span class="string">'120.77.221.25'</span>, <span class="comment">// FTP主机地址</span></span><br><span class="line">auth: <span class="string">'FTPServer1'</span>, <span class="comment">// 下一步创建的 .ftppass 文件里面对应的授权方式</span></span><br><span class="line">remotePath: <span class="string">'/data/www/xxxx.com/'</span>, <span class="comment">// FTP需要上传的位置</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'upload'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'dist/**'</span>)</span><br><span class="line">        .pipe(sftp(sftpOption));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、创建gulp-sftp配置文件-ftppass"><a href="#3、创建gulp-sftp配置文件-ftppass" class="headerlink" title="3、创建gulp-sftp配置文件.ftppass"></a>3、创建gulp-sftp配置文件.ftppass</h2><blockquote>
+<p>为了保证ftp账号安全，将FTP账号密码配置放在单独的文件中，并添加至版本控制系统的禁用列表中</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"FTPServer1"</span>: &#123;</span><br><span class="line">        <span class="attr">"user"</span>: <span class="string">"root"</span>,</span><br><span class="line">        <span class="attr">"pass"</span>: <span class="string">"xxxxxxx"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、至此我们可以使用gulp来执行定义的上传任务了"><a href="#4、至此我们可以使用gulp来执行定义的上传任务了" class="headerlink" title="4、至此我们可以使用gulp来执行定义的上传任务了"></a>4、至此我们可以使用gulp来执行定义的上传任务了</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> gulp upload</span></span><br></pre></td></tr></table></figure>
+
+<p>执行命令后我们项目的dist目录下的所有文件都上传到服务器/data/www/xxxx.com/目录下了</p>
+<h2 id="5、创建命令"><a href="#5、创建命令" class="headerlink" title="5、创建命令"></a>5、创建命令</h2><p>为了方便我们构建完成后自动上传可以<code>package.json</code>中定义一个命令</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"upload"</span>: <span class="string">"gulp upload"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就可以直接执行<code>npm run upload</code>命令来编译并上传我们的应用了</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm run upload</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6、参考链接"><a href="#6、参考链接" class="headerlink" title="6、参考链接"></a>6、参考链接</h2><p><span class="exturl" data-url="aHR0cHM6Ly94aWFvemh1YW5sYW4uY29tL3RvcGljLzEzNzk2ODA1MjQ=" title="https://xiaozhuanlan.com/topic/1379680524">https://xiaozhuanlan.com/topic/1379680524<i class="fa fa-external-link"></i></span></p>
 
       
     </div>
@@ -885,99 +885,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/git/pull/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.jpg">
-      <meta itemprop="name" content="WuLiSenSen">
-      <meta itemprop="description" content="技术改变世界">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WuLiSenSen">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/01/git/pull/" class="post-title-link" itemprop="url">Git命令行基础（三）更新与合并</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-09-01 20:18:05" itemprop="dateCreated datePublished" datetime="2020-09-01T20:18:05+08:00">2020-09-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/09/01/git/pull/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/git/pull/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1、更新代码"><a href="#1、更新代码" class="headerlink" title="1、更新代码"></a>1、更新代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<p>以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动。</p>
-<h3 id="2、合并"><a href="#2、合并" class="headerlink" title="2、合并"></a>2、合并</h3><p>要合并其他分支到你的当前分支（例如 master），执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-
-<p>两种情况下，git 都会尝试去自动合并改动。不幸的是，自动合并并非次次都能成功，并可能导致 冲突（conflicts）。 这时候就需要你修改这些文件来人肉合并这些 冲突（conflicts） 了。改完之后，你需要执行如下命令以将它们标记为合并成功：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-
-<p>在合并改动之前，也可以使用如下命令查看：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;source_branch&gt; &lt;target_branch&gt;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/git/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1059,6 +966,99 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote remove origin</span><br></pre></td></tr></table></figure>
 
 <p>如此你就能够将你的改动推送到所添加的服务器上去了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.wulisensen.com/2020/09/01/git/pull/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="WuLiSenSen">
+      <meta itemprop="description" content="技术改变世界">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WuLiSenSen">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/01/git/pull/" class="post-title-link" itemprop="url">Git命令行基础（三）更新与合并</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-01 20:18:05" itemprop="dateCreated datePublished" datetime="2020-09-01T20:18:05+08:00">2020-09-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/09/01/git/pull/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/01/git/pull/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1、更新代码"><a href="#1、更新代码" class="headerlink" title="1、更新代码"></a>1、更新代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<p>以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动。</p>
+<h3 id="2、合并"><a href="#2、合并" class="headerlink" title="2、合并"></a>2、合并</h3><p>要合并其他分支到你的当前分支（例如 master），执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+
+<p>两种情况下，git 都会尝试去自动合并改动。不幸的是，自动合并并非次次都能成功，并可能导致 冲突（conflicts）。 这时候就需要你修改这些文件来人肉合并这些 冲突（conflicts） 了。改完之后，你需要执行如下命令以将它们标记为合并成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在合并改动之前，也可以使用如下命令查看：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff &lt;source_branch&gt; &lt;target_branch&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
