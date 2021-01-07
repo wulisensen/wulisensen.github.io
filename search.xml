@@ -50,20 +50,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Git命令行基础（二）分支</title>
-    <url>/2020/09/01/git/branch/</url>
-    <content><![CDATA[<p>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”。在其他分支上进行开发，完成后再将它们合并到主分支上。</p>
-<h3 id="1、创建分支，并切换过去："><a href="#1、创建分支，并切换过去：" class="headerlink" title="1、创建分支，并切换过去："></a>1、创建分支，并切换过去：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -b &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、切换回主分支："><a href="#2、切换回主分支：" class="headerlink" title="2、切换回主分支："></a>2、切换回主分支：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
-
-<h3 id="3、切换回分支："><a href="#3、切换回分支：" class="headerlink" title="3、切换回分支："></a>3、切换回分支：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4、再把新建的分支删掉："><a href="#4、再把新建的分支删掉：" class="headerlink" title="4、再把新建的分支删掉："></a>4、再把新建的分支删掉：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch -d &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="5、除非你将分支推送到远端仓库，不然该分支就是-不为他人所见的："><a href="#5、除非你将分支推送到远端仓库，不然该分支就是-不为他人所见的：" class="headerlink" title="5、除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的："></a>5、除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="6、拉取远程分支并创建本地分支"><a href="#6、拉取远程分支并创建本地分支" class="headerlink" title="6、拉取远程分支并创建本地分支"></a>6、拉取远程分支并创建本地分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -b <span class="built_in">test</span> origin/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>]]></content>
+    <title>.gitignore失效解决办法</title>
+    <url>/2020/09/01/git/ignore/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'We really don'</span>t want Git to track this anymore!<span class="string">'</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>git</category>
       </categories>
@@ -123,9 +112,20 @@
       </tags>
   </entry>
   <entry>
-    <title>.gitignore失效解决办法</title>
-    <url>/2020/09/01/git/ignore/</url>
-    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'We really don'</span>t want Git to track this anymore!<span class="string">'</span></span><br></pre></td></tr></table></figure>]]></content>
+    <title>Git命令行基础（二）分支</title>
+    <url>/2020/09/01/git/branch/</url>
+    <content><![CDATA[<p>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”。在其他分支上进行开发，完成后再将它们合并到主分支上。</p>
+<h3 id="1、创建分支，并切换过去："><a href="#1、创建分支，并切换过去：" class="headerlink" title="1、创建分支，并切换过去："></a>1、创建分支，并切换过去：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -b &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、切换回主分支："><a href="#2、切换回主分支：" class="headerlink" title="2、切换回主分支："></a>2、切换回主分支：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、切换回分支："><a href="#3、切换回分支：" class="headerlink" title="3、切换回分支："></a>3、切换回分支：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、再把新建的分支删掉："><a href="#4、再把新建的分支删掉：" class="headerlink" title="4、再把新建的分支删掉："></a>4、再把新建的分支删掉：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch -d &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、除非你将分支推送到远端仓库，不然该分支就是-不为他人所见的："><a href="#5、除非你将分支推送到远端仓库，不然该分支就是-不为他人所见的：" class="headerlink" title="5、除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的："></a>5、除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6、拉取远程分支并创建本地分支"><a href="#6、拉取远程分支并创建本地分支" class="headerlink" title="6、拉取远程分支并创建本地分支"></a>6、拉取远程分支并创建本地分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -b <span class="built_in">test</span> origin/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>git</category>
       </categories>
@@ -162,18 +162,6 @@
       </tags>
   </entry>
   <entry>
-    <title>查看本地修改状态</title>
-    <url>/2020/09/01/git/status/</url>
-    <content><![CDATA[<p>想查看本地修改了哪些文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git命令行基础（四）标签</title>
     <url>/2020/09/01/git/tag/</url>
     <content><![CDATA[<p>在软件发布时创建标签，是被推荐的。这是个旧有概念，在 SVN 中也有。可以执行如下命令以创建一个叫做 v1.0.0 的标签：</p>
@@ -187,22 +175,6 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#将本地所有标签一次性提交到git服务器</span></span><br><span class="line">git push - –tags</span><br></pre></td></tr></table></figure>
 
 <p>我一般都是用最后一个把标签推送到服务器:)</p>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git更新全局账户密码</title>
-    <url>/2020/09/01/git/update/</url>
-    <content><![CDATA[<h3 id="1、查看当前用户名和邮箱"><a href="#1、查看当前用户名和邮箱" class="headerlink" title="1、查看当前用户名和邮箱"></a>1、查看当前用户名和邮箱</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、修改"><a href="#2、修改" class="headerlink" title="2、修改"></a>2、修改</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"zhangsan(新的用户名)"</span></span><br><span class="line">git config --global user.email <span class="string">"123456@qq.com(新的邮箱)"</span></span><br><span class="line">git config --global user.password<span class="string">"123456(新的密码)"</span></span><br><span class="line">//这里的zhangsan和邮箱都是你修改之后的用户名和邮箱</span><br></pre></td></tr></table></figure>
-
-<p>修改完成之后再次查看确认下，是不是自己改后的用户名和邮箱以及密码</p>
 ]]></content>
       <categories>
         <category>git</category>
@@ -229,6 +201,34 @@
 <p>参考资料地址：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dkdXR4aWFveHUvYXJ0aWNsZS9kZXRhaWxzLzUzNTczMzM5" title="https://blog.csdn.net/gdutxiaoxu/article/details/53573339">https://blog.csdn.net/gdutxiaoxu/article/details/53573339<i class="fa fa-external-link"></i></span></p>
 <p>顺便一提，我平时都是使用图形化客户端工具<span class="exturl" data-url="aHR0cHM6Ly93d3cuc291cmNldHJlZWFwcC5jb20v" title="https://www.sourcetreeapp.com/">Sourcetree<i class="fa fa-external-link"></i></span></p>
 <p>本宝宝才不会使用难看又难用的命令行呢，哈哈:)</p>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>查看本地修改状态</title>
+    <url>/2020/09/01/git/status/</url>
+    <content><![CDATA[<p>想查看本地修改了哪些文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git更新全局账户密码</title>
+    <url>/2020/09/01/git/update/</url>
+    <content><![CDATA[<h3 id="1、查看当前用户名和邮箱"><a href="#1、查看当前用户名和邮箱" class="headerlink" title="1、查看当前用户名和邮箱"></a>1、查看当前用户名和邮箱</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、修改"><a href="#2、修改" class="headerlink" title="2、修改"></a>2、修改</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"zhangsan(新的用户名)"</span></span><br><span class="line">git config --global user.email <span class="string">"123456@qq.com(新的邮箱)"</span></span><br><span class="line">git config --global user.password<span class="string">"123456(新的密码)"</span></span><br><span class="line">//这里的zhangsan和邮箱都是你修改之后的用户名和邮箱</span><br></pre></td></tr></table></figure>
+
+<p>修改完成之后再次查看确认下，是不是自己改后的用户名和邮箱以及密码</p>
 ]]></content>
       <categories>
         <category>git</category>
@@ -419,30 +419,6 @@
       </tags>
   </entry>
   <entry>
-    <title>vue项目多个页面css被提取到同一文件中的解决办法</title>
-    <url>/2020/09/29/javascript/vuePagesCss/</url>
-    <content><![CDATA[<h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>vue项目 3个页面引用了相同的一个css文件 index.d3ec8bd9.css。</p>
-<p>该3个css文件有3个页面的不同css，虽然有scoped做了限制，但是显然不符合我们的预期，我们希望不同的页面引入不同的css文件。</p>
-<a id="more"></a>
-
-<h2 id="2-原因"><a href="#2-原因" class="headerlink" title="2. 原因"></a>2. 原因</h2><p>经过仔细排查，发现只有这三个项目的css存在该问题，那么应该不是项目配置的问题；</p>
-<p>最后发现是页面路由配置的问题，龙舟项目的路由是如下配置</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [</span><br><span class="line">​</span><br><span class="line">            &#123;</span><br><span class="line">​</span><br><span class="line">                path: <span class="string">'/'</span>,</span><br><span class="line">​</span><br><span class="line">                name: <span class="string">'index'</span>,</span><br><span class="line">​</span><br><span class="line">                component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "index" */</span><span class="string">'./modules/index'</span>),</span><br><span class="line">​</span><br><span class="line">            &#125;,</span><br><span class="line">​</span><br><span class="line">            &#123;</span><br><span class="line">​</span><br><span class="line">                path: <span class="string">'/rule'</span>,</span><br><span class="line">​</span><br><span class="line">                name: <span class="string">'rule'</span>,</span><br><span class="line">​</span><br><span class="line">                component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "rule" */</span><span class="string">'./modules/rule'</span>),</span><br><span class="line">​</span><br><span class="line">            &#125;,</span><br><span class="line">​</span><br><span class="line">            &#123;</span><br><span class="line">​</span><br><span class="line">                path: <span class="string">'/ranking'</span>,</span><br><span class="line">​</span><br><span class="line">                name: <span class="string">'ranking'</span>,</span><br><span class="line">​</span><br><span class="line">                component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "ranking" */</span><span class="string">'./modules/ranking'</span>),</span><br><span class="line">​</span><br><span class="line">            &#125;,</span><br><span class="line">​</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
-
-<p>而后两个是复制的 第一个的项目路由，代码如下</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [</span><br><span class="line">​</span><br><span class="line">            &#123;</span><br><span class="line">​</span><br><span class="line">                path: <span class="string">'/'</span>,</span><br><span class="line">​</span><br><span class="line">                name: <span class="string">'index'</span>,</span><br><span class="line">​</span><br><span class="line">                component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "index" */</span><span class="string">'./modules/index'</span>),</span><br><span class="line">​</span><br><span class="line">            &#125;,</span><br><span class="line">​</span><br><span class="line">        ],</span><br></pre></td></tr></table></figure>
-
-<p>发现异步加载的页面 webpackChunkName 都为 index，所以最后 会把 3个页面的 css 都提取到 index 开头的css文件中</p>
-<h2 id="3-解决方案"><a href="#3-解决方案" class="headerlink" title="3. 解决方案"></a>3. 解决方案</h2><h3 id="a-放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName"><a href="#a-放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName" class="headerlink" title="a) 放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName"></a>a) 放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [&#123;</span><br><span class="line">​</span><br><span class="line">        path: <span class="string">'/'</span>,</span><br><span class="line">​</span><br><span class="line">        name: <span class="string">'index'</span>,</span><br><span class="line">​</span><br><span class="line">        component: index,</span><br><span class="line">​</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="b-使用与页面相关的-webpackChunkName"><a href="#b-使用与页面相关的-webpackChunkName" class="headerlink" title="b) 使用与页面相关的 webpackChunkName"></a>b) 使用与页面相关的 webpackChunkName</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [&#123;</span><br><span class="line">​</span><br><span class="line">        path: <span class="string">'/trace'</span>,</span><br><span class="line">​</span><br><span class="line">        name: <span class="string">'trace'</span>,</span><br><span class="line">​</span><br><span class="line">        component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "2019-ncov-more" */</span><span class="string">'./pages/trace'</span>),</span><br><span class="line">​</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="推荐-首页不使用异步加载，其他页使用异步加载"><a href="#推荐-首页不使用异步加载，其他页使用异步加载" class="headerlink" title="推荐 首页不使用异步加载，其他页使用异步加载"></a>推荐 首页不使用异步加载，其他页使用异步加载</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [&#123;</span><br><span class="line">​</span><br><span class="line">        path: <span class="string">'/'</span>,</span><br><span class="line">​</span><br><span class="line">        name: <span class="string">'index'</span>,</span><br><span class="line">​</span><br><span class="line">        component: index,</span><br><span class="line">​</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">​</span><br><span class="line">        path: <span class="string">'/trace'</span>,</span><br><span class="line">​</span><br><span class="line">        name: <span class="string">'trace'</span>,</span><br><span class="line">​</span><br><span class="line">        component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "2019-ncov-more" */</span><span class="string">'./pages/trace'</span>),</span><br><span class="line">​</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Linux基础</title>
     <url>/2020/09/01/linux/index/</url>
     <content><![CDATA[<h2 id="初始化分区，挂载到目录"><a href="#初始化分区，挂载到目录" class="headerlink" title="初始化分区，挂载到目录"></a>初始化分区，挂载到目录</h2><h3 id="1、查看硬盘-fdisk-l"><a href="#1、查看硬盘-fdisk-l" class="headerlink" title="1、查看硬盘 fdisk -l"></a>1、查看硬盘 fdisk -l</h3><h3 id="2、执行命令，对数据盘进行分区"><a href="#2、执行命令，对数据盘进行分区" class="headerlink" title="2、执行命令，对数据盘进行分区"></a>2、执行命令，对数据盘进行分区</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fdisk -S 56 /dev/xvdb</span><br></pre></td></tr></table></figure>
@@ -468,6 +444,30 @@
       <tags>
         <tag>服务器</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>vue项目多个页面css被提取到同一文件中的解决办法</title>
+    <url>/2020/09/29/javascript/vuePagesCss/</url>
+    <content><![CDATA[<h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>vue项目 3个页面引用了相同的一个css文件 index.d3ec8bd9.css。</p>
+<p>该3个css文件有3个页面的不同css，虽然有scoped做了限制，但是显然不符合我们的预期，我们希望不同的页面引入不同的css文件。</p>
+<a id="more"></a>
+
+<h2 id="2-原因"><a href="#2-原因" class="headerlink" title="2. 原因"></a>2. 原因</h2><p>经过仔细排查，发现只有这三个项目的css存在该问题，那么应该不是项目配置的问题；</p>
+<p>最后发现是页面路由配置的问题，龙舟项目的路由是如下配置</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [</span><br><span class="line">​</span><br><span class="line">            &#123;</span><br><span class="line">​</span><br><span class="line">                path: <span class="string">'/'</span>,</span><br><span class="line">​</span><br><span class="line">                name: <span class="string">'index'</span>,</span><br><span class="line">​</span><br><span class="line">                component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "index" */</span><span class="string">'./modules/index'</span>),</span><br><span class="line">​</span><br><span class="line">            &#125;,</span><br><span class="line">​</span><br><span class="line">            &#123;</span><br><span class="line">​</span><br><span class="line">                path: <span class="string">'/rule'</span>,</span><br><span class="line">​</span><br><span class="line">                name: <span class="string">'rule'</span>,</span><br><span class="line">​</span><br><span class="line">                component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "rule" */</span><span class="string">'./modules/rule'</span>),</span><br><span class="line">​</span><br><span class="line">            &#125;,</span><br><span class="line">​</span><br><span class="line">            &#123;</span><br><span class="line">​</span><br><span class="line">                path: <span class="string">'/ranking'</span>,</span><br><span class="line">​</span><br><span class="line">                name: <span class="string">'ranking'</span>,</span><br><span class="line">​</span><br><span class="line">                component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "ranking" */</span><span class="string">'./modules/ranking'</span>),</span><br><span class="line">​</span><br><span class="line">            &#125;,</span><br><span class="line">​</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
+
+<p>而后两个是复制的 第一个的项目路由，代码如下</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [</span><br><span class="line">​</span><br><span class="line">            &#123;</span><br><span class="line">​</span><br><span class="line">                path: <span class="string">'/'</span>,</span><br><span class="line">​</span><br><span class="line">                name: <span class="string">'index'</span>,</span><br><span class="line">​</span><br><span class="line">                component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "index" */</span><span class="string">'./modules/index'</span>),</span><br><span class="line">​</span><br><span class="line">            &#125;,</span><br><span class="line">​</span><br><span class="line">        ],</span><br></pre></td></tr></table></figure>
+
+<p>发现异步加载的页面 webpackChunkName 都为 index，所以最后 会把 3个页面的 css 都提取到 index 开头的css文件中</p>
+<h2 id="3-解决方案"><a href="#3-解决方案" class="headerlink" title="3. 解决方案"></a>3. 解决方案</h2><h3 id="a-放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName"><a href="#a-放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName" class="headerlink" title="a) 放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName"></a>a) 放弃使用异步加载，因为不确定项目中是否有其他人使用了相同的webpackChunkName</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [&#123;</span><br><span class="line">​</span><br><span class="line">        path: <span class="string">'/'</span>,</span><br><span class="line">​</span><br><span class="line">        name: <span class="string">'index'</span>,</span><br><span class="line">​</span><br><span class="line">        component: index,</span><br><span class="line">​</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="b-使用与页面相关的-webpackChunkName"><a href="#b-使用与页面相关的-webpackChunkName" class="headerlink" title="b) 使用与页面相关的 webpackChunkName"></a>b) 使用与页面相关的 webpackChunkName</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [&#123;</span><br><span class="line">​</span><br><span class="line">        path: <span class="string">'/trace'</span>,</span><br><span class="line">​</span><br><span class="line">        name: <span class="string">'trace'</span>,</span><br><span class="line">​</span><br><span class="line">        component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "2019-ncov-more" */</span><span class="string">'./pages/trace'</span>),</span><br><span class="line">​</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="推荐-首页不使用异步加载，其他页使用异步加载"><a href="#推荐-首页不使用异步加载，其他页使用异步加载" class="headerlink" title="推荐 首页不使用异步加载，其他页使用异步加载"></a>推荐 首页不使用异步加载，其他页使用异步加载</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">routes: [&#123;</span><br><span class="line">​</span><br><span class="line">        path: <span class="string">'/'</span>,</span><br><span class="line">​</span><br><span class="line">        name: <span class="string">'index'</span>,</span><br><span class="line">​</span><br><span class="line">        component: index,</span><br><span class="line">​</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">​</span><br><span class="line">        path: <span class="string">'/trace'</span>,</span><br><span class="line">​</span><br><span class="line">        name: <span class="string">'trace'</span>,</span><br><span class="line">​</span><br><span class="line">        component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "2019-ncov-more" */</span><span class="string">'./pages/trace'</span>),</span><br><span class="line">​</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
   </entry>
   <entry>
     <title>Docker5分钟搭建WordPress</title>
@@ -514,33 +514,6 @@
       </categories>
       <tags>
         <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信小程序拆包实战</title>
-    <url>/2020/02/14/mini-app/split/</url>
-    <content><![CDATA[<p>众所周知微信小程序本身打包体积有 2M 的限制，但是业务也多，体积也就越大。</p>
-<p>虽然会有各种瘦身的方法，但是始终不能治本。</p>
-<p>幸好微信官方提供了<code>小程序分包</code>的方法，主包和分包每个不能超过 2M，加一起不能超过 8M（截止发博客前）.</p>
-<a id="more"></a>
-
-<p>具体方法：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"pages"</span>: [</span><br><span class="line">        <span class="string">"pages/newIndex/index"</span>,</span><br><span class="line">        <span class="string">"pages/news/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/my"</span>,</span><br><span class="line">        <span class="string">"pages/index/search/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchMore/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchParts/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchMinifigs/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchClassify/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/bannerDetail/bannerDetail"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/setDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/partMinifigs/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/partMinifigsDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/bigPartsDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/shop/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/myHistoryCollect/index"</span>,</span><br><span class="line">        <span class="string">"pages/login/telphone/telphone"</span>,</span><br><span class="line">        <span class="string">"pages/picture/detail/index"</span>,</span><br><span class="line">        <span class="string">"pages/activity/bill/index/index"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以上是旧的版本，可以看到页面非常多，所有页面都是<code>pages</code>下面，最终打包出来的体积也非常大。</p>
-<p>经过优化，我们把非入口页面 移到 单独目录<code>packageSub</code>下</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"pages"</span>: [</span><br><span class="line">        <span class="string">"pages/newIndex/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/my"</span>,</span><br><span class="line">        <span class="string">"pages/login/login"</span>,</span><br><span class="line">        <span class="string">"pages/login/telphone/telphone"</span>,</span><br><span class="line">        <span class="string">"pages/activity/bill/index/index"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"subPackages"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"root"</span>: <span class="string">"packageSub"</span>,</span><br><span class="line">            <span class="attr">"pages"</span>: [</span><br><span class="line">                <span class="string">"shop/index"</span>,</span><br><span class="line">                <span class="string">"shop/shopDetail/index"</span>,</span><br><span class="line">                <span class="string">"shop/shopCar/index"</span>,</span><br><span class="line">                <span class="string">"shop/payPage/index"</span>,</span><br><span class="line">                <span class="string">"shop/remark/index"</span>,</span><br><span class="line">                <span class="string">"shop/rate/index"</span>,</span><br><span class="line">                <span class="string">"community/index"</span>,</span><br><span class="line">                <span class="string">"community/sendCommunity/index"</span>,</span><br><span class="line">                <span class="string">"community/sendComment/index"</span>,</span><br><span class="line">                <span class="string">"community/detail/index"</span>,</span><br><span class="line">                <span class="string">"my/myHistoryCollect/index"</span>,</span><br><span class="line">                <span class="string">"news/index"</span>,</span><br><span class="line">                <span class="string">"offline/offline"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>文件目录页面变化:</p>
-<p><img data-src="/images/old.png" alt="旧的"></p>
-<p><img data-src="/images/new.png" alt="新的"></p>
-<p>最后最重要的问题也是最麻烦的，就是 手动修改 <code>wx.navigateTo</code> 方法，推荐改成绝对路径，如果改动太大，用相对也是可以的。值得注意的是，pages 下引用 packageSub 下页面，都要修改路径.</p>
-]]></content>
-      <categories>
-        <category>mini-app</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -629,6 +602,33 @@
       </tags>
   </entry>
   <entry>
+    <title>微信小程序拆包实战</title>
+    <url>/2020/02/14/mini-app/split/</url>
+    <content><![CDATA[<p>众所周知微信小程序本身打包体积有 2M 的限制，但是业务也多，体积也就越大。</p>
+<p>虽然会有各种瘦身的方法，但是始终不能治本。</p>
+<p>幸好微信官方提供了<code>小程序分包</code>的方法，主包和分包每个不能超过 2M，加一起不能超过 8M（截止发博客前）.</p>
+<a id="more"></a>
+
+<p>具体方法：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"pages"</span>: [</span><br><span class="line">        <span class="string">"pages/newIndex/index"</span>,</span><br><span class="line">        <span class="string">"pages/news/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/my"</span>,</span><br><span class="line">        <span class="string">"pages/index/search/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchMore/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchParts/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchMinifigs/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/searchClassify/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/bannerDetail/bannerDetail"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/setDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/partMinifigs/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/partMinifigsDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/bigPartsDetail/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/set/shop/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/myHistoryCollect/index"</span>,</span><br><span class="line">        <span class="string">"pages/login/telphone/telphone"</span>,</span><br><span class="line">        <span class="string">"pages/picture/detail/index"</span>,</span><br><span class="line">        <span class="string">"pages/activity/bill/index/index"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上是旧的版本，可以看到页面非常多，所有页面都是<code>pages</code>下面，最终打包出来的体积也非常大。</p>
+<p>经过优化，我们把非入口页面 移到 单独目录<code>packageSub</code>下</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"pages"</span>: [</span><br><span class="line">        <span class="string">"pages/newIndex/index"</span>,</span><br><span class="line">        <span class="string">"pages/index/index"</span>,</span><br><span class="line">        <span class="string">"pages/my/my"</span>,</span><br><span class="line">        <span class="string">"pages/login/login"</span>,</span><br><span class="line">        <span class="string">"pages/login/telphone/telphone"</span>,</span><br><span class="line">        <span class="string">"pages/activity/bill/index/index"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"subPackages"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"root"</span>: <span class="string">"packageSub"</span>,</span><br><span class="line">            <span class="attr">"pages"</span>: [</span><br><span class="line">                <span class="string">"shop/index"</span>,</span><br><span class="line">                <span class="string">"shop/shopDetail/index"</span>,</span><br><span class="line">                <span class="string">"shop/shopCar/index"</span>,</span><br><span class="line">                <span class="string">"shop/payPage/index"</span>,</span><br><span class="line">                <span class="string">"shop/remark/index"</span>,</span><br><span class="line">                <span class="string">"shop/rate/index"</span>,</span><br><span class="line">                <span class="string">"community/index"</span>,</span><br><span class="line">                <span class="string">"community/sendCommunity/index"</span>,</span><br><span class="line">                <span class="string">"community/sendComment/index"</span>,</span><br><span class="line">                <span class="string">"community/detail/index"</span>,</span><br><span class="line">                <span class="string">"my/myHistoryCollect/index"</span>,</span><br><span class="line">                <span class="string">"news/index"</span>,</span><br><span class="line">                <span class="string">"offline/offline"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>文件目录页面变化:</p>
+<p><img data-src="/images/old.png" alt="旧的"></p>
+<p><img data-src="/images/new.png" alt="新的"></p>
+<p>最后最重要的问题也是最麻烦的，就是 手动修改 <code>wx.navigateTo</code> 方法，推荐改成绝对路径，如果改动太大，用相对也是可以的。值得注意的是，pages 下引用 packageSub 下页面，都要修改路径.</p>
+]]></content>
+      <categories>
+        <category>mini-app</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MongoDB　group 使用　$first 获取指定字段</title>
     <url>/2020/09/01/mongodb/first/</url>
     <content><![CDATA[<h2 id="原测试数据"><a href="#原测试数据" class="headerlink" title="原测试数据:"></a>原测试数据:</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59a221054afa291a4e0a974d"</span>), <span class="attr">"name"</span>: <span class="string">"jack"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59a221144afa291a4e0a974e"</span>), <span class="attr">"name"</span>: <span class="string">"lucy"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59a221304afa291a4e0a9750"</span>), <span class="attr">"name"</span>: <span class="string">"lili"</span>, <span class="attr">"age"</span>: <span class="number">18</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59b0a98bf4eee74a4359353d"</span>), <span class="attr">"name"</span>: <span class="string">"jack"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"_id"</span>: ObjectId(<span class="string">"59e5c25a483b8642c5ac3ded"</span>), <span class="attr">"name"</span>: <span class="string">"jame"</span>, <span class="attr">"age"</span>: <span class="number">17</span>, <span class="attr">"sex"</span>: <span class="string">"unknown"</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
@@ -639,68 +639,6 @@
 
 <p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpb2ppbmc4MjUvYXJ0aWNsZS9kZXRhaWxzLzc4MzYyOTcy" title="https://blog.csdn.net/xiojing825/article/details/78362972">参考链接https://blog.csdn.net/xiojing825/article/details/78362972<i class="fa fa-external-link"></i></span></p>
 ]]></content>
-      <categories>
-        <category>mongodb</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MongoDB 另类优化</title>
-    <url>/2020/09/01/mongodb/good/</url>
-    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>上次 实现后，发现速度很慢，因为 要聚合 几十次</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> allFrom) &#123;</span><br><span class="line">    <span class="keyword">if</span> (allFrom.hasOwnProperty(key)) &#123;</span><br><span class="line">        <span class="keyword">const</span> number = allFrom[key];</span><br><span class="line">        <span class="keyword">const</span> groupData = <span class="keyword">await</span> <span class="keyword">this</span>.getGroupData(key, number, querys);</span><br><span class="line"></span><br><span class="line">        allObj[key] = groupData;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>该方法 的 问题 在于 要等 每次 聚合完了 才能 执行 下一条，很影响 速度</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>经过 一段时间后，突发奇想，修改数据结构，从对象格式 改成数组 格式，用 Promise.map 实现 多任务并行 执行</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">Promise</span> = <span class="built_in">require</span>(<span class="string">'bluebird'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">await</span> <span class="built_in">Promise</span>.map(allFrom,</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">from</span> =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; key, <span class="attr">value</span>: number &#125; = <span class="keyword">from</span>;</span><br><span class="line">        <span class="keyword">const</span> groupData = <span class="keyword">await</span> <span class="keyword">this</span>.getGroupData(key, number, querys);</span><br><span class="line"></span><br><span class="line">        allObj[key] = groupData;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123; <span class="attr">concurrency</span>: <span class="number">100</span> &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>预先 做了处理 allFrom 从 对象 改成了 [{key: key1, value:value1}] 的结构</p>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>从之前的 20秒 返回 现在 3、4秒返回</p>
-]]></content>
-      <categories>
-        <category>mongodb</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MongoDB安装</title>
-    <url>/2020/09/01/mongodb/index/</url>
-    <content><![CDATA[<h3 id="1、安装brew"><a href="#1、安装brew" class="headerlink" title="1、安装brew"></a>1、安装brew</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2、更新brew"><a href="#2、更新brew" class="headerlink" title="2、更新brew"></a>2、更新brew</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
-
-<h3 id="3、安装MongoDB"><a href="#3、安装MongoDB" class="headerlink" title="3、安装MongoDB"></a>3、安装MongoDB</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brew install mongodb</span><br></pre></td></tr></table></figure>
-
-<h3 id="4、启动MongoDb（安装成功后命令行有提示"><a href="#4、启动MongoDb（安装成功后命令行有提示" class="headerlink" title="4、启动MongoDb（安装成功后命令行有提示"></a>4、启动MongoDb（安装成功后命令行有提示</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mongod --config /usr/<span class="built_in">local</span>/etc/mongod.conf</span><br></pre></td></tr></table></figure>
-
-<h3 id="5、连接到mongo"><a href="#5、连接到mongo" class="headerlink" title="5、连接到mongo"></a>5、连接到mongo</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mongo</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>mongodb</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MongoDB 初始化</title>
-    <url>/2020/09/01/mongodb/init/</url>
-    <content><![CDATA[<h2 id="1、-查看数据库"><a href="#1、-查看数据库" class="headerlink" title="1、 查看数据库"></a>1、 查看数据库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">mongo</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">show dbs;</span></span><br><span class="line">admin    0.000GB</span><br><span class="line">config   0.000GB</span><br><span class="line">local    0.000GB</span><br></pre></td></tr></table></figure>
-
-<p>在命令行工具中 输入 mongo 回车 就可以输入 mongo 命令</p>
-<p>show dbs 是查看当前 有哪些数据库</p>
-<h2 id="2、初始化数据库"><a href="#2、初始化数据库" class="headerlink" title="2、初始化数据库"></a>2、初始化数据库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">use comment</span></span><br><span class="line">switched to db comment</span><br></pre></td></tr></table></figure>
-
-<p>use comment 意思是 使用 comment 这个数据库</p>
-<p>如果没有，就会 新创建 1 个</p>
-<h2 id="3、初始化-用户"><a href="#3、初始化-用户" class="headerlink" title="3、初始化 用户"></a>3、初始化 用户</h2><p>为当前 数据库 创建 1 个 只有 当前数据库的 权限的 用户</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">db.createUser(&#123;</span></span><br><span class="line">    user:"wugs_comment",</span><br><span class="line">    pwd:"123456",</span><br><span class="line">    roles:[&#123;</span><br><span class="line">        role:"readWrite",</span><br><span class="line">        db:"comment"</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Successfully added user: &#123;</span><br><span class="line">	"user" : "wugs_comment",</span><br><span class="line">	"roles" : [</span><br><span class="line">		&#123;</span><br><span class="line">			"role" : "readWrite",</span><br><span class="line">			"db" : "comment"</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>成功创建了 一个 用户名为 wugs_comment 的用户， 拥有 数据库 comment 的读写权限</p>
-<h2 id="4、端口不是-默认的-27017"><a href="#4、端口不是-默认的-27017" class="headerlink" title="4、端口不是 默认的 27017"></a>4、端口不是 默认的 27017</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mongo --port 10001</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>mongodb</category>
       </categories>
@@ -778,13 +716,40 @@
       </tags>
   </entry>
   <entry>
-    <title>MongoDB　对象数组的查询</title>
-    <url>/2020/09/01/mongodb/object/</url>
-    <content><![CDATA[<h2 id="数据库中某个字段是对象数组"><a href="#数据库中某个字段是对象数组" class="headerlink" title="数据库中某个字段是对象数组"></a>数据库中某个字段是对象数组</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"tags_cn"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">"type"</span> : <span class="string">"set"</span>,</span><br><span class="line">			<span class="attr">"id"</span> : <span class="string">"5ce4f86824e43e7550bf7b6c"</span>,</span><br><span class="line">			<span class="attr">"setNumberNew"</span> : <span class="string">"10266"</span>,</span><br><span class="line">			<span class="attr">"setName"</span> : <span class="string">"NASA Apollo 11 Lunar Lander"</span>,</span><br><span class="line">			<span class="attr">"setName_cn"</span> : <span class="string">"阿波罗11号登月舱"</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>MongoDB 初始化</title>
+    <url>/2020/09/01/mongodb/init/</url>
+    <content><![CDATA[<h2 id="1、-查看数据库"><a href="#1、-查看数据库" class="headerlink" title="1、 查看数据库"></a>1、 查看数据库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">mongo</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">show dbs;</span></span><br><span class="line">admin    0.000GB</span><br><span class="line">config   0.000GB</span><br><span class="line">local    0.000GB</span><br></pre></td></tr></table></figure>
 
-<h2 id="查询的时候可以通过下列方法查询"><a href="#查询的时候可以通过下列方法查询" class="headerlink" title="查询的时候可以通过下列方法查询"></a>查询的时候可以通过下列方法查询</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.a_test.find(&#123;</span><br><span class="line">    <span class="string">'tags_cn.0'</span>: &#123; <span class="attr">$exists</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    <span class="string">'tags_cn.type'</span>: <span class="string">'set'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>在命令行工具中 输入 mongo 回车 就可以输入 mongo 命令</p>
+<p>show dbs 是查看当前 有哪些数据库</p>
+<h2 id="2、初始化数据库"><a href="#2、初始化数据库" class="headerlink" title="2、初始化数据库"></a>2、初始化数据库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">use comment</span></span><br><span class="line">switched to db comment</span><br></pre></td></tr></table></figure>
 
-<p>原创内容，转载请说明出处</p>
+<p>use comment 意思是 使用 comment 这个数据库</p>
+<p>如果没有，就会 新创建 1 个</p>
+<h2 id="3、初始化-用户"><a href="#3、初始化-用户" class="headerlink" title="3、初始化 用户"></a>3、初始化 用户</h2><p>为当前 数据库 创建 1 个 只有 当前数据库的 权限的 用户</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">db.createUser(&#123;</span></span><br><span class="line">    user:"wugs_comment",</span><br><span class="line">    pwd:"123456",</span><br><span class="line">    roles:[&#123;</span><br><span class="line">        role:"readWrite",</span><br><span class="line">        db:"comment"</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Successfully added user: &#123;</span><br><span class="line">	"user" : "wugs_comment",</span><br><span class="line">	"roles" : [</span><br><span class="line">		&#123;</span><br><span class="line">			"role" : "readWrite",</span><br><span class="line">			"db" : "comment"</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>成功创建了 一个 用户名为 wugs_comment 的用户， 拥有 数据库 comment 的读写权限</p>
+<h2 id="4、端口不是-默认的-27017"><a href="#4、端口不是-默认的-27017" class="headerlink" title="4、端口不是 默认的 27017"></a>4、端口不是 默认的 27017</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mongo --port 10001</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>mongodb</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB 另类优化</title>
+    <url>/2020/09/01/mongodb/good/</url>
+    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>上次 实现后，发现速度很慢，因为 要聚合 几十次</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> allFrom) &#123;</span><br><span class="line">    <span class="keyword">if</span> (allFrom.hasOwnProperty(key)) &#123;</span><br><span class="line">        <span class="keyword">const</span> number = allFrom[key];</span><br><span class="line">        <span class="keyword">const</span> groupData = <span class="keyword">await</span> <span class="keyword">this</span>.getGroupData(key, number, querys);</span><br><span class="line"></span><br><span class="line">        allObj[key] = groupData;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该方法 的 问题 在于 要等 每次 聚合完了 才能 执行 下一条，很影响 速度</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>经过 一段时间后，突发奇想，修改数据结构，从对象格式 改成数组 格式，用 Promise.map 实现 多任务并行 执行</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">Promise</span> = <span class="built_in">require</span>(<span class="string">'bluebird'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">await</span> <span class="built_in">Promise</span>.map(allFrom,</span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">from</span> =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123; key, <span class="attr">value</span>: number &#125; = <span class="keyword">from</span>;</span><br><span class="line">        <span class="keyword">const</span> groupData = <span class="keyword">await</span> <span class="keyword">this</span>.getGroupData(key, number, querys);</span><br><span class="line"></span><br><span class="line">        allObj[key] = groupData;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123; <span class="attr">concurrency</span>: <span class="number">100</span> &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>预先 做了处理 allFrom 从 对象 改成了 [{key: key1, value:value1}] 的结构</p>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>从之前的 20秒 返回 现在 3、4秒返回</p>
 ]]></content>
       <categories>
         <category>mongodb</category>
@@ -794,15 +759,13 @@
       </tags>
   </entry>
   <entry>
-    <title>MongoDB　聚合使用 $push 指定字段 转为数组</title>
-    <url>/2020/09/01/mongodb/push/</url>
-    <content><![CDATA[<h2 id="原测试数据"><a href="#原测试数据" class="headerlink" title="原测试数据:"></a>原测试数据:</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"jack"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"lucy"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"lili"</span>, <span class="attr">"age"</span>: <span class="number">18</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"jame"</span>, <span class="attr">"age"</span>: <span class="number">17</span>, <span class="attr">"sex"</span>: <span class="string">"unknown"</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+    <title>MongoDB　对象数组的查询</title>
+    <url>/2020/09/01/mongodb/object/</url>
+    <content><![CDATA[<h2 id="数据库中某个字段是对象数组"><a href="#数据库中某个字段是对象数组" class="headerlink" title="数据库中某个字段是对象数组"></a>数据库中某个字段是对象数组</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"tags_cn"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">"type"</span> : <span class="string">"set"</span>,</span><br><span class="line">			<span class="attr">"id"</span> : <span class="string">"5ce4f86824e43e7550bf7b6c"</span>,</span><br><span class="line">			<span class="attr">"setNumberNew"</span> : <span class="string">"10266"</span>,</span><br><span class="line">			<span class="attr">"setName"</span> : <span class="string">"NASA Apollo 11 Lunar Lander"</span>,</span><br><span class="line">			<span class="attr">"setName_cn"</span> : <span class="string">"阿波罗11号登月舱"</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="以-age-聚合，把-name-输出为数组"><a href="#以-age-聚合，把-name-输出为数组" class="headerlink" title="以 age 聚合，把 name 输出为数组"></a>以 age 聚合，把 name 输出为数组</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.a_test.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $group: &#123;</span><br><span class="line">            _id: <span class="string">'$age'</span>,</span><br><span class="line">            name: &#123;</span><br><span class="line">                <span class="string">'$push'</span>: <span class="string">'$name'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+<h2 id="查询的时候可以通过下列方法查询"><a href="#查询的时候可以通过下列方法查询" class="headerlink" title="查询的时候可以通过下列方法查询"></a>查询的时候可以通过下列方法查询</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.a_test.find(&#123;</span><br><span class="line">    <span class="string">'tags_cn.0'</span>: &#123; <span class="attr">$exists</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    <span class="string">'tags_cn.type'</span>: <span class="string">'set'</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h2 id="获取到的数据"><a href="#获取到的数据" class="headerlink" title="获取到的数据"></a>获取到的数据</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">16</span>,  <span class="attr">"name"</span>: [<span class="string">"jack"</span>, <span class="string">"lucy"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">17</span>,  <span class="attr">"name"</span>: [<span class="string">"jame"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">18</span>,  <span class="attr">"name"</span>: [<span class="string">"lili"</span>] &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<p><span class="exturl" data-url="aHR0cDovL2NuLnZvaWRjYy5jb20vcXVlc3Rpb24vcC10Y2V2b2Fkcy1iY3YuaHRtbA==" title="http://cn.voidcc.com/question/p-tcevoads-bcv.html">参考链接http://cn.voidcc.com/question/p-tcevoads-bcv.html<i class="fa fa-external-link"></i></span></p>
+<p>原创内容，转载请说明出处</p>
 ]]></content>
       <categories>
         <category>mongodb</category>
@@ -847,6 +810,43 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">db.getCollection('articleCollection').aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $match: &#123;</span><br><span class="line">            type: &#123;$ne: "随便写的"&#125;,</span><br><span class="line">            vertical: &#123;$ne: "随便写的"&#125;,</span><br><span class="line">            score: &#123;$ne: "随便写的"&#125;,</span><br><span class="line">            publishTime: &#123;$ne: "随便写的"&#125;,</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;,</span><br><span class="line">     &#123;</span><br><span class="line">         $group: &#123;</span><br><span class="line">            _id: &#123;</span><br><span class="line">               type: "$type",</span><br><span class="line">               vertical: "$vertical"</span><br><span class="line">            &#125;,</span><br><span class="line">            count: &#123;$sum: 1&#125;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
 
 <p>完美的实现了 我们的 需求</p>
+]]></content>
+      <categories>
+        <category>mongodb</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB安装</title>
+    <url>/2020/09/01/mongodb/index/</url>
+    <content><![CDATA[<h3 id="1、安装brew"><a href="#1、安装brew" class="headerlink" title="1、安装brew"></a>1、安装brew</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2、更新brew"><a href="#2、更新brew" class="headerlink" title="2、更新brew"></a>2、更新brew</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、安装MongoDB"><a href="#3、安装MongoDB" class="headerlink" title="3、安装MongoDB"></a>3、安装MongoDB</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brew install mongodb</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、启动MongoDb（安装成功后命令行有提示"><a href="#4、启动MongoDb（安装成功后命令行有提示" class="headerlink" title="4、启动MongoDb（安装成功后命令行有提示"></a>4、启动MongoDb（安装成功后命令行有提示</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mongod --config /usr/<span class="built_in">local</span>/etc/mongod.conf</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、连接到mongo"><a href="#5、连接到mongo" class="headerlink" title="5、连接到mongo"></a>5、连接到mongo</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mongo</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>mongodb</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB　聚合使用 $push 指定字段 转为数组</title>
+    <url>/2020/09/01/mongodb/push/</url>
+    <content><![CDATA[<h2 id="原测试数据"><a href="#原测试数据" class="headerlink" title="原测试数据:"></a>原测试数据:</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"jack"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"lucy"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"lili"</span>, <span class="attr">"age"</span>: <span class="number">18</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"jame"</span>, <span class="attr">"age"</span>: <span class="number">17</span>, <span class="attr">"sex"</span>: <span class="string">"unknown"</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="以-age-聚合，把-name-输出为数组"><a href="#以-age-聚合，把-name-输出为数组" class="headerlink" title="以 age 聚合，把 name 输出为数组"></a>以 age 聚合，把 name 输出为数组</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.a_test.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $group: &#123;</span><br><span class="line">            _id: <span class="string">'$age'</span>,</span><br><span class="line">            name: &#123;</span><br><span class="line">                <span class="string">'$push'</span>: <span class="string">'$name'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取到的数据"><a href="#获取到的数据" class="headerlink" title="获取到的数据"></a>获取到的数据</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">16</span>,  <span class="attr">"name"</span>: [<span class="string">"jack"</span>, <span class="string">"lucy"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">17</span>,  <span class="attr">"name"</span>: [<span class="string">"jame"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">18</span>,  <span class="attr">"name"</span>: [<span class="string">"lili"</span>] &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p><span class="exturl" data-url="aHR0cDovL2NuLnZvaWRjYy5jb20vcXVlc3Rpb24vcC10Y2V2b2Fkcy1iY3YuaHRtbA==" title="http://cn.voidcc.com/question/p-tcevoads-bcv.html">参考链接http://cn.voidcc.com/question/p-tcevoads-bcv.html<i class="fa fa-external-link"></i></span></p>
 ]]></content>
       <categories>
         <category>mongodb</category>
@@ -901,19 +901,24 @@
       </tags>
   </entry>
   <entry>
-    <title>MongoDB 　聚合使用 $unwind 解构数组</title>
-    <url>/2020/09/01/mongodb/unwind/</url>
-    <content><![CDATA[<h2 id="原测试数据"><a href="#原测试数据" class="headerlink" title="原测试数据:"></a>原测试数据:</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"Host"</span>: <span class="string">"abc.com"</span>, <span class="attr">"ArtId"</span>: <span class="string">"123"</span>, <span class="attr">"tags"</span>: [<span class="string">"tag1"</span>, <span class="string">"tag2"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"Host"</span>: <span class="string">"abc.com"</span>, <span class="attr">"ArtId"</span>: <span class="string">"123"</span>, <span class="attr">"tags"</span>: [<span class="string">"tag3"</span>, <span class="string">"tag4"</span>] &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+    <title>Nginx配置二级域名</title>
+    <url>/2020/09/01/nginx/second/</url>
+    <content><![CDATA[<p>网络应用中经常会遇到1台服务器起多个应用在不同端口的情况</p>
+<h2 id="1、申请二级域名"><a href="#1、申请二级域名" class="headerlink" title="1、申请二级域名"></a>1、申请二级域名</h2><p>从域名服务商那里，找到主域名，点解析，然后输入个二级域名name，指向服务器，一般来说会自动帮你配置DNS</p>
+<h2 id="2、安装nginx"><a href="#2、安装nginx" class="headerlink" title="2、安装nginx"></a>2、安装nginx</h2><p>看上一篇</p>
+<h2 id="3、配置主域名"><a href="#3、配置主域名" class="headerlink" title="3、配置主域名"></a>3、配置主域名</h2><p>想配置二级域名就得先配置个主域名www，详情参考上一篇</p>
+<h2 id="4、nginx配置子域名"><a href="#4、nginx配置子域名" class="headerlink" title="4、nginx配置子域名"></a>4、nginx配置子域名</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    # listen       80 default_server;</span><br><span class="line">    # listen       [::]:80 default_server;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  www.wulisensen.com;</span><br><span class="line">    root         &#x2F;home&#x2F;www&#x2F;;</span><br><span class="line">    index  index.html;</span><br><span class="line">    # try_files $uri &#x2F;cache.php ;</span><br><span class="line"></span><br><span class="line">    # Load configuration files for the default server block.</span><br><span class="line">    # include &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;*.conf;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        index  index.html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location &#x2F;manage &#123;</span><br><span class="line">        index  index.html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page 404 &#x2F;404.html;</span><br><span class="line">        location &#x3D; &#x2F;40x.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page 500 502 503 504 &#x2F;50x.html;</span><br><span class="line">        location &#x3D; &#x2F;50x.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  wordpress.wulisensen.com;</span><br><span class="line">    proxy_set_header Host $host:8000;</span><br><span class="line">    proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        proxy_pass       http:&#x2F;&#x2F;127.0.0.1:8000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="把所有的-tags-合并成-1-个数组"><a href="#把所有的-tags-合并成-1-个数组" class="headerlink" title="把所有的 tags 合并成 1 个数组"></a>把所有的 tags 合并成 1 个数组</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.a_test.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $unwind: <span class="string">'$tags'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $group: &#123;</span><br><span class="line">            _id: <span class="literal">null</span>,</span><br><span class="line">            tags: &#123;</span><br><span class="line">                $push: <span class="string">'$tags'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+<p>上面的是我的主域名配置，下面是二级域名配置。</p>
+<p>注意 <code>proxy_set_header Host $host:8000;</code> 要把端口号带上，不然会出现wordpress.wulisensen.com 被nginx 301 转发到 wordpress.wulisensen.com:8000 的情况，前端看到就很尴尬了。</p>
+<h2 id="5、给SPA项目做配置"><a href="#5、给SPA项目做配置" class="headerlink" title="5、给SPA项目做配置"></a>5、给SPA项目做配置</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  www.wulisensen.com;</span><br><span class="line"></span><br><span class="line">    #charset koi8-r;</span><br><span class="line"></span><br><span class="line">    access_log  &#x2F;data&#x2F;logs&#x2F;nginx&#x2F;localhost.access.log  main;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root         &#x2F;home&#x2F;www&#x2F;;</span><br><span class="line">        try_files $uri $uri&#x2F; @router;#需要指向下面的@router否则会出现vue的路由在nginx中刷新出现404</span><br><span class="line">        index  index.html;</span><br><span class="line">    &#125;</span><br><span class="line">    #对应上面的@router，主要原因是路由的路径资源并不是一个真实的路径，所以无法找到具体的文件</span><br><span class="line">    #因此需要rewrite到index.html中，然后交给路由在处理请求资源</span><br><span class="line">    location @router &#123;</span><br><span class="line">        rewrite ^.*$ &#x2F;index.html last;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="获取到的数据"><a href="#获取到的数据" class="headerlink" title="获取到的数据"></a>获取到的数据</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[&#123; <span class="attr">"_id"</span>: <span class="literal">null</span>, <span class="attr">"tags"</span>: [<span class="string">"tag1"</span>, <span class="string">"tag2"</span>, <span class="string">"tag3"</span>, <span class="string">"tag4"</span>] &#125;]</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>mongodb</category>
+        <category>nginx</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -933,27 +938,6 @@
 <h2 id="8、重启nginx"><a href="#8、重启nginx" class="headerlink" title="8、重启nginx"></a>8、重启nginx</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
 
 <p>再试试能否访问</p>
-]]></content>
-      <categories>
-        <category>nginx</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nginx配置二级域名</title>
-    <url>/2020/09/01/nginx/second/</url>
-    <content><![CDATA[<p>网络应用中经常会遇到1台服务器起多个应用在不同端口的情况</p>
-<h2 id="1、申请二级域名"><a href="#1、申请二级域名" class="headerlink" title="1、申请二级域名"></a>1、申请二级域名</h2><p>从域名服务商那里，找到主域名，点解析，然后输入个二级域名name，指向服务器，一般来说会自动帮你配置DNS</p>
-<h2 id="2、安装nginx"><a href="#2、安装nginx" class="headerlink" title="2、安装nginx"></a>2、安装nginx</h2><p>看上一篇</p>
-<h2 id="3、配置主域名"><a href="#3、配置主域名" class="headerlink" title="3、配置主域名"></a>3、配置主域名</h2><p>想配置二级域名就得先配置个主域名www，详情参考上一篇</p>
-<h2 id="4、nginx配置子域名"><a href="#4、nginx配置子域名" class="headerlink" title="4、nginx配置子域名"></a>4、nginx配置子域名</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    # listen       80 default_server;</span><br><span class="line">    # listen       [::]:80 default_server;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  www.wulisensen.com;</span><br><span class="line">    root         &#x2F;home&#x2F;www&#x2F;;</span><br><span class="line">    index  index.html;</span><br><span class="line">    # try_files $uri &#x2F;cache.php ;</span><br><span class="line"></span><br><span class="line">    # Load configuration files for the default server block.</span><br><span class="line">    # include &#x2F;etc&#x2F;nginx&#x2F;default.d&#x2F;*.conf;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        index  index.html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location &#x2F;manage &#123;</span><br><span class="line">        index  index.html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page 404 &#x2F;404.html;</span><br><span class="line">        location &#x3D; &#x2F;40x.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page 500 502 503 504 &#x2F;50x.html;</span><br><span class="line">        location &#x3D; &#x2F;50x.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  wordpress.wulisensen.com;</span><br><span class="line">    proxy_set_header Host $host:8000;</span><br><span class="line">    proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        proxy_pass       http:&#x2F;&#x2F;127.0.0.1:8000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上面的是我的主域名配置，下面是二级域名配置。</p>
-<p>注意 <code>proxy_set_header Host $host:8000;</code> 要把端口号带上，不然会出现wordpress.wulisensen.com 被nginx 301 转发到 wordpress.wulisensen.com:8000 的情况，前端看到就很尴尬了。</p>
-<h2 id="5、给SPA项目做配置"><a href="#5、给SPA项目做配置" class="headerlink" title="5、给SPA项目做配置"></a>5、给SPA项目做配置</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  www.wulisensen.com;</span><br><span class="line"></span><br><span class="line">    #charset koi8-r;</span><br><span class="line"></span><br><span class="line">    access_log  &#x2F;data&#x2F;logs&#x2F;nginx&#x2F;localhost.access.log  main;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root         &#x2F;home&#x2F;www&#x2F;;</span><br><span class="line">        try_files $uri $uri&#x2F; @router;#需要指向下面的@router否则会出现vue的路由在nginx中刷新出现404</span><br><span class="line">        index  index.html;</span><br><span class="line">    &#125;</span><br><span class="line">    #对应上面的@router，主要原因是路由的路径资源并不是一个真实的路径，所以无法找到具体的文件</span><br><span class="line">    #因此需要rewrite到index.html中，然后交给路由在处理请求资源</span><br><span class="line">    location @router &#123;</span><br><span class="line">        rewrite ^.*$ &#x2F;index.html last;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
         <category>nginx</category>
@@ -1057,6 +1041,22 @@
       </categories>
       <tags>
         <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MongoDB 　聚合使用 $unwind 解构数组</title>
+    <url>/2020/09/01/mongodb/unwind/</url>
+    <content><![CDATA[<h2 id="原测试数据"><a href="#原测试数据" class="headerlink" title="原测试数据:"></a>原测试数据:</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"Host"</span>: <span class="string">"abc.com"</span>, <span class="attr">"ArtId"</span>: <span class="string">"123"</span>, <span class="attr">"tags"</span>: [<span class="string">"tag1"</span>, <span class="string">"tag2"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"Host"</span>: <span class="string">"abc.com"</span>, <span class="attr">"ArtId"</span>: <span class="string">"123"</span>, <span class="attr">"tags"</span>: [<span class="string">"tag3"</span>, <span class="string">"tag4"</span>] &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="把所有的-tags-合并成-1-个数组"><a href="#把所有的-tags-合并成-1-个数组" class="headerlink" title="把所有的 tags 合并成 1 个数组"></a>把所有的 tags 合并成 1 个数组</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">db.a_test.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $unwind: <span class="string">'$tags'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        $group: &#123;</span><br><span class="line">            _id: <span class="literal">null</span>,</span><br><span class="line">            tags: &#123;</span><br><span class="line">                $push: <span class="string">'$tags'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取到的数据"><a href="#获取到的数据" class="headerlink" title="获取到的数据"></a>获取到的数据</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[&#123; <span class="attr">"_id"</span>: <span class="literal">null</span>, <span class="attr">"tags"</span>: [<span class="string">"tag1"</span>, <span class="string">"tag2"</span>, <span class="string">"tag3"</span>, <span class="string">"tag4"</span>] &#125;]</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>mongodb</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>

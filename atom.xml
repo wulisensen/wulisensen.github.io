@@ -86,32 +86,6 @@
   </entry>
   
   <entry>
-    <title>Nginx更改配置教程</title>
-    <link href="https://www.wulisensen.com/2020/09/01/nginx/index/"/>
-    <id>https://www.wulisensen.com/2020/09/01/nginx/index/</id>
-    <published>2020-09-01T12:18:05.495Z</published>
-    <updated>2020-09-01T12:18:05.495Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1、远程连接ssh"><a href="#1、远程连接ssh" class="headerlink" title="1、远程连接ssh"></a>1、远程连接ssh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@ip</span><br></pre></td></tr></table></figure><h2 id="2、查看有没有nginx"><a href="#2、查看有没有nginx" class="headerlink" title="2、查看有没有nginx"></a>2、查看有没有nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure><h2 id="3、查看nginx有没有安装"><a href="#3、查看nginx有没有安装" class="headerlink" title="3、查看nginx有没有安装"></a>3、查看nginx有没有安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure><h2 id="4、通过ip试下能不能访问nginx"><a href="#4、通过ip试下能不能访问nginx" class="headerlink" title="4、通过ip试下能不能访问nginx"></a>4、通过ip试下能不能访问nginx</h2><h2 id="5、检查nginx配置是否正确"><a href="#5、检查nginx配置是否正确" class="headerlink" title="5、检查nginx配置是否正确"></a>5、检查nginx配置是否正确</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure><h2 id="6、去目录-etc-nginx-conf-d"><a href="#6、去目录-etc-nginx-conf-d" class="headerlink" title="6、去目录 /etc/nginx/conf.d"></a>6、去目录 /etc/nginx/conf.d</h2><p>如果目录内为空，这创建web.conf</p><p>配置web.conf</p><h2 id="7、配置好后，检查配置是否正确"><a href="#7、配置好后，检查配置是否正确" class="headerlink" title="7、配置好后，检查配置是否正确"></a>7、配置好后，检查配置是否正确</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure><h2 id="8、重启nginx"><a href="#8、重启nginx" class="headerlink" title="8、重启nginx"></a>8、重启nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure><p>再试试能否访问</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;1、远程连接ssh&quot;&gt;&lt;a href=&quot;#1、远程连接ssh&quot; class=&quot;headerlink&quot; title=&quot;1、远程连接ssh&quot;&gt;&lt;/a&gt;1、远程连接ssh&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-      
-    
-    </summary>
-    
-    
-      <category term="nginx" scheme="https://www.wulisensen.com/categories/nginx/"/>
-    
-    
-      <category term="工具" scheme="https://www.wulisensen.com/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Nginx配置二级域名</title>
     <link href="https://www.wulisensen.com/2020/09/01/nginx/second/"/>
     <id>https://www.wulisensen.com/2020/09/01/nginx/second/</id>
@@ -126,6 +100,32 @@
       
         &lt;p&gt;网络应用中经常会遇到1台服务器起多个应用在不同端口的情况&lt;/p&gt;
 &lt;h2 id=&quot;1、申请二级域名&quot;&gt;&lt;a href=&quot;#1、申请二级域名&quot; class=&quot;headerlink&quot; title=&quot;1、申请二级域名&quot;&gt;&lt;/a&gt;1、申请二级域名&lt;/h2&gt;&lt;p&gt;从域名服务商那里，找
+      
+    
+    </summary>
+    
+    
+      <category term="nginx" scheme="https://www.wulisensen.com/categories/nginx/"/>
+    
+    
+      <category term="工具" scheme="https://www.wulisensen.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx更改配置教程</title>
+    <link href="https://www.wulisensen.com/2020/09/01/nginx/index/"/>
+    <id>https://www.wulisensen.com/2020/09/01/nginx/index/</id>
+    <published>2020-09-01T12:18:05.495Z</published>
+    <updated>2020-09-01T12:18:05.495Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1、远程连接ssh"><a href="#1、远程连接ssh" class="headerlink" title="1、远程连接ssh"></a>1、远程连接ssh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@ip</span><br></pre></td></tr></table></figure><h2 id="2、查看有没有nginx"><a href="#2、查看有没有nginx" class="headerlink" title="2、查看有没有nginx"></a>2、查看有没有nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure><h2 id="3、查看nginx有没有安装"><a href="#3、查看nginx有没有安装" class="headerlink" title="3、查看nginx有没有安装"></a>3、查看nginx有没有安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nginx</span><br></pre></td></tr></table></figure><h2 id="4、通过ip试下能不能访问nginx"><a href="#4、通过ip试下能不能访问nginx" class="headerlink" title="4、通过ip试下能不能访问nginx"></a>4、通过ip试下能不能访问nginx</h2><h2 id="5、检查nginx配置是否正确"><a href="#5、检查nginx配置是否正确" class="headerlink" title="5、检查nginx配置是否正确"></a>5、检查nginx配置是否正确</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure><h2 id="6、去目录-etc-nginx-conf-d"><a href="#6、去目录-etc-nginx-conf-d" class="headerlink" title="6、去目录 /etc/nginx/conf.d"></a>6、去目录 /etc/nginx/conf.d</h2><p>如果目录内为空，这创建web.conf</p><p>配置web.conf</p><h2 id="7、配置好后，检查配置是否正确"><a href="#7、配置好后，检查配置是否正确" class="headerlink" title="7、配置好后，检查配置是否正确"></a>7、配置好后，检查配置是否正确</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure><h2 id="8、重启nginx"><a href="#8、重启nginx" class="headerlink" title="8、重启nginx"></a>8、重启nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure><p>再试试能否访问</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1、远程连接ssh&quot;&gt;&lt;a href=&quot;#1、远程连接ssh&quot; class=&quot;headerlink&quot; title=&quot;1、远程连接ssh&quot;&gt;&lt;/a&gt;1、远程连接ssh&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
       
     
     </summary>
@@ -245,32 +245,6 @@
   </entry>
   
   <entry>
-    <title>MongoDB 初始化</title>
-    <link href="https://www.wulisensen.com/2020/09/01/mongodb/init/"/>
-    <id>https://www.wulisensen.com/2020/09/01/mongodb/init/</id>
-    <published>2020-09-01T12:18:05.493Z</published>
-    <updated>2020-09-01T12:18:05.493Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1、-查看数据库"><a href="#1、-查看数据库" class="headerlink" title="1、 查看数据库"></a>1、 查看数据库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">mongo</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">show dbs;</span></span><br><span class="line">admin    0.000GB</span><br><span class="line">config   0.000GB</span><br><span class="line">local    0.000GB</span><br></pre></td></tr></table></figure><p>在命令行工具中 输入 mongo 回车 就可以输入 mongo 命令</p><p>show dbs 是查看当前 有哪些数据库</p><h2 id="2、初始化数据库"><a href="#2、初始化数据库" class="headerlink" title="2、初始化数据库"></a>2、初始化数据库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">use comment</span></span><br><span class="line">switched to db comment</span><br></pre></td></tr></table></figure><p>use comment 意思是 使用 comment 这个数据库</p><p>如果没有，就会 新创建 1 个</p><h2 id="3、初始化-用户"><a href="#3、初始化-用户" class="headerlink" title="3、初始化 用户"></a>3、初始化 用户</h2><p>为当前 数据库 创建 1 个 只有 当前数据库的 权限的 用户</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">db.createUser(&#123;</span></span><br><span class="line">    user:"wugs_comment",</span><br><span class="line">    pwd:"123456",</span><br><span class="line">    roles:[&#123;</span><br><span class="line">        role:"readWrite",</span><br><span class="line">        db:"comment"</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Successfully added user: &#123;</span><br><span class="line">"user" : "wugs_comment",</span><br><span class="line">"roles" : [</span><br><span class="line">&#123;</span><br><span class="line">"role" : "readWrite",</span><br><span class="line">"db" : "comment"</span><br><span class="line">&#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>成功创建了 一个 用户名为 wugs_comment 的用户， 拥有 数据库 comment 的读写权限</p><h2 id="4、端口不是-默认的-27017"><a href="#4、端口不是-默认的-27017" class="headerlink" title="4、端口不是 默认的 27017"></a>4、端口不是 默认的 27017</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo --port 10001</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;1、-查看数据库&quot;&gt;&lt;a href=&quot;#1、-查看数据库&quot; class=&quot;headerlink&quot; title=&quot;1、 查看数据库&quot;&gt;&lt;/a&gt;1、 查看数据库&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
-      
-    
-    </summary>
-    
-    
-      <category term="mongodb" scheme="https://www.wulisensen.com/categories/mongodb/"/>
-    
-    
-      <category term="数据库" scheme="https://www.wulisensen.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
     <title>在MongoDB中使用JOIN操作</title>
     <link href="https://www.wulisensen.com/2020/09/01/mongodb/join/"/>
     <id>https://www.wulisensen.com/2020/09/01/mongodb/join/</id>
@@ -284,6 +258,32 @@
       
       
         &lt;h3 id=&quot;1、SQL&quot;&gt;&lt;a href=&quot;#1、SQL&quot; class=&quot;headerlink&quot; title=&quot;1、SQL&quot;&gt;&lt;/a&gt;1、SQL&lt;/h3&gt;&lt;p&gt;SQL与NoSQL最大的不同之一就是不支持JOIN，在传统的数据库中，SQL JOIN子句允许你使用普通的字段，在两
+      
+    
+    </summary>
+    
+    
+      <category term="mongodb" scheme="https://www.wulisensen.com/categories/mongodb/"/>
+    
+    
+      <category term="数据库" scheme="https://www.wulisensen.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB 初始化</title>
+    <link href="https://www.wulisensen.com/2020/09/01/mongodb/init/"/>
+    <id>https://www.wulisensen.com/2020/09/01/mongodb/init/</id>
+    <published>2020-09-01T12:18:05.493Z</published>
+    <updated>2020-09-01T12:18:05.493Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1、-查看数据库"><a href="#1、-查看数据库" class="headerlink" title="1、 查看数据库"></a>1、 查看数据库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">mongo</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">show dbs;</span></span><br><span class="line">admin    0.000GB</span><br><span class="line">config   0.000GB</span><br><span class="line">local    0.000GB</span><br></pre></td></tr></table></figure><p>在命令行工具中 输入 mongo 回车 就可以输入 mongo 命令</p><p>show dbs 是查看当前 有哪些数据库</p><h2 id="2、初始化数据库"><a href="#2、初始化数据库" class="headerlink" title="2、初始化数据库"></a>2、初始化数据库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">use comment</span></span><br><span class="line">switched to db comment</span><br></pre></td></tr></table></figure><p>use comment 意思是 使用 comment 这个数据库</p><p>如果没有，就会 新创建 1 个</p><h2 id="3、初始化-用户"><a href="#3、初始化-用户" class="headerlink" title="3、初始化 用户"></a>3、初始化 用户</h2><p>为当前 数据库 创建 1 个 只有 当前数据库的 权限的 用户</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">db.createUser(&#123;</span></span><br><span class="line">    user:"wugs_comment",</span><br><span class="line">    pwd:"123456",</span><br><span class="line">    roles:[&#123;</span><br><span class="line">        role:"readWrite",</span><br><span class="line">        db:"comment"</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Successfully added user: &#123;</span><br><span class="line">"user" : "wugs_comment",</span><br><span class="line">"roles" : [</span><br><span class="line">&#123;</span><br><span class="line">"role" : "readWrite",</span><br><span class="line">"db" : "comment"</span><br><span class="line">&#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>成功创建了 一个 用户名为 wugs_comment 的用户， 拥有 数据库 comment 的读写权限</p><h2 id="4、端口不是-默认的-27017"><a href="#4、端口不是-默认的-27017" class="headerlink" title="4、端口不是 默认的 27017"></a>4、端口不是 默认的 27017</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo --port 10001</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1、-查看数据库&quot;&gt;&lt;a href=&quot;#1、-查看数据库&quot; class=&quot;headerlink&quot; title=&quot;1、 查看数据库&quot;&gt;&lt;/a&gt;1、 查看数据库&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
       
     
     </summary>
@@ -323,32 +323,6 @@
   </entry>
   
   <entry>
-    <title>MongoDB　聚合使用 $push 指定字段 转为数组</title>
-    <link href="https://www.wulisensen.com/2020/09/01/mongodb/push/"/>
-    <id>https://www.wulisensen.com/2020/09/01/mongodb/push/</id>
-    <published>2020-09-01T12:18:05.493Z</published>
-    <updated>2020-09-01T12:18:05.493Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="原测试数据"><a href="#原测试数据" class="headerlink" title="原测试数据:"></a>原测试数据:</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"jack"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"lucy"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"lili"</span>, <span class="attr">"age"</span>: <span class="number">18</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"jame"</span>, <span class="attr">"age"</span>: <span class="number">17</span>, <span class="attr">"sex"</span>: <span class="string">"unknown"</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure><h2 id="以-age-聚合，把-name-输出为数组"><a href="#以-age-聚合，把-name-输出为数组" class="headerlink" title="以 age 聚合，把 name 输出为数组"></a>以 age 聚合，把 name 输出为数组</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.a_test.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $group: &#123;</span><br><span class="line">            _id: <span class="string">'$age'</span>,</span><br><span class="line">            name: &#123;</span><br><span class="line">                <span class="string">'$push'</span>: <span class="string">'$name'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">]);</span><br></pre></td></tr></table></figure><h2 id="获取到的数据"><a href="#获取到的数据" class="headerlink" title="获取到的数据"></a>获取到的数据</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">16</span>,  <span class="attr">"name"</span>: [<span class="string">"jack"</span>, <span class="string">"lucy"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">17</span>,  <span class="attr">"name"</span>: [<span class="string">"jame"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">18</span>,  <span class="attr">"name"</span>: [<span class="string">"lili"</span>] &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure><p><span class="exturl" data-url="aHR0cDovL2NuLnZvaWRjYy5jb20vcXVlc3Rpb24vcC10Y2V2b2Fkcy1iY3YuaHRtbA==" title="http://cn.voidcc.com/question/p-tcevoads-bcv.html">参考链接http://cn.voidcc.com/question/p-tcevoads-bcv.html<i class="fa fa-external-link"></i></span></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;原测试数据&quot;&gt;&lt;a href=&quot;#原测试数据&quot; class=&quot;headerlink&quot; title=&quot;原测试数据:&quot;&gt;&lt;/a&gt;原测试数据:&lt;/h2&gt;&lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter
-      
-    
-    </summary>
-    
-    
-      <category term="mongodb" scheme="https://www.wulisensen.com/categories/mongodb/"/>
-    
-    
-      <category term="数据库" scheme="https://www.wulisensen.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
     <title>MongoDB 聚合优化</title>
     <link href="https://www.wulisensen.com/2020/09/01/mongodb/optimize/"/>
     <id>https://www.wulisensen.com/2020/09/01/mongodb/optimize/</id>
@@ -363,6 +337,32 @@
       
         &lt;h2 id=&quot;聚合管道优化&quot;&gt;&lt;a href=&quot;#聚合管道优化&quot; class=&quot;headerlink&quot; title=&quot;聚合管道优化&quot;&gt;&lt;/a&gt;聚合管道优化&lt;/h2&gt;&lt;p&gt;1、$group 不使用 索引，想要使用 要借助 $match、$sort&lt;/p&gt;
 &lt;p&gt;2、$match 
+      
+    
+    </summary>
+    
+    
+      <category term="mongodb" scheme="https://www.wulisensen.com/categories/mongodb/"/>
+    
+    
+      <category term="数据库" scheme="https://www.wulisensen.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB　聚合使用 $push 指定字段 转为数组</title>
+    <link href="https://www.wulisensen.com/2020/09/01/mongodb/push/"/>
+    <id>https://www.wulisensen.com/2020/09/01/mongodb/push/</id>
+    <published>2020-09-01T12:18:05.493Z</published>
+    <updated>2020-09-01T12:18:05.493Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="原测试数据"><a href="#原测试数据" class="headerlink" title="原测试数据:"></a>原测试数据:</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"jack"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"male"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"lucy"</span>, <span class="attr">"age"</span>: <span class="number">16</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"lili"</span>, <span class="attr">"age"</span>: <span class="number">18</span>, <span class="attr">"sex"</span>: <span class="string">"female"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">"name"</span>: <span class="string">"jame"</span>, <span class="attr">"age"</span>: <span class="number">17</span>, <span class="attr">"sex"</span>: <span class="string">"unknown"</span> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure><h2 id="以-age-聚合，把-name-输出为数组"><a href="#以-age-聚合，把-name-输出为数组" class="headerlink" title="以 age 聚合，把 name 输出为数组"></a>以 age 聚合，把 name 输出为数组</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db.a_test.aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">        $group: &#123;</span><br><span class="line">            _id: <span class="string">'$age'</span>,</span><br><span class="line">            name: &#123;</span><br><span class="line">                <span class="string">'$push'</span>: <span class="string">'$name'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">]);</span><br></pre></td></tr></table></figure><h2 id="获取到的数据"><a href="#获取到的数据" class="headerlink" title="获取到的数据"></a>获取到的数据</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">16</span>,  <span class="attr">"name"</span>: [<span class="string">"jack"</span>, <span class="string">"lucy"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">17</span>,  <span class="attr">"name"</span>: [<span class="string">"jame"</span>] &#125;,</span><br><span class="line">    &#123; <span class="attr">"age"</span>: <span class="number">18</span>,  <span class="attr">"name"</span>: [<span class="string">"lili"</span>] &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure><p><span class="exturl" data-url="aHR0cDovL2NuLnZvaWRjYy5jb20vcXVlc3Rpb24vcC10Y2V2b2Fkcy1iY3YuaHRtbA==" title="http://cn.voidcc.com/question/p-tcevoads-bcv.html">参考链接http://cn.voidcc.com/question/p-tcevoads-bcv.html<i class="fa fa-external-link"></i></span></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;原测试数据&quot;&gt;&lt;a href=&quot;#原测试数据&quot; class=&quot;headerlink&quot; title=&quot;原测试数据:&quot;&gt;&lt;/a&gt;原测试数据:&lt;/h2&gt;&lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter
       
     
     </summary>
