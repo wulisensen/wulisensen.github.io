@@ -1,0 +1,17 @@
+{
+    "name": "WuLiSenSen的个人博客",
+    "short_name": "WuLiSenSen",
+    "description": "不轻微栗，不累沧海",
+    "icons": [
+        {
+            "src": "icons/icon225.png",
+            "sizes": "225x225",
+            "type": "image/png"
+        }
+    ],
+    "background_color": "#fff",
+    "theme_color": "#000",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
+}
